@@ -55,8 +55,9 @@ The epics were created using the milistones on github. Each epic was created and
 
     </br></br>
 
-
-
+> ## Design
+Navigation color scheme
+![Navigation](/images_reademe/design-nav-color.png)
 > ## Testing
 ---
    
@@ -70,4 +71,6 @@ The epics were created using the milistones on github. Each epic was created and
 </br></br>
 ### Not Fixed bugs
 
+> ## Technologies Used
 
+- [CSS Gradient](https://cssgradient.io/) - for navbar gradient color

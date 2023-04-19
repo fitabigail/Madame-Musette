@@ -1,7 +1,101 @@
 {% extends "base.html" %}
-
 {% load static %}
 
+{% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
-    <h1 class="display-4 text-success">Madame Musette</h1>
+
+
+
+<!-- Background image -->
+<div class="p-5 text-center bg-image banner-image">
+  <div class="mask d-none d-sm-block">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="text-white hero-text">
+        <h1 class="mb-3">MadameMusette</h1>
+        <a class="btn btn-outline-light btn-lg" href="#!" role="button">Find your perfect shoes</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--Main page heading-->
+<div class="col12 text-center mt-5">
+  <h3 class="text-dark pt-4">New Collection</h3>
+  <h1 class="text-dark pt-4">Spring-Summer 2023</h1>
+  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="#!" role="button">Discover</a>
+</div>
+<!--End main heading-->
+
+<!--Three column products section-->
+<div class="container-fluid">
+  <div class="row my-5 w-100 p-3">
+
+    <div class="col-md-4 my-4">
+      <img src="/media/shoe2.webp" alt="" class="w-100">
+      <div class="col12 text-center mt-5">
+        <h4 class="my-4">Women</h4>
+        <a href="#" class="btn btn-outline-dark btn-md products-btn">PUMPS</a>
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 my-4">
+      <img src="/media/purse.webp" alt="" class="w-100">
+      <div class="col12 text-center mt-5">
+        <h4 class="my-4">Women</h4>
+        <a href="#" class="btn btn-outline-dark btn-md products-btn">BAGS</a>
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 my-4">
+      <img src="/media/belts1.webp" alt="" class="w-100">
+      <div class="col12 text-center mt-5">
+        <h4 class="my-4">Women</h4>
+        <a href="#" class="btn btn-outline-dark btn-md products-btn">ACCESSORIES</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!--End section-->
+
+<!--Sales section-->
+
+<div class="container-fluid mb-5">
+<div class="p-5 text-center bg-image sales-image">  
+</div>
+<div class="col12 text-center mt-5">
+  <h3 class="text-dark pt-4">Up to 60% Off</h3>
+  <h1 class="text-dark pt-4">SALES</h1>
+  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="#!" role="button">BUY NOW</a>
+</div>
+</div>
+
+<!--End sales section-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {% endblock %}
