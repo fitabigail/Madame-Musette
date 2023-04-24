@@ -56,7 +56,7 @@
         <a href="#" class="nav-link main-logo-link">
           <h2 class="logo-font text-white my-0"><strong>MadameMusette</strong></h2>
         </a>
-      </div>    
+      </div>
       <div class="col-12 col-lg-8 my-auto py-1 py-lg-0">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item dropdown">
@@ -109,9 +109,9 @@
     </div>
     <div id="delivery-banner" class="row text-center">
       <div class="col bg-black text-white">
-          <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
+        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
       </div>
-  </div>
+    </div>
   </header>
 
   {% if messages %}
@@ -142,6 +142,113 @@
 
   </div>
 
+  <footer class="footer bg-dark">
+    <div class="container-fluid">
+      <div class="row my-5 w-100 p-3">
+        <!-- Subscription-->
+        <div class="col-md-4 my-4">
+          <div class="col-12 text-center mt-5">
+            <h4 class="my-4">Subscribe to our newsletter</h4>
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
+              data-target="#myModal">
+              Subscribe
+            </button>
+            <!-- The Modal -->
+            <div class="modal" id="myModal">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+
+                  <!-- Modal Header -->
+                  <div class="modal-header gradient-custom">
+                    <h4 class="modal-title pl-5">You are not subscribe to ours newsletter?</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  </div>
+
+                  <!-- Modal body -->
+                  <div class="modal-body">
+                    <div class="row">
+                      <div class="col-sm mt-5 p-5">
+                        <p class="d-none d-sm-block"><strong>Subscribe now</strong> and you will join the MadameMusette family! You will find out
+                          among the first all
+                          the news,
+                          news about the promotional campaigns and, from time to time, you will have
+                          <strong>personalized surprises</strong>
+                          !</p>
+                        <div class="form-group form-control-inline mt-5">
+
+                          <input type="text" class="form-control form-control-md" id="firstname"
+                            placeholder="First Name">
+                        </div>
+                        <div class="form-group">
+
+                          <input type="text" class="form-control form-control-md" id="lastname" placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
+
+                          <input type="text" class="form-control form-control-md" id="email" placeholder="Your Email">
+                        </div>
+                      </div>
+                      <div class="col-sm">
+                        <img src="/media/modal-shoes.png" alt="high heels" width="300" height="300">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal footer -->
+                  <div class="modal-footer gradient-custom">
+                    <button type="button" class="btn btn-outline-dark btn-md products-btn"
+                      data-dismiss="modal">Subscribe</button>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <!--End Subscription-->
+        <!-- Section: Social media -->
+        <div class="col-md-4 my-4">
+          <div class="col-12 text-center mt-5">
+            <h4 class="my-4">Follow us</h4>
+            <div class="social text-white">
+
+              <!-- social icons copied from https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/ -->
+
+              <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-facebook-f"></i></a>
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-twitter"></i></a>
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i
+                    class="fab fa-instagram"></i></a>
+
+            </div>
+
+
+          </div>
+        </div>
+        <!-- End Social media -->
+
+        <!--Store Location-->
+        <div class="col-md-4 my-4">
+          <div class="col-12 text-center mt-5">
+            <h4 class="my-4">Store location</h4>
+            <a
+              href="https://www.google.com/maps/place/Blanchardstown+Centre/@53.3931251,-6.3983277,14.75z/data=!4m6!3m5!1s0x48670d50e9317be7:0x1ef966973dd6d646!8m2!3d53.3918686!4d-6.3910117!16s%2Fm%2F05qb9zy">
+              <h6 class="text-white" id="store-location"><i class="fas fa-map-marker-alt"></i> Blankcharstown Shopping
+                Center</h6>
+            </a>
+          </div>
+        </div>
+        <!--End Store Location-->
+      </div>
+    </div>
+  </footer>
 
 </body>
 

@@ -55,13 +55,32 @@ The epics were created using the milistones on github. Each epic was created and
 
     </br></br>
 
+
+> ## Flowchart
+</br>
+
+
 > ## Design
-Navigation color scheme
+
+<summary>Navigation color scheme</summary>
+<details>
+
 ![Navigation](/images_reademe/design-nav-color.png)
+
+</details>
+</br></br>
+
+> ## Features
+</br></br>
+
+> ## Database
+
+</br></br>
+
 > ## Testing
 ---
    
-</br></br>
+</br>
 
 ## **BUGS**
 </br>
@@ -69,8 +88,27 @@ Navigation color scheme
 ### Fixed bugs
 
 </br></br>
+
 ### Not Fixed bugs
+</br></br>
+
+> ## LightHouse
+</br></br>
+
+
+> ## Validation
+
+</br></br>
 
 > ## Technologies Used
 
 - [CSS Gradient](https://cssgradient.io/) - for navbar gradient color
+
+> ## Deployment
+</br></br>
+
+> ## Credits
+ 
+ - [Social Footer](https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/) -code copied
+
+ > ## Acknowledgement

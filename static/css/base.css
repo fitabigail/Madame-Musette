@@ -5,7 +5,7 @@ html, body {
 /**** Navigation bar ***/
 
 .navbar {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-family: 'Playfair', sans-serif;
     font-weight: 300;
     letter-spacing: .1rem;    
@@ -17,11 +17,11 @@ html, body {
 
 .nav-link:hover{
     color: rgb(53, 29, 2)!important;
-    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.4);
+    text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.4);
     z-index: 1;
     }
 
-/*** Headergradient color ***/
+/*** Header gradient color ***/
 
 .gradient-custom {
     background: rgb(36,19,0);
@@ -56,19 +56,20 @@ html, body {
 }
 
 .hero-text h1{
-font-size: 2.8rem;
-text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);
+    font-size: 2.8rem;
+    text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);
 }
 
-/***Main Heading Section**/
+/* ---- Main Heading Section ---- */
 
-.discover-btn{
+.btn.discover-btn{
     width: 20rem;
     color:rgb(53, 29, 2)!important;
     background-color: #fff;
+    text-transform: uppercase;
 }
 
-.discover-btn:hover{
+a.discover-btn:hover{
     background: rgb(36,19,0);
     background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
@@ -78,30 +79,17 @@ text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);
     }
 
 /***Section three columns**/
-.products-btn{
-    width: 10rem;
-    color:rgb(53, 29, 2)!important;
-    background-color: #fff;
-}
 
-.products-btn:hover{
-    background: rgb(36,19,0);
-    background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
-    color:#fff;
-    }
 
 /***Section Sales***/
 
 .sales-image {
     background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/media/sales-background.webp');
     background-size: cover;
-    background-position: center bottom;
+    background-position: center center;
     background-repeat: no-repeat;
-    height: 500px;   
-
+    height: 600px;   
+    
 }
 
 /* from Bulma */
@@ -231,7 +219,39 @@ text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);
     background: #3a3a3a;
 }
 
+/* ---- Footer ----*/
 
+.footer {   
+    background-color: #33240e!important;
+    color:#fff;
+    font-size: 2px;
+}
+
+/* ------ Subscribe footer modal ---*/
+#myModal{      
+    color: #000;  
+    
+}
+
+.modal-header{
+    color: #fff;
+}
+
+.modal-body{
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+}
+
+a:link{
+    text-decoration: none; 
+}
+#store-location:hover{
+    color: rgb(172, 134, 90)!important;
+    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
+       
+}
 
 /* -------------------------------- Media Queries */
 
