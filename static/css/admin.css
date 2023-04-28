@@ -1,0 +1,61 @@
+/* -- branding text color -- */
+
+#branding h1, #branding h1 a:link, #branding h1 a:visited {
+    color: antiquewhite;
+}
+
+#user-tools a{
+    border-bottom:none;
+}
+
+/* -- header background color -- */
+
+#header{
+    background: rgb(36,19,0);
+    background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
+    box-shadow: 0px 0px 3px 0px #241300;
+}
+/* -- header text color -- */
+
+#header a:link, #header a:visited{
+    color: antiquewhite!important;   
+
+}
+ /* -- breadcrumbs background color -- */
+div.breadcrumbs{
+    background: #351d06c9;
+    
+}
+/* -- modules background color -- */
+
+.module h2, .module caption, .inline-group h2
+    {
+        background:#351d06c9;
+        
+    }
+
+    /* -- butons color -- */
+    .button, input[type=submit], input[type=button], .submit-row input, a.button {
+        background: #351d06c9;
+       
+    }
+
+    .button:active, input[type=submit]:active, input[type=button]:active, .button:focus, input[type=submit]:focus, input[type=button]:focus, .button:hover, input[type=submit]:hover, input[type=button]:hover{
+        background-color: #c7a474;
+      }
+
+    .button.default, input[type=submit].default, .submit-row input.default{
+        background: #351d06c9;
+       
+    }
+    .button.default:active, input[type=submit].default:active, .button.default:focus, input[type=submit].default:focus, .button.default:hover, input[type=submit].default:hover{
+        background-color: #c7a474;
+      }
+/* -- text color -- */
+
+    a:link, a:visited{
+        color: #1c1f1f;
+      }

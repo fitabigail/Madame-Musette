@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %}
+{% load static %}
+
+
+{% block branding %}
+<a href="/admin">
+<h1 id="head">
+    <strong>MadameMusette</strong>
+</h1>
+</a>
+{% endblock %}
+
+{% block extrastyle %}
+<link rel="stylesheet" href="{% static 'css/admin.css' %}">
+
+{% endblock %}
+

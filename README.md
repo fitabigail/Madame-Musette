@@ -103,12 +103,13 @@ The epics were created using the milistones on github. Each epic was created and
 > ## Technologies Used
 
 - [CSS Gradient](https://cssgradient.io/) - for navbar gradient color
+- [Conversion](https://www.xconvert.com/) - used to compress and convert the images from jpeg to webp
 
 > ## Deployment
 </br></br>
 
 > ## Credits
  
- - [Social Footer](https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/) -code copied
+ - [Social Footer](https://mdbootstrap.com/docs/standard/extended/social-media-icons-footer/) - code copied from mdbootstrap
 
  > ## Acknowledgement
