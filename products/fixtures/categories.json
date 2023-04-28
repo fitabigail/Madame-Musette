@@ -23,7 +23,7 @@
     "pk": 4,
     "model": "products.category",
     "fields": {
-        "name": "Shoulder_bags",
+        "name": "shoulder_bags",
         "friendly_name": "Shoulder Bags"
     }
 }, {

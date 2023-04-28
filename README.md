@@ -104,6 +104,7 @@ The epics were created using the milistones on github. Each epic was created and
 
 - [CSS Gradient](https://cssgradient.io/) - for navbar gradient color
 - [Conversion](https://www.xconvert.com/) - used to compress and convert the images from jpeg to webp
+- [CKeditor](https://pypi.org/project/django-ckeditor/) - used for rich text editor
 
 > ## Deployment
 </br></br>
