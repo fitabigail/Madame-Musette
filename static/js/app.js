@@ -1,4 +1,5 @@
 // Full  Page Search Activation
+
 $(function () {
     $('a[href="#full-page-search"]').on('click', function(event) {
         event.preventDefault();
@@ -13,6 +14,15 @@ $(function () {
     });
 });
 
+ //Scroll Button
 
-
- 
+ document.querySelector('.scroll_btn').addEventListener(
+    'click', () => {
+       document.querySelector('html').style.scrollBehavior = 'smooth';
+       setTimeout(() => {
+           document.querySelector('html').style.scrollBehavior = 'unset';
+       }), 1000;
+       
+       
+    }
+    );

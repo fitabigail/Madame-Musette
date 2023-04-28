@@ -227,6 +227,14 @@ a.discover-btn:hover{
     font-size: 2px;
 }
 
+.bottom_border { 
+    border-bottom:1px solid #eecfb5; 
+    padding-bottom:20px;   
+}
+
+#subfooter{
+    background-color:#1a1207!important ;
+}
 /* ------ Subscribe footer modal ---*/
 #myModal{      
     color: #000;  
@@ -246,12 +254,43 @@ a.discover-btn:hover{
 a:link{
     text-decoration: none; 
 }
+
 #store-location:hover{
     color: rgb(172, 134, 90)!important;
     text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.4);
     z-index: 1;
        
 }
+
+/* ----Scroll up button---- */
+
+.scroll_btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 5.5rem;  
+    width: 3.5rem;
+    height: 3rem;    
+    font-size: 2rem;    
+    cursor: pointer;
+    color: antiquewhite;
+    background-color: rgba(172, 134, 90, 0.438)!important;
+    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+ 
+ 
+ 
+  
+  
+  
+  
+  
+
 
 /* -------------------------------- Media Queries */
 

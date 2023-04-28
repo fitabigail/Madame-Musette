@@ -1,0 +1,900 @@
+[{
+    "pk": 1,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001340155",
+        "name": "July",
+        "description": " classic stiletto shoes that come this collection in a new, sensational form. You can complete any outfit with these shoes, just let them inspire you.",
+        "price": 169,
+        "category": 1,
+        "rating": 5,        
+        "image": "pumps-1.webp"
+    }
+}, {
+    "pk": 2,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001600425",
+        "name": "Liz ",
+        "description": "Leather | cream | Heel: 11 cm | Sole: Gomma",
+        "price": 169,
+        "category": 1,
+        "rating": 4.6,        
+        "image": "pumps-2.webp"
+    }
+}, {
+    "pk": 3,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001730010",
+        "name": "Royal Velvet",
+        "description": "Velvet A160, classic, stylish shoes, made from real leather.",
+        "price": 206,
+        "category": 1,
+        "rating": 4.7,        
+        "image": "pumps-3.webp"
+    }
+}, {
+    "pk": 4,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5001890157",
+        "name": "Gill",
+        "description": "POSH A124, stiletto type shoes with a 9 cm high heel, that gives you stability and comfort. Created from patent leather, with the interior made from natural leather. A basic piece of your garderobe, you can wear the with both pants and skirts or dresses.",
+        "price": 169,
+        "category": 1,
+        "rating": 5.0,        
+        "image": "pumps-4.webp"
+    }
+}, {
+    "pk": 5,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002111605",
+        "name": "Sue",
+        "description": "Shoes with a pointed toe and a medium heel, in a unique form. You can wear them with confidence with both pants and skirts or dresses. ",
+        "price": 230,
+        "category": 1,
+        "rating": 5.0,        
+        "image": "pumps-5.webp"
+    }
+}, {
+    "pk": 6,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002260206",
+        "name": "Emma",
+        "description": "Natural leather shoes, with 11 cm heel and a pointed toe, in a unique from. Wear these slingback pumps with confidence with both pants and skirts or dresses, they are perfect for warm summer days.",
+        "price": 209,
+        "category": 1,
+        "rating": 4.7,        
+        "image": "pumps-6.webp"
+    }
+}, {
+    "pk": 7,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002440521",
+        "name": "Liz",
+        "description": "Stiletto type shoes with a 9 cm high heel, that gives you stability and comfort. Created from patent leather, with the interior made from natural leather. A basic piece of your garderobe, you can wear the with both pants and skirts or dresses. ",
+        "price": 159,
+        "category": 1,
+        "rating": 4.4,        
+        "image": "pumps-7.webp"
+    }
+}, {
+    "pk": 8,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002601115",
+        "name": "Rachael",
+        "description": "Stiletto type shoes with a 9 cm high heel, that gives you stability and comfort. Created from patent leather, with the interior made from natural leather. A basic piece of your garderobe, you can wear the with both pants and skirts or dresses.",
+        "price": 199,
+        "category": 1,
+        "rating": 4.5,        
+        "image": "pumps-8.webp"
+    }
+}, {
+    "pk": 9,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002690715",
+        "name": "Posh",
+        "description": "Stiletto type shoes with a 9 cm high heel, that gives you stability and comfort. Created from patent leather, with the interior made from natural leather. A basic piece of your garderobe, you can wear the with both pants and skirts or dresses.",
+        "price": 169,
+        "category": 1,
+        "rating": 4.7,        
+        "image": "pumps-9.webp"
+    }
+}, {
+    "pk": 10,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002701115",
+        "name": "Riana",
+        "description": "Women’s shoes made from a combination of smooth and suede leather, with a low heel and a pointed toe. Available in different colors, this classic model is highlighted by the applied accessory on the front. They have a fine strap around the heel. Wear them confidently with both pants and skirts or dresses.",
+        "price": 139,
+        "category": 1,
+        "rating": 4.4,        
+        "image": "pumps-10.webp"
+    }
+}, {
+    "pk": 11,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002761055",
+        "name": "Carol",
+        "description": "Women’s shoes made from a combination of smooth and suede leather, with a low heel and a pointed toe. Available in different colors, this classic model is highlighted by the applied accessory on the front. They have a fine strap around the heel. Wear them confidently with both pants and skirts or dresses.",
+        "price": 190,
+        "category": 1,
+        "rating": 4.0,        
+        "image": "pumps-11.webp"
+    }
+}, {
+    "pk": 12,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002820069",
+        "name": "Noreen",
+        "description": "Women’s shoes made from a combination of smooth and suede leather, with a low heel and a pointed toe. Available in different colors, this classic model is highlighted by the applied accessory on the front. They have a fine strap around the heel. Wear them confidently with both pants and skirts or dresses.",
+        "price": 199,
+        "category": 1,
+        "rating": 4.6,        
+        "image": "pumps-12.webp"
+    }
+}, {
+    "pk": 13,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002820147",
+        "name": "Jesica",
+        "description": "Women’s shoes with a 10 cm thick heel and a round toe. They have an extremely cool applied accessory. These natural leather shoes will complete any day or office outfit.",
+        "price": 199,
+        "category": 1,
+        "rating": 4.2,        
+        "image": "pumps-13.webp"
+    }
+}, {
+    "pk": 14,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002910572",
+        "name": "Shara",
+        "description": "Natural leather shoes with a pointed toe and a 11 cm heel, in a unique form. Wear them confidently with both pants and skirts or dresses.",
+        "price": 169,
+        "category": 1,
+        "rating": 4.7,        
+        "image": "pumps-14.webp"
+    }
+}, {
+    "pk": 15,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5002990740",
+        "name": "Jenny",
+        "description": "Shoes with a modern and feminine design, made from natural leather, represent a new approach to the classic stiletto. Sophisticated and elegant, these pumps are a must-have for the office but can enhance any day or evening outfit.",
+        "price": 159,
+        "category": 1,
+        "rating": 4.8,        
+        "image": "shoe2.webp"
+    }
+}, {
+    "pk": 16,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003050248",
+        "name": "Ella",
+        "description": "Classic and elegant shoes, made of smooth natural leather, with a medium heel. Comfortable and stable, these are ideal for office outfits.",
+        "price": 165,
+        "category": 1,
+        "rating": 4.4,
+        "image": "shoes1.webp"
+    }
+}, {
+    "pk": 17,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003070787",
+        "name": "Ester",
+        "description": "Sandals made of natural leather with a thin high heel. For better support, but also to highlight the shape of the foot, they were created with a thin strap around the ankle. You can wear them with elegant day or especially evening outfits. ",
+        "price": 133,
+        "category": 2,
+        "rating": 4.4,        
+        "image": "sandals-6.webp"
+    }
+}, {
+    "pk": 18,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003090182",
+        "name": "Blake",
+        "description": "Elegant and feminine leather sandals with multiple straps which are decorated with golden accessories and a 10 cm heel. For better support, but also to highlight the shape of the foot, they were created with a fine strap around the ankle.",
+        "price": 159,
+        "category": 2,
+        "rating": 4.8,        
+        "image": "sandals-1.webp"
+    }
+}, {
+    "pk": 19,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003090186",
+        "name": "Anne",
+        "description": "Elegant and feminine suede leather sandals, with an 8 cm heel. For better support, but also to highlight the shape of the foot, they were created with a thin strap around the ankle. In front they have a large, stylized bow. Wear them with elegant day or night outfits.",
+        "price": 160,
+        "category": 2,
+        "rating": 5.0,
+        "image": "sandals-2.webp"
+    }
+}, {
+    "pk": 20,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003161326",
+        "name": "Esther",
+        "description": "Sandals made of natural leather with a thin high heel. For better support, but also to highlight the shape of the foot, they were created with a thin strap around the ankle. You can wear them with elegant day or especially evening outfits. ",
+        "price": 120,
+        "category": 2,
+        "rating": 4.7,        
+        "image": "sandals-3.webp"
+    }
+}, {
+    "pk": 21,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003230723",
+        "name": "Chiara",
+        "description": "Multi-strap sandals with a 9 cm heel. For better support, but also to highlight the shape of the foot, they were created with thin strap around the ankle. The perfect accessory to complete any outfit.",
+        "price": 160,
+        "category": 2,
+        "rating": 4.3,        
+        "image": "sandals-4.webp"
+    }
+}, {
+    "pk": 22,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003270936",
+        "name": "Brooke",
+        "description": "Sandals made of natural leather with a thin high heel. For better support, but also to highlight the shape of the foot, they were created with a thin strap around the ankle. You can wear them with elegant day or especially evening outfits.",
+        "price": 176,
+        "category": 2,
+        "rating": 5.0,        
+        "image": "sandals-5.webp"
+    }
+}, {
+    "pk": 23,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003360384",
+        "name": "Greta",
+        "description": "Elegant sandals with delicate straps, for extra support. You can easily make the transition from a day's work to an evening in the city.",
+        "price": 129,
+        "category": 2,
+        "rating": 4.8,       
+        "image": "sandals-7.webp"
+    }
+}, {
+    "pk": 24,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003440111",
+        "name": "Velvet",
+        "description": "Elegant and feminine natural leather sandals, with thick 10 cm heel. They have a strap around the ankle for better support and the model is composed of multiple straps on the front. Wear them with elegant day and evening outfits.",
+        "price": 182,
+        "category": 2,
+        "rating": 4.8,        
+        "image": "sandals-8.webp"
+    }
+}, {
+    "pk": 25,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003540313",
+        "name": "Mimosa",
+        "description": "Elegant and feminine natural leather sandals, with thick 10 cm heel. They have a strap around the ankle for better support and the model is composed of multiple straps on the front. Wear them with elegant day and evening outfits.",
+        "price": 106,
+        "category": 2,
+        "rating": 4.0,       
+        "image": "sandals-9.webp"
+    }
+}, {
+    "pk": 26,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003560513",
+        "name": "Penney",
+        "description": "Elegant and feminine natural leather sandals, with thick 10 cm heel. They have a strap around the ankle for better support and the model is composed of multiple straps on the front. Wear them with elegant day and evening outfits.",
+        "price": 141,
+        "category": 2,
+        "rating": 4.4,        
+        "image": "sandals-10.webp"
+    }
+}, {
+    "pk": 27,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003560948",
+        "name": "Rachael",
+        "description": "elegant and feminine natural leather sandals, with thick 10 cm heel. They have a strap around the ankle for better support and the model is composed of multiple straps on the front. Wear them with elegant day and evening outfits.",
+        "price": 138,
+        "category": 2,
+        "rating": 5.0,        
+        "image": "sandals.webp"
+    }
+}, {
+    "pk": 28,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003570628",
+        "name": "Eleta",
+        "description": "Made of natural leather and combine different types of colors and textures. They offer very good support and are ideal for active days. Easy to match with any casual and sporty outfit.",
+        "price": 153,
+        "category": 3,
+        "rating": 4.3,
+        "image": "sneakers.webp"
+    }
+}, {
+    "pk": 29,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003620308",
+        "name": "Atena",
+        "description": "Thick sole shoes, made of natural leather of different textures. They offer very good support and are ideal for active days. Wear them with any casual, sporty, or even office outfit.",
+        "price": 131,
+        "category": 3,
+        "rating": 4.6,        
+        "image": "sneakers1.webp"
+    }
+}, {
+    "pk": 30,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003690115",
+        "name": "Kali",
+        "description": "Made from natural leather and textile material, with a thick sole. The interior is made of natural leather, and they close with laces. They are perfect for active days, and you can wear them with casual or sport outfits.",
+        "price": 172,
+        "category": 3,
+        "rating": 5.0,        
+        "image": "sneakers2.webp"
+    }
+}, {
+    "pk": 31,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003690116",
+        "name": "Arizona",
+        "description": "Sports shoes made from elastic textile with a thick sole. A minimalist, contemporary line that can be easily integrated in sport and casual, but for a nonconformist look you can wear them with creative evening outfits.",
+        "price": 169,
+        "category": 3,
+        "rating": 4.0,        
+        "image": "sneakers3.webp"
+    }
+}, {
+    "pk": 32,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003780391",
+        "name": "Sweet",
+        "description": "Sports shoes made from elastic textile with a thick sole. A minimalist, contemporary line that can be easily integrated in sport and casual, but for a nonconformist look you can wear them with creative evening outfits.",
+        "price": 135,
+        "category": 3,
+        "rating": 4.8,       
+        "image": "sneakers4.webp"
+    }
+}, {
+    "pk": 33,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003790542",
+        "name": "Liz",
+        "description": "The anatomical sole shoes, ELETA A163, are made of natural leather and combine different types of colors and textures. They offer very good support and are ideal for active days. Easy to match with any casual and sporty outfit.",
+        "price": 158,
+        "category": 3,
+        "rating": 4.5,        
+        "image": "sneakers5.webp"
+    }
+}, {
+    "pk": 34,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003831225",
+        "name": "Stafford",
+        "description": "The anatomical sole shoes, FRANCINE A143, are made of natural leather and they combine different types of colors and texture. They are perfect for active days in the city, and you can wear them with any casual or sporty outfit.",
+        "price": 193,
+        "category": 3,
+        "rating": 4.5,        
+        "image": "sneakers6.webp"
+    }
+}, {
+    "pk": 35,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003861402",
+        "name": "Francine",
+        "description": "The anatomical sole shoes, FRANCINE A143, are made of natural leather and they combine different types of colors and texture. They are perfect for active days in the city, and you can wear them with any casual or sporty outfit.",
+        "price": 150,
+        "category": 3,
+        "rating": 4.7,        
+        "image": "sneakers7.webp"
+    }
+}, {
+    "pk": 36,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003910638",
+        "name": "Ana GM",
+        "description": "ANA GM, quilted leather bag, very well compartmentalized. It is divided into three compartments, one zipper closed, and inside them there is a zipper closed pocket and another 2 applied. The bag has an adjustable handle and closes with a metal accessory.",
+        "price": 123,
+        "category": 4,        
+        "image": "bags.webp"
+    }
+}, {
+    "pk": 37,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003950574",
+        "name": "Debby",
+        "description": "DEBBY, a shoulder bag with a single compartment inside which there is a zippered pocket. The leather strap is detachable and allows it to be worn as a clutch. Available in several colors, this bag is an indispensable accessory for any wardrobe. The bag closes with a magnetic clasp, the design is finish with an applied buckle strap on the front clap",
+        "price": 121,
+        "category": 4,
+        "rating": 4.0,        
+        "image": "bags1.webp"
+    }
+}, {
+    "pk": 38,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003950576",
+        "name": "Bonnie",
+        "description": "BONNIE is a women’s bag made from quilted leather. It has three compartments, the central one closes with a zipper, and two applied ones. The bag has a handle and a 100 cm strap. It closes with a metallic accessory.",
+        "price": 160,
+        "category": 4,
+        "rating": 4.5,        
+        "image": "bags2.webp"
+    }
+}, {
+    "pk": 39,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960062",
+        "name": "Coco",
+        "description": "The COCO, a smooth leather bag, with a chic and modern closing accessory. It is provided with two compartments, one small in front and a large one, which can be extended with the help of staples on the side. The large compartment has a zipper close pocket and MUSETTE logo on the back. It has a sliding leather and gold chain strap. The bag is perfect for an office and casual outfit",
+        "price": 141,
+        "category": 4,
+        "rating": 4.8,        
+        "image": "bags3.webp"
+    }
+}, {
+    "pk": 40,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960682",
+        "name": "Kasia",
+        "description": "KASIA is a bag with a unique design, made from a special leather, with an innovative closure system. There is a central compartment and two other front and rear compartments. At the back it has a zippered pocket with the MUSETTE logo, behind which the fourth, smaller compartment is formed. It is made of a special textured leather, has a strap on the front, which passes through the central decorative element - the metal emblem. The strap is adjustable.",
+        "price": 131,
+        "category": 4,
+        "rating": 5.0,       
+        "image": "bags4.webp"
+    }
+}, {
+    "pk": 41,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003960775",
+        "name": "Arnela",
+        "description": "ARNELA or the Musette icon model, is the perfect bag for every style. It has one large compartment, which contains three applied pockets, one of them zipper closed.",
+        "price": 141,
+        "category": 4,
+        "rating": 3.0,        
+        "image": "bags5.webp"
+    }
+}, {
+    "pk": 42,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003990736",
+        "name": "Carole",
+        "description": "NEW CAROLE bag, has become in the past collections one of our evergreen models. Its square shape, the two spacious compartments and the golden chain and leather shoulder strap make it perfect for everyday use.",
+        "price": 158,
+        "category": 4,
+        "rating": 4.7,        
+        "image": "bags6.webp"
+    }
+}, {
+    "pk": 43,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5003990746",
+        "name": "Camille",
+        "description": "CAMILLE women's bag made from natural crock-effect leather, with one compartment, inside which there is a zippered pocket. It has a handle, but also a shoulder strap with a length of 130 cm, adjustable and removable, allowing it to be worn as a clutch also. The bag closes with a front flap with an accessory.",
+        "price": 165,
+        "category": 4,
+        "rating": 4.0,
+        "image": "bags7.webp"
+    }
+}, {
+    "pk": 44,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004111503",
+        "name": "Tasha",
+        "description": "The NEW TASHA BEE shoulder bag has one-compartment with zippered inside pocket. It has a shoulder strap that allows crossbody wear. It integrates perfectly with the casual style and is perfect for active days in the city.",
+        "price": 160,
+        "category": 4,
+        "rating": 4.9,        
+        "image": "bags8.webp"
+    }
+}, {
+    "pk": 45,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004230059",
+        "name": "Brianna",
+        "description": "The BRIANNA bag is made from quilted leather. The interior has three compartments, one of which zipper closed and an applied zipper pocket. It has a sliding leather and chain shoulder strap with the length of 110 cm and a magnetic-fastening front flap.",
+        "price": 141,
+        "category": 4,
+        "rating": 4.6,        
+        "image": "bags9.webp"
+    }
+}, {
+    "pk": 46,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004310089",
+        "name": "Elisabeth",
+        "description": "The natural leather bag, ELISABETH MM is a unique and versatile model. It has 2 compartments with different faces. One of the compartments closes with a zipper and one with a flap with a metal accessory. Inside each compartment there is an applied pocket and one that closes with a zipper. It has a chain handle with a length of 40 cm and a removable shoulder strap with a length of 110 cm.",
+        "price": 162,
+        "category": 4,
+        "rating": 4.5,        
+        "image": "purse.webp"
+    }
+}, {
+    "pk": 47,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004610254",
+        "name": "Boa",
+        "description": "The BOA bag is made from a combination of smooth and embossed leather, with the principal compartment zipper closed and an applied pocket that closes with a special golden accessory. The shoulder strap is made from a textile material and is detachable, so that you can wear it as a clutch.",
+        "price": 148,
+        "category": 5,
+        "rating": 5.0,        
+        "image": "cluch1.webp"
+    }
+}, {
+    "pk": 48,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004650050",
+        "name": "JSelene",
+        "description": "SELENA, women's quilted bag made of natural leather, an applied one and one that closes with a zipper. The bag has 2 handles with a length of 58 cm and does not have a shoulder strap. It closes with a zipper.",
+        "price": 134,
+        "category": 5,
+        "rating": 4.0,        
+        "image": "cluch2.webp"
+    }
+}, {
+    "pk": 49,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004821375",
+        "name": "Alyssa",
+        "description": "ALYSSA MM is a quilted bag made from natural leather, that has a single compartment inside which there is a zippered pocket. It has a shoulder strap, but also handles so that you can wear the bag in differently each time.",
+        "price": 160,
+        "category": 5,
+        "rating": 4.0,        
+        "image": "cluch3.webp"
+    }
+}, {
+    "pk": 50,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004900522",
+        "name": "Ann",
+        "description": "ANA, quilted leather bag, very well compartmentalized. It is divided into three compartments, one zipper closed, and inside them there is a zipper closed pocket and another 2 applied. The bag has an adjustable handle and closes with a metal accessory.",
+        "price": 166,
+        "category": 5,
+        "rating": 4.6,        
+        "image": "cluch4.webp"
+    }
+}, {
+    "pk": 51,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004910158",
+        "name": "Roxette",
+        "description": "Made from soft quilted leather, the ROXETTE bag have one large compartment inside which there is a zipper closed pocket. The bag closes by flap with a magnetic accessory. It has a chain handle and an adjustable shoulder strap made from chain and smooth leather.",
+        "price": 199,
+        "category": 5,
+        "rating": 4.8,        
+        "image": "cluch5.webp"
+    }
+}, {
+    "pk": 52,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004910477",
+        "name": "Zaira",
+        "description": "ZAIRA is a smooth leather bag with a single compartment. It has a slightly rounded shape, a handle and a shoulder strap that is detachable and adjustable. The bag can be worn in different ways, easily accessorizing outfits. Zaira bag is the perfect choice for the warm season.",
+        "price": 188,
+        "category": 5,
+        "rating": 5.0,        
+        "image": "cluch6.webp"
+    }
+}, {
+    "pk": 53,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004940703",
+        "name": "Vivi",
+        "description": "VIVI is a smooth leather bag with a single compartment inside which there is an applied pocket. The adjustable handle can be worn like a belt and is made of 183 cm leather and 25 cm chain. The bag closes by a chic golden metallic accessory. Available in several colors, this bag will stand out regardless of your outfit.",
+        "price": 153,
+        "category": 5,
+        "rating": 4.7,        
+        "image": "cluch7.webp"
+    }
+}, {
+    "pk": 54,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004991006",
+        "name": "Jennifer",
+        "description": "JENNIFER is a natural leather bag that has a large compartment inside which there are 2 applied pockets, one zipper closed. The strap is adjustable. The bag closes with a golden metallic accessory.",
+        "price": 126,
+        "category": 5,
+        "rating": 5.0,        
+        "image": "cluch8.webp"
+    }
+}, {
+    "pk": 55,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5004991162",
+        "name": "Rimini",
+        "description": "RIMINI backpack, has one large compartment which contains a zipper closed pocket and two applied ones. The bag closes with a zipper.",
+        "price": 128,
+        "category": 6,
+        "rating": 4.5,        
+        "image": "backpack.webp"
+    }
+}, {
+    "pk": 56,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005000046",
+        "name": "Pamela",
+        "description": "PAMELA backpack closes with a middle applied zipper. It has a carabiner closure system, that allows you to increase or decrease the interior space.",
+        "price": 165,
+        "category": 6,
+        "rating": 3.9,        
+        "image": "backpack1.webp"
+    }
+}, {
+    "pk": 57,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005070254",
+        "name": "Torino",
+        "description": "The TORINO backpack has a zipper in the middle. The backpack is equipped with a carabiner closure system, which can increase or decrease the interior space.",
+        "price": 166,
+        "category": 6,
+        "rating": 4.7,       
+        "image": "backpack3.webp"
+    }
+}, {
+    "pk": 58,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005071145",
+        "name": "Rimini MM",
+        "description": "RIMINI MM backpack, has one large compartment which has inside a zipper closed pocket. The bag closes with a zipper.",
+        "price": 165,
+        "category": 6,
+        "rating": 3.3,        
+        "image": "backpack4.webp"
+    }
+}, {
+    "pk": 59,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005140282",
+        "name": "Denver",
+        "description": "DENVER, a textile backpack, with one large compartment which has three interior pockets, one of them zipper closed. It has two exterior pockets closed by staple: one in the front, that has the MUSETTE logo, an one in the back. The bag closes with a zipper",
+        "price": 119,
+        "category": 6,
+        "rating": 4.0,       
+        "image": "backpack5.webp"
+    }
+}, {
+    "pk": 60,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005200166",
+        "name": "Toledo",
+        "description": "TOLEDO, a textile backpack, has two zipper closed side compartments. It has the MUSETTE logo on the front, an adjustable handle and two straps.",
+        "price": 165,
+        "category": 6,
+        "rating": 4.4,        
+        "image": "backpack6.webp"
+    }
+}, {
+    "pk": 61,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005210241",
+        "name": "Pam",
+        "description": "PAM backpack closes with a middle applied zipper. It has a carabiner closure system, that allows you to increase or decrease the interior space.",
+        "price": 144,
+        "category": 6,
+        "rating": 4.5,        
+        "image": "backpack7.webp"
+    }
+}, {
+    "pk": 62,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005280104",
+        "name": "Eva",
+        "description": "EVA backpack closes with a middle applied zipper. It has a carabiner closure system, that allows you to increase or decrease the interior space.",
+        "price": 131,
+        "category": 6,
+        "rating": 5.0,        
+        "image": "backpack8.webp"
+    }
+}, {
+    "pk": 63,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005310360",
+        "name": "Sally",
+        "description": "SALLY backpack closes with a middle applied zipper. It has a carabiner closure system, that allows you to increase or decrease the interior space.",
+        "price": 169,
+        "category": 6,
+        "rating": 5.0,       
+        "image": "bacpack2.webp"
+    }
+}, {
+    "pk": 64,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005330595",
+        "name": "Emma",
+        "description": "The EMMA wallet is made of smooth natural leather. It has a compartment for bills and spaces for cards or business cards. It is compact and closes with staple.",
+        "price": 69,
+        "category": 7,
+        "rating": 4.9,        
+        "image": "wallets.webp"
+    }
+}, {
+    "pk": 65,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005330596",
+        "name": "Coco mini",
+        "description": "The COCO MINI wallet is made of smooth natural leather. It has a compartment for bills and spaces for cards or business cards. It is compact and closes with a metal accessory.",
+        "price": 69,
+        "category": 7,
+        "rating": 4.0,        
+        "image": "wallets1.webp"
+    }
+}, {
+    "pk": 66,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005430914",
+        "name": "Arniela",
+        "description": "ARNELA women’s wallet, made from natural leather. It has one bills pocket, cards slots, and a pocket for storage documents/bills that is zipper closed. It has a snap-fastening front flap.",
+        "price": 40,
+        "category": 7,
+        "rating": 4.0,        
+        "image": "wallets2.webp"
+    }
+}, {
+    "pk": 67,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005430944",
+        "name": "Michelle",
+        "description": "MICHELLE MATLASAT women’s wallet, made from natural leather. It has a bills storage pocket, a zipper closed pocket, two spaces for storing documents, slots for credit cards or business cards. It has a snap-fastening front flap.",
+        "price": 72,
+        "category": 7,
+        "rating": 4.5,        
+        "image": "wallets3.webp"
+    }
+}, {
+    "pk": 68,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005510265",
+        "name": "Rebecca",
+        "description": "REBECCA women’s wallet, made from natural leather. It has a bills storage pocket, a zipper closed pocket, two spaces for storing documents, slots for credit cards or business cards. It has a snap-fastening front flap.",
+        "price": 55,
+        "category": 7,
+        "rating": 4.7,        
+        "image": "wallets4.webp"
+    }
+}, {
+    "pk": 69,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005520201",
+        "name": "Venus",
+        "description": "Leather | beige | Accessory: aurii",
+        "price": 42,
+        "category": 8,
+        "rating": 4.3,        
+        "image": "belts.webp"
+    }
+}, {
+    "pk": 70,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005520205",
+        "name": "Nancy",
+        "description": "Leather | ivory | Accessory: aurii",
+        "price": 28,
+        "category": 8,
+        "rating": 4.2,
+        "image": "belts1.webp"
+    }
+}, {
+    "pk": 71,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005630545",
+        "name": "Ivy",
+        "description": "Leather | black | Accessory: aurii",
+        "price": 38,
+        "category": 8,
+        "rating": 4.3,        
+        "image": "belts4.webp"
+    }
+}, {
+    "pk": 72,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005630605",
+        "name": "Camille",
+        "description": "Leather | black | Accessory: aurii",
+        "price": 30,
+        "category": 8,
+        "rating": 4.6,        
+        "image": "belts2.webp"
+    }
+}, {
+    "pk": 73,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005630637",
+        "name": "Ella",
+        "description": "Leather | black | Accessory: aurii",
+        "price": 60,
+        "category": 8,
+        "rating": 4.7,       
+        "image": "belts3.webp"
+    }
+}, {
+    "pk": 74,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005630638",
+        "name": "Natalie",
+        "description": "Leather | orange | Accessory: aurii",
+        "price": 60,
+        "category": 8,
+        "rating": 4.2,        
+        "image": "belts5.webp"
+    }
+}, {
+    "pk": 75,
+    "model": "products.product",
+    "fields": {
+        "sku": "pp5005650677",
+        "name": "Felicity",
+        "description": "Leather | ivory | Accessory: aurii",
+        "price": 48,
+        "category": 8,
+        "rating": 4.4,        
+        "image": "belts6.webp"
+    }
+}]
