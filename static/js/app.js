@@ -15,7 +15,7 @@ $(function () {
 });
 
  //Scroll Button
-
+/*
  document.querySelector('.scroll_btn').addEventListener(
     'click', () => {
        document.querySelector('html').style.scrollBehavior = 'smooth';
@@ -25,4 +25,4 @@ $(function () {
        
        
     }
-    );
+    );*/

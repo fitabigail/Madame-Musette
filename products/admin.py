@@ -3,7 +3,6 @@ from .models import Product, Category
 from django.utils.html import format_html
 
 
-
 class ProductAdmin(admin.ModelAdmin):
 
     def image_tag(self, obj):
@@ -26,4 +25,3 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-
