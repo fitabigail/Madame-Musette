@@ -69,13 +69,19 @@ html, body {
     text-transform: uppercase;
 }
 
-a.discover-btn:hover{
+.discover-btn:hover,
+.discover-btn:active,
+.discover-btn:focus,
+.modal-close-btn:hover,
+.modal-close-btn:active,
+.modal-close-btn:focus {
     background: rgb(36,19,0);
     background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
     background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
     color:#fff;
+    transition: 0.7s;
     }
 
 /***Section three columns**/
@@ -92,7 +98,7 @@ a.discover-btn:hover{
     
 }
 
-/* from Bulma */
+/* --- from Bulma --- */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -101,7 +107,7 @@ a.discover-btn:hover{
     width: 1.5rem;
 }
 
-/** Logo**/
+/*---- Logo and delivery banner ---- */
 
 .logo-font { 
     text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);    
@@ -113,21 +119,6 @@ a.discover-btn:hover{
     width: fit-content;
 }
 
-
-.btn-black {
-    background: black;
-    color: white;
-}
-
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
-}
 
 .text-white {
     color: #fff!important;
@@ -141,17 +132,8 @@ a.discover-btn:hover{
     background: #000 !important;
 }
 
-/* --- Products caltalog nav top ---- */
 
-.catalog-top{    
-    width: 100%;
-    background: #fff;   
-    height: 50px;
-    border-bottom: 1px solid #db9963; 
-    padding-bottom:20px;  
-}
-
-/* --- Pagination ----*/
+/* --- Pagination (code reused from PP4)----*/
 
 
 .pagination-box {
@@ -217,7 +199,7 @@ a.discover-btn:hover{
 }
 
 
-/** Full page search **/
+/** Full page search (code reused from PP4) **/
 #full-page-search {
     position: fixed;
     top: 0px;
@@ -327,7 +309,10 @@ a.discover-btn:hover{
     margin: auto;
     font-size: 1.2rem;
 }
-
+.modal-close-btn{
+    width: 8rem;
+}
+ 
 a:link{
     text-decoration: none; 
 }
@@ -360,16 +345,46 @@ a:link{
 }
 
  /* ------- Products page ----- */
- .products{
-    height: 50vh;
+ .products{    
+    display: flex;   
+    justify-content: space-between;   
+    padding: 13px 0;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+   
+ }
+ 
+ .products-body{
+    margin-top: 15rem;
+ } 
+
+ .sort-categories {
+    width: 10rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color:rgb(53, 29, 2)!important;
+    background-color: #fff;
+    border-color: #000;
+
+ }
+
+ .sort-categories:hover,
+ .sort-categories:active,
+ .sort-categories:focus {
+    background: rgb(36,19,0);
+    background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
+    color:#fff;
+    transition: 0.7s;
+    box-shadow: 0 0 0 1px  rgb(61, 34, 2);
  }
  
  
+ 
   
-  
-  
-  
-  
+   
 
 
 /* -------------------------------- Media Queries */
@@ -395,3 +410,14 @@ a:link{
         padding-top: 164px;
     }
 }
+
+/* pad the top a bit when navbar is collapsed on mobile 
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+}*/

@@ -45,11 +45,11 @@
   {% block extra_js %}
   {% endblock %}
 
-  <title>Madame Musette {% block extra_title %}{% endblock %}</title>
+  <title>MadameMusette {% block extra_title %}{% endblock %}</title>
 </head>
 
 <body>
-
+  {% block navbar %}
   <header class="container-fluid fixed-top gradient-custom">
     <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -86,9 +86,9 @@
                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                 <p class="my-0">
                   {% if grand_total %}
-                  ${{ grand_total|floatformat:2 }}
+                  €{{ grand_total|floatformat:2 }}
                   {% else %}
-                  $0.00
+                  €0.00
                   {% endif %}
                 </p>
               </div>
@@ -109,10 +109,11 @@
     </div>
     <div id="delivery-banner" class="row text-center">
       <div class="col bg-black text-white">
-        <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threshold }}!</h4>
+        <h4 class="logo-font my-1">Free delivery on orders over € {{ free_shipping_threshold }}!</h4>
       </div>
     </div>
   </header>
+  {% endblock %}
 
   {% if messages %}
   <div class="message-container"></div>
@@ -199,7 +200,7 @@
 
                   <!-- Modal footer -->
                   <div class="modal-footer gradient-custom">
-                    <button type="button" class="btn btn-outline-dark btn-md products-btn"
+                    <button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
                       data-dismiss="modal">Subscribe</button>
                   </div>
 
