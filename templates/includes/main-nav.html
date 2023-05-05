@@ -6,10 +6,11 @@
                 Shoes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="shoes-link">
-                <a href="" class="dropdown-item">High Heels</a>
-                <a href="" class="dropdown-item ">Sandals</a>
-                <a href="" class="dropdown-item ">Sneakers</a>
-                <a href="" class="dropdown-item">All Shoes</a>
+                <a href="{% url 'products' %}?category=pumps" class="dropdown-item">Pumps</a>
+                <a href="{% url 'products' %}?category=sandals" class="dropdown-item ">Sandals</a>
+                <a href="{% url 'products' %}?category=Sneakers" class="dropdown-item ">Sneakers</a>
+                <div class="dropdown-divider"></div>  
+                <a href="{% url 'products' %}?category=pumps,sandals,Sneakers" class="dropdown-item">All Shoes</a>
             </div>
         </li>
 
@@ -18,10 +19,11 @@
                 Handbags
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="handbags-link">
-                <a href="" class="dropdown-item">Shoulder Bags</a>
-                <a href="" class="dropdown-item">Cluch & Evening Bags</a>
-                <a href="" class="dropdown-item">Backpacks</a>
-                <a href="" class="dropdown-item">All Handbags</a>
+                <a href="{% url 'products' %}?category=shoulder_bags" class="dropdown-item">Shoulder Bags</a>
+                <a href="{% url 'products' %}?category=cluch_evening_bags" class="dropdown-item">Cluch & Evening Bags</a>
+                <a href="{% url 'products' %}?category=backpacks" class="dropdown-item">Backpacks</a>
+                <div class="dropdown-divider"></div>  
+                <a href="{% url 'products' %}?category=shoulder_bags,cluch_evening_bags,backpacks" class="dropdown-item">All Handbags</a>
             </div>
         </li>
 
@@ -30,21 +32,22 @@
                 Accessories
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="accessories-link">
-                <a href="" class="dropdown-item">Wallets</a>
-                <a href="" class="dropdown-item">Belts</a>
-                <a href="" class="dropdown-item">All Accessories</a>
+                <a href="{% url 'products' %}?category=belts" class="dropdown-item">Belts</a>
+                <a href="{% url 'products' %}?category=wallets" class="dropdown-item">Wallets</a>                
+                <div class="dropdown-divider"></div>  
+                <a href="{% url 'products' %}?category=wallets,belts" class="dropdown-item">All Accessories</a>
             </div>
         </li>
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white" href="#" id="sales-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Sales
+                Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="sales-link">
-                <a href="" class="dropdown-item">Shoes</a>
-                <a href="" class="dropdown-item">Handbags</a>
-                <a href="" class="dropdown-item">Accessories</a>
-                <a href="" class="dropdown-item">All Sales</a>
+                <a href="{% url 'products' %}?category=sales" class="dropdown-item">Sales</a>
+                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a> 
+                <div class="dropdown-divider"></div>               
+                <a href="{% url 'products' %}?category=sales,new_arrivals" class="dropdown-item">All Special Offers</a>
             </div>
         </li>
         
