@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
 from .models import Product
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -9,24 +11,23 @@ def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
-
+    
     page_num = request.GET.get('page', 1)
     paginator = Paginator(products, 16)
-
     try:
         page_obj = paginator.page(page_num)
-    except PageNotAnInteger:
-        # if page is not an integer, deliver the first page
+    except PageNotAnInteger:        
         page_obj = paginator.page(1)
-    except EmptyPage:
-        # if the page is out of range, deliver the last page
+    except EmptyPage:       
         page_obj = paginator.page(paginator.num_pages)
 
     context = {
                 'products': page_obj,
+               
             }
 
     return render(request, 'products/products.html', context)
+
 
 # Product details view
 
@@ -42,4 +43,15 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+
+def search(request):
+    if 'keyword' in request.GET:
+        keyword = request.GET['keyword']
+        if keyword:
+            query = Q(name__icontains=keyword) | Q(description__icontains=keyword)
+            products = Product.objects.order_by('-updated_date').filter(query)
     
+    data = {
+        'products': products,
+    }
+    return render(request, 'products/products.html', data)      

@@ -3,7 +3,7 @@
     "model": "products.category",
     "fields": {
         "name": "pumps",
-        "friendly_name": "High heels"
+        "friendly_name": "Pumps"
     }
 }, {
     "pk": 2,

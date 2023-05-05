@@ -73,11 +73,10 @@
                     <i class="fa fa-bars"></i> <span> All category</span>
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'products' %}">All Products </a>
-                    <a class="dropdown-item" href="#">Pumps </a>
-                    <a class="dropdown-item" href="#">Sandals</a>
-                    <a class="dropdown-item" href="#">Sneakers</a>
-                    <a class="dropdown-item" href="#">Bags</a>
+                    <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
+                    {% for category in list %}
+                    <a class="dropdown-item" href="#">{{ category.friendly_name }}</a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
