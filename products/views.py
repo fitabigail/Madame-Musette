@@ -10,16 +10,31 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all()
+    products = Product.objects.all()    
     categories = None    
-    
+    sort = None
+    direction = None       
+        
+    if request.GET:
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                products = products.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            products = products.order_by(sortkey)
+
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
-    
-    
+            products = products.filter(category__name__in=categories, in_stock=True, is_customized=True,)
+            categories = Category.objects.filter(name__in=categories)    
+
     page_num = request.GET.get('page', 1)
     paginator = Paginator(products, 16)
     try:
@@ -28,9 +43,13 @@ def all_products(request):
         page_obj = paginator.page(1)
     except EmptyPage:       
         page_obj = paginator.page(paginator.num_pages)
+
+    sorting_products = f'{sort}_{direction}'
+
     context = {
         'products': page_obj,
-        'categories': categories,               
+        'categories': categories,
+        'sorting_products': sorting_products,              
     }
     return render(request, 'products/products.html', context)
 

@@ -31,7 +31,7 @@ class Product(models.Model):
                                  blank=True) 
     image = models.ImageField(null=True, blank=True)
     in_stock = models.BooleanField(default=True)   
-    is_available = models.BooleanField(default=True)
+    is_customized = models.BooleanField(default=True)
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True) 
 

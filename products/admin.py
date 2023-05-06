@@ -8,11 +8,12 @@ class ProductAdmin(admin.ModelAdmin):
     def image_tag(self, obj):
         return format_html('<img src="{}" width="50" height="50" style="border-radius: 50px" />'.format(obj.image.url))
 
-    list_display = ('id', 'image_tag', 'name', 'category', 'price', 'is_available',
-                    'updated_date')
+    list_display = ('id', 'image_tag', 'name', 'category', 'price',
+                    'in_stock', 'is_customized', 'updated_date')
     list_display_links = ('image_tag', 'name',)
-    search_fields = ('name', 'category', 'rating', 'is_available', 'updated_date')
-    list_filter = ('category', 'rating', 'is_available', 'updated_date')
+    search_fields = ('name', 'category', 'rating', 'is_customized',
+                     'updated_date')
+    list_filter = ('category', 'rating', 'is_customized', 'updated_date')
 
     ordering = ('id',)
 
