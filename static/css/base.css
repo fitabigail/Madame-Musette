@@ -84,8 +84,16 @@ html, body {
     transition: 0.7s;
     }
 
-/***Section three columns**/
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
 
 /***Section Sales***/
 
@@ -133,7 +141,7 @@ html, body {
 }
 
 
-/* --- Pagination (code reused from PP4)----*/
+/* ---- Pagination (code reused from PP4-Lamborghinideals)----*/
 
 
 .pagination-box {
@@ -199,7 +207,8 @@ html, body {
 }
 
 
-/** Full page search (code reused from PP4) **/
+/* ----- Full page search (code reused from PP4- LamborghiniDeals) ------ */
+
 #full-page-search {
     position: fixed;
     top: 0px;
@@ -277,6 +286,12 @@ html, body {
     background: #3a3a3a;
 }
 
+/* ------------- Product detail page -------- */
+
+.prod_detail_wrap{
+    margin-top: 30vh;
+}
+
 /* ---- Footer ----*/
 
 .footer {   
@@ -294,7 +309,11 @@ html, body {
 #subfooter{
     background-color:#1a1207!important ;
 }
-/* ------ Subscribe footer modal ---*/
+
+
+/* ------ Subscribe footer modal --- */
+
+
 #myModal{      
     color: #000;  
     
@@ -354,10 +373,14 @@ a:link{
    
  }
  
+ a.span.small:link {
+    /*background: #212529 !important;*/
+    color: black !important;
+}
  .products-body{
     margin-top: 15rem;
  } 
-
+ 
  .sort-categories {
     width: 10rem;
     font-size: 1rem;
@@ -382,9 +405,24 @@ a:link{
  }
  
  
- 
+ a.category-list:link,
+ a.category-list:active 
+ {    
+    color: rgb(12, 11, 11)!important;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+ } 
+ a.category-list:visited {
+    color:#e79d34!important;}
+
+ a.category-list:hover {
+    color: rgb(12, 11, 11)!important;
+    font-size:130%;
+}
   
-   
+ 
 
 
 /* -------------------------------- Media Queries */
@@ -410,14 +448,3 @@ a:link{
         padding-top: 164px;
     }
 }
-
-/* pad the top a bit when navbar is collapsed on mobile 
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
-
-    body {
-        height: calc(100vh - 116px);
-    }
-}*/

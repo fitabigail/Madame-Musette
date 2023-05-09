@@ -4,32 +4,76 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container-fluid ">
-    <div class="row products-body">       
-        <div class="row">
+    <div class="row products-body">
+        <div class="row mt-5">
             <div class="col text-center mt-3">
-                <h2 class="logo-font m-5">Products</h2>
-                <hr class="w-50 mb-3">
+               
+                {% for categ in categories %}
+                    <a class="text-decoration-none category-list" href="{% url 'products' %}?category={{ categ.name }}">
+                        <span class="p-2 mt-2 text-black">{{ categ.friendly_name }} /</span>
+                    </a>
+                {% endfor %}
+               
             </div>
         </div>
+       
         <div class="row">
-            <div class="product-container col-10 offset-1">
-                <div class="row mt-1 mb-2"></div>
+            <div class="product-container col-10 offset-1">                
+                <div class="row mt-1 mb-2">
+                    <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
+                        <div class="sort-select-wrapper w-50">
+                            <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
+                                <option value="reset" {% if sorting_products == 'None_None' %}selected{% endif %}>Sort by...</option>
+                                <option value="price_asc" {% if sorting_products == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="price_desc" {% if sorting_products == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="rating_asc" {% if sorting_products == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
+                                <option value="rating_desc" {% if sorting_products == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
+                                <option value="name_asc" {% if sorting_products == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
+                                <option value="name_desc" {% if sorting_products == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
+                                <option value="category_asc" {% if sorting_products == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                                <option value="category_desc" {% if sorting_products == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 order-md-first">
+                        <p class="text-muted mt-3 text-center text-md-left">
+                            {% if products or categories or sorting_products != 'None_None' %}
+                                <a href="{% url 'products' %}"><span class="small">Products Home</a> | </span>
+                            {% endif %}
+                            {{ products|length }} items {% if products %} found for {{ products }}{% endif %}
+                        </p>
+                    </div>
+                </div>             
+
+
+<!-- Products distlay-->
+
                 <div class="row">
                     {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0">
+                        <div class="card h-100 border-0 ">
                             <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid" src="{{ product.image.url }}"
+                                <img class="card-img-top img-fluid w-100" src="{{ product.image.url }}"
                                     alt="{{ product.name }}">
                             </a>
 
                             <div class="card-body pb-0">
-                                <p class="mb-0">{{ product.name }}</p>
+                                <p class="mb-0">{{ product.name }}
+                                    {% if product.category %}
+                                    <a class="text-muted"
+                                        href="{% url 'products' %}?category={{ product.category.name }}">
+                                        / <span>{{ product.category.friendly_name }}</span>
+                                    </a>
+                                </p>
+                                {% endif %}
                             </div>
                             <div class="card-footer bg-white pt-0 border-0 text-left">
                                 <div class="row">
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">€ {{ product.price }}</p>
+
+
+
                                         {% if product.rating %}
                                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
                                             5</small>
@@ -63,6 +107,7 @@
                     {% endif %}
                     {% endfor %}
                 </div>
+<!-- End Products display -->                
             </div>
         </div>
 
@@ -110,4 +155,38 @@
 </div>
 </div>
 <!-- End Pagination -->
+{% endblock %}
+
+
+<!-- Function copied from Boutique Ado project-->
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+		$('.btt-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+	</script>
+    
+    <script type="text/javascript">
+        $('#sort-selector').change(function() {
+            var selector = $(this);
+            var currentUrl = new URL(window.location);
+
+            var selectedVal = selector.val();
+            if(selectedVal != "reset"){
+                var sort = selectedVal.split("_")[0];
+                var direction = selectedVal.split("_")[1];
+
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
