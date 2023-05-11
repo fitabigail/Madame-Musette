@@ -6,20 +6,23 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
+    
     <div class="container-fluid h-100 prod_detail_wrap">
+        
         <div class="row">
+            <!--Fist part-->
             <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
                 <div class="image-container my-5">                    
                         <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}" style=" height: 35rem; width: auto;" >
                         </a>                      
                 </div>
                 
             </div>
+            <!--Second part-->
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}
+                    <p class="mb-0"> {{ product.name }}
                         {% if product.category %}
                         <a class="text-muted"
                             href="{% url 'products' %}?category={{ product.category.name }}">

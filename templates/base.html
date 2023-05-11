@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!doctype html>
 <html lang="en">
@@ -50,7 +51,7 @@
 
 <body>
   {% block navbar %}
-  <header class="container-fluid fixed-top gradient-custom">
+  <header class="container-fluid sticky-top gradient-custom">
     <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
@@ -98,7 +99,11 @@
       </div>
     </div>
     <div class="row " id="main_nav">
+
       <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link">
+          <h4 class="logo-font text-white my-0 d-lg-none d-xl-none"><strong>MM</strong></h4>
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -116,7 +121,19 @@
   {% endblock %}
 
   {% if messages %}
-  <div class="message-container"></div>
+
+  {% for message in messages %}
+
+  <div class="container-fluid p-0">
+    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="True">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+  </div>
+
+  {% endfor %}
   {% endif %}
 
   {% block page_header %}
@@ -147,70 +164,24 @@
 
     <div class="container-fluid bottom_border">
       <div class="row w-100 p-3">
+
         <!-- Subscription-->
         <div class="col-md-4 my-4">
           <div class="col-12 text-center mt-5">
             <h4 class="my-4">Subscribe to our newsletter</h4>
-            <!-- Button to Open the Modal -->
-            <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
-              data-target="#myModal">
-              Subscribe
-            </button>
-            <!-- The Modal -->
-            <div class="modal" id="myModal">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
 
-                  <!-- Modal Header -->
-                  <div class="modal-header gradient-custom">
-                    <h4 class="modal-title pl-5">You are not subscribe to ours newsletter?</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  </div>
-
-                  <!-- Modal body -->
-                  <div class="modal-body">
-                    <div class="row">
-                      <div class="col-sm mt-5 p-5">
-                        <p class="d-none d-sm-block"><strong>Subscribe now</strong> and you will join the MadameMusette
-                          family! You will find out
-                          among the first all
-                          the news,
-                          news about the promotional campaigns and, from time to time, you will have
-                          <strong>personalized surprises</strong>
-                          !</p>
-                        <div class="form-group form-control-inline mt-5">
-
-                          <input type="text" class="form-control form-control-md" id="firstname"
-                            placeholder="First Name">
-                        </div>
-                        <div class="form-group">
-
-                          <input type="text" class="form-control form-control-md" id="lastname" placeholder="Last Name">
-                        </div>
-                        <div class="form-group">
-
-                          <input type="text" class="form-control form-control-md" id="email" placeholder="Your Email">
-                        </div>
-                      </div>
-                      <div class="col-sm">
-                        <img src="/media/modal-shoes.png" alt="high heels" width="300" height="300">
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Modal footer -->
-                  <div class="modal-footer gradient-custom">
-                    <button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
-                      data-dismiss="modal">Subscribe</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
+            
+           
+              <!-- Button to Open the Modal -->
+              <button type="button" class="btn btn-outline-dark btn-lg discover-btn">
+                Subscribe
+              </button>
+         
+           
           </div>
         </div>
         <!--End Subscription-->
+
         <!-- Section: Social media -->
         <div class="col-md-4 my-4">
           <div class="col-12 text-center mt-5">
@@ -238,22 +209,75 @@
         </div>
         <!-- End Social media -->
 
-        <!--Store Location-->
+        <!--Contact Us and Store Location-->
         <div class="col-md-4 my-4">
+
+
           <div class="col-12 text-center mt-5">
-            <h4 class="my-4">Store location</h4>
+
+            <h4 class="my-4">Contact Us</h4>
+<div class="form-group">
+            <form action="{% url 'contactView' %}" method="POST">
+              {% csrf_token %}
+              <!-- Button to Open the Modal -->
+              <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
+                data-target="#myModal">
+                Contact Us
+              </button>
+              <!-- The Modal -->
+              <div class="modal" id="myModal">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header gradient-custom">
+                      <h4 class="modal-title pl-5">You can write your message here!</h4>
+                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                      <div class="row">
+                        <div class="col-sm mt-5 p-5">
+
+                          {{c_form}}
+
+                        </div>
+                        <div class="col-sm">
+                          <img src="/media/modal-shoes.png" alt="high heels" width="300" height="300">
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer gradient-custom">
+                      <button type="submit" class="btn btn-outline-dark btn-md modal-close-btn ">Submit</button>
+                      <!--<button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
+                        data-dismiss="modal">Close</button>-->
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div> 
+          </div>
+
+          <div class="text-center">
+            <h4 class="my-4 ml-5">Store location:</h4>
             <a
               href="https://www.google.com/maps/place/Blanchardstown+Centre/@53.3931251,-6.3983277,14.75z/data=!4m6!3m5!1s0x48670d50e9317be7:0x1ef966973dd6d646!8m2!3d53.3918686!4d-6.3910117!16s%2Fm%2F05qb9zy">
-              <h6 class="text-white" id="store-location"><i class="fas fa-map-marker-alt"></i> Blankcharstown Shopping
+              <h6 class="text-white ml-5 " id="store-location"><i class="fas fa-map-marker-alt"></i> Blankcharstown
+                Shopping
                 Center</h6>
             </a>
           </div>
         </div>
-        <!--End Store Location-->
+        <!--End Contact Us and Store Location-->
 
       </div>
     </div>
-    <div class="container-fluid" id="subfooter" >
+    <div class="container-fluid" id="subfooter">
       <div class="row">
         <div class="col-lg-4 p-4">
           <a class="text-reset fw-bold" href="https://mdbootstrap.com/">
@@ -273,8 +297,8 @@
 
 
   </footer>
-<!--Scroll up button-->
-<a href="#" class="scroll_btn text-white" aria-label="Scroll"><i class="fas fa-arrow-up"></i></a>
+  <!--Scroll up button-->
+  <a href="#" class="scroll_btn text-white" aria-label="Scroll"><i class="fas fa-arrow-up"></i></a>
 
 
 

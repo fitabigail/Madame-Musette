@@ -5,19 +5,20 @@
 <div class="overlay"></div>
 <div class="container-fluid ">
     <div class="row products-body">
-        <div class="row mt-5">
-            <div class="col text-center mt-3">
+        <div class="row mt-3 bc-icons" aria-label="breadcrumb">
+            <!--<div class="col text-center mt-3"> </div>-->
                
                 {% for categ in categories %}
-                    <a class="text-decoration-none category-list" href="{% url 'products' %}?category={{ categ.name }}">
-                        <span class="p-2 mt-2 text-black">{{ categ.friendly_name }} /</span>
-                    </a>
+                <ol class="breadcrumb">
+                   <li class="breadcrumb-item"><a class="text-decoration-none category-list" href="{% url 'products' %}?category={{ categ.name }}">
+                        <span class="text-black arr-right">{{ categ.friendly_name }}</span>
+                    </a><i class="fa fa-angle-right mx-2" aria-hidden="true"></i></li></ol>
                 {% endfor %}
                
-            </div>
+           
         </div>
        
-        <div class="row">
+        <div class="row-fluid">
             <div class="product-container col-10 offset-1">                
                 <div class="row mt-1 mb-2">
                     <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
@@ -38,7 +39,7 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if products or categories or sorting_products != 'None_None' %}
-                                <a href="{% url 'products' %}"><span class="small">Products Home</a> | </span>
+                                <a href="{% url 'products' %}"><span class="small"><i class="fa fa-fw fa-home"></i></a> | </span>
                             {% endif %}
                             {{ products|length }} items {% if products %} found for {{ products }}{% endif %}
                         </p>
@@ -51,10 +52,10 @@
                 <div class="row">
                     {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card h-100 border-0 ">
+                        <div class="card h-100 w-100 border-0 ">
                             <a href="{% url 'product_detail' product.id %}">
-                                <img class="card-img-top img-fluid w-100" src="{{ product.image.url }}"
-                                    alt="{{ product.name }}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}"
+                                    alt="{{ product.name }}" style=" height: 25rem; width: auto;">
                             </a>
 
                             <div class="card-body pb-0">
@@ -72,14 +73,16 @@
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">€ {{ product.price }}</p>
 
-
-
                                         {% if product.rating %}
                                         <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
                                             5</small>
                                         {% else %}
                                         <small class="text-muted">No Rating</small>
                                         {% endif %}
+                                        <span class="float-right mr-5">
+                                            <i class="far fa-heart pr-5" style="cursor: pointer"></i>
+                              
+                                          </span>
                                     </div>
                                 </div>
                             </div>
@@ -159,13 +162,10 @@
 
 
 <!-- Function copied from Boutique Ado project-->
+
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-		$('.btt-link').click(function(e) {
-			window.scrollTo(0,0)
-		})
-	</script>
+    
     
     <script type="text/javascript">
         $('#sort-selector').change(function() {

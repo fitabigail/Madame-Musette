@@ -14,6 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('name', 'category', 'rating', 'is_customized',
                      'updated_date')
     list_filter = ('category', 'rating', 'is_customized', 'updated_date')
+    list_per_page = 20
 
     ordering = ('id',)
 

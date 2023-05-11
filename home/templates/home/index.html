@@ -1,17 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-<div class="container header-container">
-  <div class="row">
-    <div class="col"></div>
-  </div>
-</div>
-{% endblock %}
-
 {% block content %}
 
-
+<div class="container-fluid">
 
 <!-- Background image -->
 <div class="p-5 text-center bg-image banner-image shadow-lg">
@@ -20,7 +12,7 @@
       <div class="text-white hero-text">
         <h1 class="mb-3 d-none d-sm-block">MadameMusette</h1>
         <h1 class="mb-3 d-block d-sm-none">MM</h1>
-        <a class="btn btn-outline-light btn-lg" href="{% url 'products' %}" role="button">Find your perfect shoes</a>
+        <a class="btn btn-outline-light btn-lg" href="{% url 'products' %}?category=pumps,sandals,Sneakers" role="button">Find your perfect shoes</a>
       </div>
     </div>
   </div>
@@ -32,7 +24,7 @@
   <h3 class="text-dark pt-4">New Collection</h3>
   <h1 class="text-dark pt-4 d-none d-sm-block">Spring-Summer 2023</h1>
   <h1 class="mb-3 d-block d-sm-none">SS-2023</h1>
-  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="#!" role="button">Discover</a>
+  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="{% url 'products' %}?category=new_arrivals" role="button">Discover</a>
 </div>
 <!--End main heading-->
 
@@ -44,7 +36,7 @@
       <img src="/media/shoe2.webp" alt="" class="w-100 shadow-lg">
       <div class="col-12 text-center mt-5">
         <h4 class="my-4">Women</h4>
-        <a href="#" class="btn btn-outline-dark btn-lg discover-btn">PUMPS</a>
+        <a href="{% url 'products' %}?category=pumps" class="btn btn-outline-dark btn-lg discover-btn">PUMPS</a>
         
       </div>
     </div>
@@ -53,7 +45,7 @@
       <img src="/media/purse.webp" alt="" class="w-100 shadow-lg">
       <div class="col-12 text-center mt-5">
         <h4 class="my-4">Women</h4>
-        <a href="#" class="btn btn-outline-dark btn-lg discover-btn">BAGS</a>
+        <a href="{% url 'products' %}?category=shoulder_bags,cluch_evening_bags,backpacks" class="btn btn-outline-dark btn-lg discover-btn">BAGS</a>
         
       </div>
     </div>
@@ -62,7 +54,7 @@
       <img src="/media/belts1.webp" alt="" class="w-100 shadow-lg">
       <div class="col-12 text-center mt-5">
         <h4 class="my-4">Women</h4>
-        <a href="#" class="btn btn-outline-dark btn-lg discover-btn">ACCESSORIES</a>
+        <a href="{% url 'products' %}?category=wallets,belts" class="btn btn-outline-dark btn-lg discover-btn">ACCESSORIES</a>
         
       </div>
     </div>
@@ -78,12 +70,12 @@
 <div class="col12 text-center mt-5">
   <h3 class="text-dark pt-4">Up to 60% Off</h3>
   <h1 class="text-dark pt-4">SALES</h1>
-  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="#!" role="button">BUY NOW</a>
+  <a class="btn btn-outline-dark btn-lg mt-5 discover-btn" href="{% url 'products' %}?category=sales" role="button">BUY NOW</a>
 </div>
 </div>
 
 <!--End sales section-->
-
+</div>
 {% endblock %}
 
 

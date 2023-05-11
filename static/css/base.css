@@ -2,7 +2,8 @@ html, body {
     
     font-family: 'Open Sans', sans-serif;
 }
-/**** Navigation bar ***/
+
+/* ----- Navigation bar ----- */
 
 .navbar {
     font-size: 1.5rem;
@@ -21,7 +22,7 @@ html, body {
     z-index: 1;
     }
 
-/*** Header gradient color ***/
+/* ---- Header gradient color ---- */
 
 .gradient-custom {
     background: rgb(36,19,0);
@@ -31,7 +32,7 @@ html, body {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
     }
 
-  /**** Hero Image ***/
+  /* ----- Hero Image ---- */
 
 .banner-image {
     background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/media/hero.webp');
@@ -48,7 +49,7 @@ html, body {
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.4);
     height: 200px;
-    width: 400px;
+    width: 350px;
     top:65%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -56,7 +57,7 @@ html, body {
 }
 
 .hero-text h1{
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);
 }
 
@@ -85,17 +86,7 @@ html, body {
     }
 
 
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
-
-/***Section Sales***/
+/* ----- Section Sales ---- */
 
 .sales-image {
     background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/media/sales-background.webp');
@@ -115,7 +106,7 @@ html, body {
     width: 1.5rem;
 }
 
-/*---- Logo and delivery banner ---- */
+/* ---- Logo and delivery banner ---- */
 
 .logo-font { 
     text-shadow: .1rem .1rem .3rem rgba(0, 0, 0, 1);    
@@ -141,6 +132,145 @@ html, body {
 }
 
 
+
+
+
+/* ------- Products page ----- */
+
+ .products{    
+    display: flex;   
+    justify-content: space-between;   
+    padding: 13px 0;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+   
+ }
+ 
+ .card {
+    background: #fff;    
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    border: 0;
+    
+}
+
+.card-img,
+.card-img-top {
+    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, .1), 0 0 2rem rgba(0, 0, 0, .1);
+    border-radius: 0.2rem;
+}
+
+.card:hover {
+    transform: scale(1.02);
+   
+}
+
+ .products-body{
+    margin-top: 15rem;
+ } 
+ 
+ .sort-categories {
+    width: 10rem;
+    font-size: 1rem;
+    text-transform: capitalize;
+    color:rgb(53, 29, 2)!important;
+    background-color: #fff;
+    border-color: #000;
+
+ }
+
+ .sort-categories:hover,
+ .sort-categories:active,
+ .sort-categories:focus {
+    background: rgb(36,19,0);
+    background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
+    color:#fff;
+    transition: 0.7s;
+    box-shadow: 0 0 0 1px  rgb(61, 34, 2);
+ }
+ 
+ .breadcrumb{
+    background-color: transparent;
+ } 
+ .bc-icons .breadcrumb-item + .breadcrumb-item::before+ .breadcrumb-item:last-child{
+    content: none; }
+ 
+ a.category-list:link,
+ a.category-list:active 
+ {    
+    color: rgb(12, 11, 11)!important;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;    
+ } 
+ a.category-list:visited {
+    color:#e79d34!important;}
+
+ a.category-list:hover {
+    color: rgb(12, 11, 11)!important;
+    font-size:130%;
+}
+
+
+/* ------------- Product detail page -------- */
+
+.prod_detail_wrap{
+    margin-top: 30vh;
+}
+
+
+  /* ---- Footer ----*/
+
+.footer {   
+    background-color: #33240e!important;
+    color:#fff;
+    font-size: 2px;
+   
+}
+
+.bottom_border { 
+    border-bottom:1px solid #eecfb5; 
+    padding-bottom:20px;   
+}
+
+#subfooter{
+    background-color:#1a1207!important ;
+}
+
+
+/* ------ Contact footer modal --- */
+
+
+#myModal{      
+    color: #000;  
+    
+}
+
+.modal-header{
+    color: #fff;
+}
+
+.modal-body{
+    text-align: center;
+    margin: auto;
+    font-size: 1.2rem;
+}
+.modal-close-btn{
+    width: 8rem;
+}
+ 
+a:link{
+    text-decoration: none; 
+}
+
+#store-location:hover{
+    color: rgb(172, 134, 90)!important;
+    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
+       
+}
 /* ---- Pagination (code reused from PP4-Lamborghinideals)----*/
 
 
@@ -205,6 +335,7 @@ html, body {
 .page-link:focus {
     box-shadow: 1px 1px 1px 1px rgb(53, 29, 2)!important;
 }
+
 
 
 /* ----- Full page search (code reused from PP4- LamborghiniDeals) ------ */
@@ -286,148 +417,14 @@ html, body {
     background: #3a3a3a;
 }
 
-/* ------------- Product detail page -------- */
-
-.prod_detail_wrap{
-    margin-top: 30vh;
-}
-
-/* ---- Footer ----*/
-
-.footer {   
-    background-color: #33240e!important;
-    color:#fff;
-    font-size: 2px;
-   
-}
-
-.bottom_border { 
-    border-bottom:1px solid #eecfb5; 
-    padding-bottom:20px;   
-}
-
-#subfooter{
-    background-color:#1a1207!important ;
-}
-
-
-/* ------ Subscribe footer modal --- */
-
-
-#myModal{      
-    color: #000;  
-    
-}
-
-.modal-header{
-    color: #fff;
-}
-
-.modal-body{
-    text-align: center;
-    margin: auto;
-    font-size: 1.2rem;
-}
-.modal-close-btn{
-    width: 8rem;
-}
- 
-a:link{
-    text-decoration: none; 
-}
-
-#store-location:hover{
-    color: rgb(172, 134, 90)!important;
-    text-shadow: 0 .2rem .2rem rgba(0, 0, 0, 0.4);
-    z-index: 1;
-       
-}
-
-/* ----Scroll up button---- */
-
-.scroll_btn {
-    position: fixed;
-    right: 2rem;
-    bottom: 5.5rem;  
-    width: 3.5rem;
-    height: 3rem;    
-    font-size: 2rem;    
-    cursor: pointer;
-    color: antiquewhite;
-    background-color: rgba(172, 134, 90, 0.438)!important;
-    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.3);
-    border-radius: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
- /* ------- Products page ----- */
- .products{    
-    display: flex;   
-    justify-content: space-between;   
-    padding: 13px 0;
-    border-bottom: 1px solid #e5e5e5;
-    background-color: #fff;
-   
- }
- 
- a.span.small:link {
-    /*background: #212529 !important;*/
-    color: black !important;
-}
- .products-body{
-    margin-top: 15rem;
- } 
- 
- .sort-categories {
-    width: 10rem;
-    font-size: 1rem;
-    text-transform: capitalize;
-    color:rgb(53, 29, 2)!important;
-    background-color: #fff;
-    border-color: #000;
-
- }
-
- .sort-categories:hover,
- .sort-categories:active,
- .sort-categories:focus {
-    background: rgb(36,19,0);
-    background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    background: linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#241300",endColorstr="#c7a474",GradientType=1);
-    color:#fff;
-    transition: 0.7s;
-    box-shadow: 0 0 0 1px  rgb(61, 34, 2);
- }
- 
- 
- a.category-list:link,
- a.category-list:active 
- {    
-    color: rgb(12, 11, 11)!important;
-    padding: 5px 5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;    
- } 
- a.category-list:visited {
-    color:#e79d34!important;}
-
- a.category-list:hover {
-    color: rgb(12, 11, 11)!important;
-    font-size:130%;
-}
-  
  
 
+ 
 
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
+
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
@@ -444,7 +441,5 @@ a:link{
         z-index: 1030;
     }
 
-    .header-container {
-        padding-top: 164px;
-    }
+    
 }
