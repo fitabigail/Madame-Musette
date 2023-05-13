@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'products',
     'ckeditor',
     'crispy_forms',
+    'cart',
 ]
 
 MIDDLEWARE = [

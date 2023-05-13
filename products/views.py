@@ -70,15 +70,20 @@ def product_detail(request, product_id):
 
     return render(request, 'products/product_detail.html', context)
 
+# Search View
+
 
 def search(request):
     if 'keyword' in request.GET:
         keyword = request.GET['keyword']
         if keyword:
             query = Q(name__icontains=keyword) | Q(description__icontains=keyword)
-            products = Product.objects.order_by('-updated_date').filter(query)            
+            products = Product.objects.order_by('-updated_date').filter(query)
+            product_count = products.count()          
     
     data = {
-        'products': products,        
+        'keyword': keyword,
+        'products': products,
+        'product_count': product_count,       
     }
     return render(request, 'products/products.html', data)      

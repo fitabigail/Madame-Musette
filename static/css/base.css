@@ -1,3 +1,8 @@
+/*html{
+    position: relative;
+    min-height: 100%;
+}*/
+
 html, body {
     
     font-family: 'Open Sans', sans-serif;
@@ -139,7 +144,7 @@ html, body {
 
  .products{    
     display: flex;   
-    justify-content: space-between;   
+    justify-content: space-between;       
     padding: 13px 0;
     border-bottom: 1px solid #e5e5e5;
     background-color: #fff;
@@ -150,6 +155,11 @@ html, body {
     background: #fff;    
     transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
     border: 0;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+       
+}
+    
     
 }
 
@@ -166,6 +176,7 @@ html, body {
 
  .products-body{
     margin-top: 15rem;
+    width: 100%;
  } 
  
  .sort-categories {
@@ -223,7 +234,12 @@ html, body {
 
   /* ---- Footer ----*/
 
-.footer {   
+.footer {  
+   /* position: absolute;
+    bottom: 0;
+    width: 100%; 
+   
+    margin-top: 50rem;*/
     background-color: #33240e!important;
     color:#fff;
     font-size: 2px;

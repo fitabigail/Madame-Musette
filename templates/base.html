@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 
 <!doctype html>
+
 <html lang="en">
 
 <head>
@@ -53,7 +54,12 @@
   {% block navbar %}
   <header class="container-fluid sticky-top gradient-custom">
     <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
+   <div class="col-12 col-lg-4 my-auto py-1 py-sm-0 text-center text-lg-left d-md-none">
+        <a href="{% url 'home' %}" class="nav-link main-logo-link ">
+          <h2 class="logo-font text-white my-0"><strong>MM</strong></h2>
+        </a>
+      </div>
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-md-block d-lg-block ">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
           <h2 class="logo-font text-white my-0"><strong>MadameMusette</strong></h2>
         </a>
@@ -65,7 +71,7 @@
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
-                <p class="my-0">My Account</p>
+               
               </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -82,7 +88,13 @@
             </div>
           </li>
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="">
+           
+            <a href="{% url 'cart_view' %}" class="nav-link text-white">
+              <div class="icon icon-lg "><i class="fas fa-shopping-bag fa-lg"></i></div>
+              <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
+            </a>
+
+            <!--<a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'cart_view' %}">
               <div class="text-center">
                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                 <p class="my-0">
@@ -93,7 +105,7 @@
                   {% endif %}
                 </p>
               </div>
-            </a>
+            </a>-->
           </li>
         </ul>
       </div>
@@ -159,8 +171,8 @@
     </form>
 
   </div>
-
-  <footer class="footer bg-dark">
+<!-- Footer -->
+  <footer class="footer bg-dark sticky-bottom">
 
     <div class="container-fluid bottom_border">
       <div class="row w-100 p-3">
@@ -201,7 +213,7 @@
                 <!-- Instagram -->
                 <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/musette.official/"
                   target="_blank" role="button"><i class="fab fa-instagram"></i></a>
-
+              </section>
             </div>
 
 
@@ -277,6 +289,7 @@
 
       </div>
     </div>
+    <!-- Start subfooter -->
     <div class="container-fluid" id="subfooter">
       <div class="row">
         <div class="col-lg-4 p-4">
@@ -288,7 +301,7 @@
         </div>
       </div>
     </div>
-
+<!-- End subfooter -->
 
 
 
@@ -297,6 +310,7 @@
 
 
   </footer>
+  <!--End Footer-->
   <!--Scroll up button-->
   <a href="#" class="scroll_btn text-white" aria-label="Scroll"><i class="fas fa-arrow-up"></i></a>
 
