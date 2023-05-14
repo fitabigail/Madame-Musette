@@ -53,7 +53,7 @@
 <body>
   {% block navbar %}
   <header class="container-fluid sticky-top gradient-custom">
-    <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">  
+    <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left d-none d-md-block d-lg-block ">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
           <h2 class="logo-font text-white my-0"><strong>MadameMusette</strong></h2>
@@ -66,7 +66,7 @@
               aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
-               
+
               </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -83,24 +83,13 @@
             </div>
           </li>
           <li class="list-inline-item">
-           
-            <a href="{% url 'cart_view' %}" class="nav-link text-white">
-              <div class="icon icon-lg "><i class="fas fa-shopping-bag fa-lg"></i></div>
-              <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
-            </a>
 
-            <!--<a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'cart_view' %}">
-              <div class="text-center">
-                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-                <p class="my-0">
-                  {% if grand_total %}
-                  €{{ grand_total|floatformat:2 }}
-                  {% else %}
-                  €0.00
-                  {% endif %}
-                </p>
-              </div>
-            </a>-->
+            <a href="{% url 'cart_view' %}" class="nav-link text-white cart position-relative d-inline-flex">
+              <i class="fas fa fa-shopping-cart fa-lg"></i>
+              <span class="cart-basket d-flex align-items-center justify-content-center">
+                {{product_count}}
+              </span>
+            </a>            
           </li>
         </ul>
       </div>
@@ -108,8 +97,8 @@
     <div class="row " id="main_nav">
 
       <nav class="navbar navbar-expand-lg navbar-light w-100">
-        
-        
+
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
           aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -165,7 +154,7 @@
     </form>
 
   </div>
-<!-- Footer -->
+  <!-- Footer -->
   <footer class="footer bg-dark sticky-bottom">
 
     <div class="container-fluid bottom_border">
@@ -176,14 +165,14 @@
           <div class="col-12 text-center mt-5">
             <h4 class="my-4">Subscribe to our newsletter</h4>
 
-            
-           
-              <!-- Button to Open the Modal -->
-              <button type="button" class="btn btn-outline-dark btn-lg discover-btn">
-                Subscribe
-              </button>
-         
-           
+
+
+            <!-- Button to Open the Modal -->
+            <button type="button" class="btn btn-outline-dark btn-lg discover-btn">
+              Subscribe
+            </button>
+
+
           </div>
         </div>
         <!--End Subscription-->
@@ -222,51 +211,51 @@
           <div class="col-12 text-center mt-5">
 
             <h4 class="my-4">Contact Us</h4>
-<div class="form-group">
-            <form action="{% url 'contactView' %}" method="POST">
-              {% csrf_token %}
-              <!-- Button to Open the Modal -->
-              <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
-                data-target="#myModal">
-                Contact Us
-              </button>
-              <!-- The Modal -->
-              <div class="modal" id="myModal">
-                <div class="modal-dialog modal-lg">
-                  <div class="modal-content">
+            <div class="form-group">
+              <form action="{% url 'contactView' %}" method="POST">
+                {% csrf_token %}
+                <!-- Button to Open the Modal -->
+                <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
+                  data-target="#myModal">
+                  Contact Us
+                </button>
+                <!-- The Modal -->
+                <div class="modal" id="myModal">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
 
-                    <!-- Modal Header -->
-                    <div class="modal-header gradient-custom">
-                      <h4 class="modal-title pl-5">You can write your message here!</h4>
-                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+                      <!-- Modal Header -->
+                      <div class="modal-header gradient-custom">
+                        <h4 class="modal-title pl-5">You can write your message here!</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                      </div>
 
-                    <!-- Modal body -->
-                    <div class="modal-body">
-                      <div class="row">
-                        <div class="col-sm mt-5 p-5">
+                      <!-- Modal body -->
+                      <div class="modal-body">
+                        <div class="row">
+                          <div class="col-sm mt-5 p-5">
 
-                          {{c_form}}
+                            {{c_form}}
 
-                        </div>
-                        <div class="col-sm">
-                          <img src="/media/modal-shoes.png" alt="high heels" width="300" height="300">
+                          </div>
+                          <div class="col-sm">
+                            <img src="/media/modal-shoes.png" alt="high heels" width="300" height="300">
+                          </div>
                         </div>
                       </div>
-                    </div>
 
-                    <!-- Modal footer -->
-                    <div class="modal-footer gradient-custom">
-                      <button type="submit" class="btn btn-outline-dark btn-md modal-close-btn ">Submit</button>
-                      <!--<button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
+                      <!-- Modal footer -->
+                      <div class="modal-footer gradient-custom">
+                        <button type="submit" class="btn btn-outline-dark btn-md modal-close-btn ">Submit</button>
+                        <!--<button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
                         data-dismiss="modal">Close</button>-->
-                    </div>
+                      </div>
 
+                    </div>
                   </div>
                 </div>
-              </div>
-            </form>
-          </div> 
+              </form>
+            </div>
           </div>
 
           <div class="text-center">
@@ -295,7 +284,7 @@
         </div>
       </div>
     </div>
-<!-- End subfooter -->
+    <!-- End subfooter -->
 
 
 

@@ -32,10 +32,12 @@
                     </div>
                 </li>
                 <li class="list-inline-item">
-                    <a href="{% url 'cart_view' %}" class="nav-link text-white">
-                        <div class="icon icon-lg "><i class="fas fa-shopping-bag fa-lg"></i></div>
-                        <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
-                    </a>
+                    <a href="{% url 'cart_view' %}" class="nav-link text-white cart position-relative d-inline-flex">
+                        <i class="fas fa fa-shopping-cart fa-lg"></i>
+                        <span class="cart-basket d-flex align-items-center justify-content-center">
+                          {{product_count}}
+                        </span>
+                      </a>
 
                 </li>
             </ul>
@@ -53,7 +55,7 @@
     </div>
     <div id="delivery-banner" class="row text-center">
         <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Free delivery on orders over €{{ free_shipping_threshold }}!</h4>
+            <h4 class="logo-font my-1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>
         </div>
     </div>
 

@@ -21,7 +21,7 @@
                 <div class="input-group-append">
                     <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
                         <span class="icon">
-                            <i class="fas fa-search"></i>
+                            <i class="fas fa-search fa-md"></i>
                         </span>
                     </button>
                 </div>
@@ -32,7 +32,7 @@
 <li class="list-inline-item dropdown">
     <a class="text-white nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
-            <div><i class="fas fa-user fa-lg"></i></div>
+            <div><i class="fas fa-user fa-md"></i></div>
             
         </div>
     </a>
@@ -52,21 +52,10 @@
 </li>
 <li class="list-inline-item d-lg-none">
 
-    <a href="{% url 'cart_view' %}" class="nav-link text-white">
-        <div class="icon icon-lg "><i class="fas fa-shopping-bag fa-lg"></i></div>
-        <span class="badge badge-pill badge-danger notify">{{cart_count}}</span>
-      </a>
-
-    <!--<a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="{% url 'cart_view' %}">
-        <div class="text-center">
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
-            <p class="my-0">
-                {% if grand_total %}
-                €{{ grand_total|floatformat:2 }}
-                {% else %}
-                €0.00
-                {% endif %}
-            </p>
-        </div>
-    </a>-->
+    <a href="{% url 'cart_view' %}" class="nav-link text-white cart position-relative d-inline-flex">
+        <i class="fas fa fa-shopping-cart fa-md"></i>
+        <span class="cart-basket-mobile d-flex align-items-center justify-content-center">
+          {{product_count}}
+        </span>
+      </a>    
 </li>
