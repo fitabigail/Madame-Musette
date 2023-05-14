@@ -80,7 +80,8 @@ html, body {
 .discover-btn:focus,
 .modal-close-btn:hover,
 .modal-close-btn:active,
-.modal-close-btn:focus {
+.modal-close-btn:focus,
+.checkout-btn {
     background: rgb(36,19,0);
     background: -moz-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
     background: -webkit-linear-gradient(90deg, rgba(36,19,0,1) 0%, rgba(245,183,95,1) 35%, rgba(199,164,116,1) 100%);
@@ -245,7 +246,7 @@ ul a.cart:hover {
     width: 20px;
     height: 20px;   
     color: #fff;
-    background-color:#241300;
+    background-color:#3820047e;
     border-radius: 50%;
   }
 
@@ -257,7 +258,7 @@ ul a.cart:hover {
     width: 15px;
     height: 15px;
     color: #fff;
-    background-color: #241300;
+    background-color:#3820047e;
     border-radius: 50%;
   }
 
@@ -266,6 +267,12 @@ ul a.cart:hover {
 .cart-container{
     margin-top: 15rem;
 }
+.img-cart {
+    height: 20rem;
+    width: auto;
+}
+
+
   /* ---- Footer ----*/
 
 .footer {  
@@ -492,5 +499,16 @@ a:link{
         z-index: 1030;
     }
 
-    
+   
+}
+@media (max-width: 992px){
+     .img-cart-mobile{
+        height: 5rem;
+        width: auto;
+    }
+    .discover-btn.checkout-btn{
+        width: 15rem;
+        height: 3rem;
+        font-size: medium;
+    }
 }
