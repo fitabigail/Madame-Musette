@@ -224,7 +224,10 @@ html, body {
     font-size:130%;
 }
 
-
+.image-product{
+    height: 20rem;
+     width: auto;
+}
 /* ------------- Product detail page -------- */
 
 .prod_detail_wrap{
@@ -501,6 +504,7 @@ a:link{
 
    
 }
+
 @media (max-width: 992px){
      .img-cart-mobile{
         height: 5rem;
@@ -511,4 +515,5 @@ a:link{
         height: 3rem;
         font-size: medium;
     }
+    
 }
