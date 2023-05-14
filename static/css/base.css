@@ -161,7 +161,6 @@ html, body {
 }
     
     
-}
 
 .card-img,
 .card-img-top {
@@ -255,6 +254,11 @@ html, body {
     background-color:#1a1207!important ;
 }
 
+/* -----Shopping cart page ----- */
+
+.cart-container{
+    margin-top: 15rem;
+}
 
 /* ------ Contact footer modal --- */
 

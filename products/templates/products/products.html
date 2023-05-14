@@ -39,7 +39,7 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if products or categories or sorting_products != 'None_None' %}
-                                <a href="{% url 'home' %}"><span class="small"><i class="fa fa-fw fa-home"></i></a> | </span>
+                                <a href="{% url 'home' %}" class="text-black"><span class="small"><i class="fa fa-fw fa-home"></i></a> | </span>
                             {% endif %}
                             {{ products|length }} items {% if products %} | {{ categ.friendly_name }} {{ keyword }} {% endif %}
                         </p>

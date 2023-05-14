@@ -1,6 +1,10 @@
-
-   
-
+<li class="list-inline-item"> 
+    <div class="my-auto py-1 py-sm-0   d-lg-none">
+       <a href="{% url 'home' %}" class="nav-link main-logo-link ">
+         <h2 class="logo-font text-white my-0 text-left"><strong>MM</strong></h2>
+       </a>
+     </div>
+   </li>
 
 <li class="list-inline-item">
     
@@ -46,7 +50,7 @@
         {% endif %}
     </div>
 </li>
-<li class="list-inline-item">
+<li class="list-inline-item d-lg-none">
 
     <a href="{% url 'cart_view' %}" class="nav-link text-white">
         <div class="icon icon-lg "><i class="fas fa-shopping-bag fa-lg"></i></div>
