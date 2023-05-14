@@ -14,7 +14,8 @@ from pathlib import Path
 import os
 if os.path.isfile('env.py'):
     import env
-from django.contrib.messages import constants as messages     
+from django.contrib.messages import constants as messages
+ 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'products.context_processors.categories_sort',
                 'home.context_processors.contact_form',
+                'cart.context_processors.cart_contents',
             ],
         },
     },
@@ -161,6 +163,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+FREE_DELIVERY_THRESHOLD = 50
+STANDARD_DELIVERY_PERCENTAGE = 10
 
 # Messages
 
