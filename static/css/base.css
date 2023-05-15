@@ -234,7 +234,22 @@ html, body {
     margin-top: 30vh;
 }
 
+.btn.btn-increment{
+    background-color:#382004be;
+}
+/* --- Remove the arrows from input quantity field- W3Schools copied code --- */
 
+/* Chrome, Safari, Edge, Opera */
+input.qty_input::-webkit-outer-spin-button,
+input.qty_input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input.qty_input[type=number] {
+  -moz-appearance: textfield;
+}
 
 /* Cart icon  */
 ul a.cart:hover {
@@ -478,7 +493,25 @@ a:link{
     background: #3a3a3a;
 }
 
- 
+ /* ----Scroll up button---- */
+
+.scroll_btn {
+    position: fixed;
+    right: 2rem;
+    bottom: 5.5rem;  
+    width: 3.5rem;
+    height: 3rem;    
+    font-size: 2rem;    
+    cursor: pointer;
+    color: antiquewhite;
+    background-color: rgba(172, 134, 90, 0.438)!important;
+    box-shadow: 0 0.1rem 0.6rem rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
  
 

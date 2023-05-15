@@ -35,7 +35,9 @@
                         {% for item in cart_items %}
                         <tr>
                             <td class="p-3 w-25">
+                               
                                 <img class="img-fluid rounded img-cart img-cart-mobile" src="{{ item.product.image.url }}">
+                            
                             </td>
                             <td class="py-3">
                                 <p class="my-0"><strong>{{ item.product.name }}</strong></p>
@@ -49,13 +51,13 @@
                                 <p class="my-0">{{ item.quantity }}</p>
                             </td>
                             <td class="py-3">
-                                <p class="my-0">${{ item.product.price }}</p>
+                                <p class="my-0">€ {{ item.product.price }}</p>
                             </td>
                         </tr>
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>Cart Total: ${{ total|floatformat:2 }}</strong></h6>
+                                <h6><strong>Cart Total: € {{ total|floatformat:2 }}</strong></h6>
                                 <h6>Delivery: € {{ delivery|floatformat:2 }}</h6>
                                 <h4 class="mt-4"><strong>Grand Total: € {{ grand_total|floatformat:2 }}</strong></h4>
                                 {% if free_delivery_delta > 0 %}

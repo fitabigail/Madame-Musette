@@ -1,3 +1,16 @@
+/*//Scroll Button
+
+document.querySelector('.scroll_btn').addEventListener(
+    'click', () => {
+       document.querySelector('html').style.scrollBehavior = 'smooth';
+       setTimeout(() => {
+           document.querySelector('html').style.scrollBehavior = 'unset';
+       }), 1000;
+       
+       
+    }
+    );
+*/
 // Full  Page Search Activation
 
 $(function () {
@@ -14,15 +27,6 @@ $(function () {
     });
 });
 
- //Scroll Button
-/*
- document.querySelector('.scroll_btn').addEventListener(
-    'click', () => {
-       document.querySelector('html').style.scrollBehavior = 'smooth';
-       setTimeout(() => {
-           document.querySelector('html').style.scrollBehavior = 'unset';
-       }), 1000;
-       
-       
-    }
-    );*/
+ 
+
+

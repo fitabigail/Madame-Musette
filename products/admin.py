@@ -11,8 +11,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'image_tag', 'name', 'category', 'price',
                     'in_stock', 'is_customized', 'updated_date')
     list_display_links = ('image_tag', 'name',)
-    search_fields = ('name', 'category', 'rating', 'is_customized',
-                     'updated_date')
+    search_fields = ('name', 'category')
     list_filter = ('category', 'rating', 'is_customized', 'updated_date')
     list_per_page = 20
 
