@@ -21,6 +21,5 @@ def contactView(request):
             form.save()
             messages.success(request, 'Your message was send succesfuly, soon one of our team member will contact you!')
             return HttpResponseRedirect('/')
-        #else:            
-            #print('INVALID: ', form.errors)    
+        
         

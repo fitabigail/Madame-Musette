@@ -233,7 +233,9 @@ html, body {
 .prod_detail_wrap{
     margin-top: 30vh;
 }
-
+.quantity-group{
+    width: 10rem;
+}
 .btn.btn-increment{
     background-color:#382004be;
 }
@@ -283,14 +285,18 @@ ul a.cart:hover {
 /* -----Shopping cart page ----- */
 
 .cart-container{
-    margin-top: 15rem;
+    height: 100vh;
+    margin-top: 20rem;
 }
 .img-cart {
     height: 20rem;
     width: auto;
 }
 
-
+.update-link,
+.remove-item{
+    cursor: pointer;
+}
   /* ---- Footer ----*/
 
 .footer {  

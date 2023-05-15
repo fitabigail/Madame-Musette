@@ -92,6 +92,10 @@ The epics were created using the milistones on github. Each epic was created and
 ### Not Fixed bugs
 </br></br>
 
+- Products Admin page search product field is not rendering the search
+- Shopping cart is not display in line the quantity fieldon mobile view
+- Empty Shopping cart footer was not stick to bottom - fixed by adding container height=100vh
+- update cart is not updated
 > ## LightHouse
 </br></br>
 
