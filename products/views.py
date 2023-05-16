@@ -34,7 +34,8 @@ def all_products(request):
     if request.GET:
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
-            products = products.filter(category__name__in=categories, in_stock=True, is_customized=True,)
+            products = products.filter(category__name__in=categories,
+                                       in_stock=True, is_customized=True,)
             categories = Category.objects.filter(name__in=categories)    
 
     page_num = request.GET.get('page', 1)
@@ -79,11 +80,10 @@ def search(request):
         if keyword:
             query = Q(name__icontains=keyword) | Q(description__icontains=keyword)
             products = Product.objects.order_by('-updated_date').filter(query)
-            product_count = products.count()          
-    
+            product_count = products.count()
     data = {
         'keyword': keyword,
         'products': products,
-        'product_count': product_count,       
-    }
-    return render(request, 'products/products.html', data)      
+        'product_count': product_count,
+        }
+    return render(request, 'products/products.html', data)

@@ -55,7 +55,11 @@
     <a href="{% url 'cart_view' %}" class="nav-link text-white cart position-relative d-inline-flex">
         <i class="fas fa fa-shopping-cart fa-md"></i>
         <span class="cart-basket-mobile d-flex align-items-center justify-content-center">
-          {{product_count}}
+            {% if product_count %}
+                {{product_count}}
+            {% else %}
+                0
+            {% endif %}
         </span>
       </a>    
 </li>

@@ -31,7 +31,9 @@
 
   {% block corejs %}
   <script src="https://kit.fontawesome.com/21d6103b31.js" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+  <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>-->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
     integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
@@ -84,9 +86,13 @@
             <a href="{% url 'cart_view' %}" class="nav-link text-white cart position-relative d-inline-flex">
               <i class="fas fa fa-shopping-cart fa-lg"></i>
               <span class="cart-basket d-flex align-items-center justify-content-center">
-                {{product_count}}
+                {% if product_count %}
+                  {{product_count}}
+                {% else %}
+                  0
+                {% endif %}
               </span>
-            </a>            
+            </a>
           </li>
         </ul>
       </div>
@@ -113,19 +119,21 @@
   {% endblock %}
 
   {% if messages %}
-
-  {% for message in messages %}
-
-  <div class="container-fluid p-0">
-    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="True">&times;</span>
-      </button>
-      {{ message }}
-    </div>
+  <div class="message-container">
+    {% for message in messages %}
+    {% with message.level as level %}
+    {% if level == 40 %}
+    {% include 'includes/toasts/toast_errors.html' %}
+    {% elif level == 30 %}
+    {% include 'includes/toasts/toast_warning.html' %}
+    {% elif level == 25 %}
+    {% include 'includes/toasts/toast_success.html' %}
+    {% else %}
+    {% include 'includes/toasts/toast_info.html' %}
+    {% endif %}
+    {% endwith %}
+    {% endfor %}
   </div>
-
-  {% endfor %}
   {% endif %}
 
   {% block page_header %}
@@ -135,6 +143,9 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+    $('.toast').toast('show');
+  </script>
   {% endblock %}
 
   <!-- Full Page Search -->
@@ -291,9 +302,9 @@
 
   </footer>
   <!--End Footer-->
+
   <!--Scroll up button-->
-  <!--Scroll up button-->
-<a href="#" class="scroll_btn text-white" aria-label="Scroll"><i class="fas fa-arrow-up"></i></a>
+  <a href="#" class="scroll_btn text-white" aria-label="Scroll"><i class="fas fa-arrow-up"></i></a>
 
 
 
