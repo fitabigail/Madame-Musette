@@ -163,7 +163,7 @@
 
   </div>
   <!-- Footer -->
-  <footer class="footer bg-dark sticky-bottom">
+  <footer class="footer bg-dark">
 
     <div class="container-fluid bottom_border">
       <div class="row w-100 p-3">
@@ -179,6 +179,17 @@
             <button type="button" class="btn btn-outline-dark btn-lg discover-btn">
               Subscribe
             </button>
+             <!--Button Info-->
+            <div class="btn-group mt-5">
+              <button class="btn btn-outline-dark btn-lg discover-btn dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Info
+              </button>
+              <div class="dropdown-menu">
+                <a href="{% url 'about' %}" class="dropdown-item">About Us</a>
+              </div>
+            </div>
+            
+           
 
 
           </div>
@@ -224,7 +235,7 @@
                 {% csrf_token %}
                 <!-- Button to Open the Modal -->
                 <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
-                  data-target="#myModal">
+                  data-target="#myModal" id="contact_us_modal">
                   Contact Us
                 </button>
                 <!-- The Modal -->
@@ -255,8 +266,7 @@
                       <!-- Modal footer -->
                       <div class="modal-footer gradient-custom">
                         <button type="submit" class="btn btn-outline-dark btn-md modal-close-btn ">Submit</button>
-                        <!--<button type="button" class="btn btn-outline-dark btn-md modal-close-btn"
-                        data-dismiss="modal">Close</button>-->
+                        
                       </div>
 
                     </div>

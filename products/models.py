@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
+from home.models import Designer
 
 
 # Create your models here.
@@ -31,10 +32,11 @@ class Product(models.Model):
                                  blank=True) 
     image = models.ImageField(null=True, blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    in_stock = models.BooleanField(default=True)   
-    is_customized = models.BooleanField(default=True)
+    in_stock = models.BooleanField(default=True)
+    is_customised = models.BooleanField(default=False)
+    designer_id = models.ForeignKey(Designer(), on_delete=models.PROTECT, blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True) 
+    updated_date = models.DateTimeField(auto_now=True)   
 
     def __str__(self):
         return self.name

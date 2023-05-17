@@ -35,7 +35,7 @@ def all_products(request):
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories,
-                                       in_stock=True, is_customized=True,)
+                                       in_stock=True)
             categories = Category.objects.filter(name__in=categories)    
 
     page_num = request.GET.get('page', 1)

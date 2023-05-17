@@ -18,7 +18,9 @@
                         style=" height: 35rem; width: auto;">
                 </a>
             </div>
-
+            <div class="designer_name ml-10 float-left">
+                Designed by: <a href="{% url 'about' %}#card-group-designers" class="link-offset-3-hover"><strong>{{ product.designer_id.first_name }} {{ product.designer_id.last_name }}</strong></a>
+            </div>
         </div>
         <!--Product Details-->
         <div class="col-12 col-md-6 col-lg-4">

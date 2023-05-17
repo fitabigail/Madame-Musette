@@ -1,0 +1,34 @@
+[{
+    "pk": 1,
+    "model": "home.designer",
+    "fields": {
+        "first_name": "Anne",
+        "last_name": "Hart",
+        "hierarchy": "Business Owner",
+        "image": "Anne-Hart.webp",
+        "facebook_link": "https://www.facebook.com/profile.php?id=100091938860938",
+        "twiter_link": "https://twitter.com/MusetteRomania"
+    }
+}, {
+    "pk": 2,
+    "model": "home.designer",
+    "fields": {
+        "first_name": "Anne",
+        "last_name": "Klein",
+        "hierarchy": "Senior Designer",
+        "image": "Anne-Klein.webp",
+        "facebook_link": "https://www.facebook.com/profile.php?id=100091938860938",
+        "twiter_link": "https://twitter.com/MusetteRomania"
+    }
+}, {
+    "pk": 3,
+    "model": "home.designer",
+    "fields": {
+        "first_name": "Tracy",
+        "last_name": "Reese",
+        "hierarchy": "Designer",
+        "image": "Tracy-Reese.webp",
+        "facebook_link": "https://www.facebook.com/profile.php?id=100091938860938",
+        "twiter_link": "https://twitter.com/MusetteRomania"
+    }
+} ]

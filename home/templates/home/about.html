@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %}Products{% endblock %}
+{% block content %}
+
+
+<div class="container-fluid about-container">
+  <div class="row text-center mb-10">
+    <div class="col-12 mb-3">
+      <h1>About Us</h1>
+    </div>
+  </div>
+  <hr class="hr-about">
+  <div class="row mt-5 mb-5">
+
+    <div class="col-lg-4 text-center">
+      <img class="w-50 shadow img-about" src="/media/modal-shoes.png" alt="About MadameMusette" style="width: 300px;"/>
+    </div>
+    <div class="col-lg-8">
+      <div class="p-2 mt-4">
+        <h3 class="display-5"><strong> MadameMusette</strong> <small> is a Creative Designers team working since
+            2015</small></h3>
+        <hr>
+        <p class="pr-2 pl-2 about-text">We are specialized on Shoes designers to create original footwear. From sketch
+          designs, selection of materials and patterns, and to productions we know how to make the products that are
+          best for our clients. </p>
+        <p class="pr-2 pl-2 about-text">
+          Leonardo da Vinci described the human foot as "a masterpiece of engineering and a work of art". And to
+          make sure we can look after it better than anyone else, we've studied it. From the cradle to old age. We've
+          looked at the way it develops. We've scrutinised its biomechanics, the way it moves at work, rest and play.
+          We've deliberated on what it takes to keep feet healthy and happy. And what we've learned is what helps us
+          make the perfect shoes for you.
+        </p>
+        <p class="pr-2 pl-2 mb-5 about-text">
+          <strong> MadameMusette </strong>continues to focus on its mission, by exploring its heritage, fusing its
+          history with
+          modernity, targeting growth on the international market. </p>
+
+        <a href="#contact_us_modal" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Contact Us</a>
+      </div>
+    </div>
+  </div>
+  <hr class="hr">
+  <div class="row text-center mt-10">
+    <div class="col-12 mb-3 ">
+      <h1>Ours Designers</h1>
+    </div>
+  </div>
+  <hr class="hr-about">
+  <div class="row mt-5 mb-3 mx-auto text-center">
+    <div class="card-group" id="card-group-designers">
+    {% for designer in designers %}
+    <div class="col-sm">
+      <div class="card h-100 w-100 card  align-items-center">
+        <a href="#">
+          <img class="card-img-top img-fluid" src="{{ designer.image.url }}"
+            alt="{{ designer.first_name }}{{ designer.last_name }}">
+        </a>
+        <div class="card-body pb-0">
+          <h4 class="mb-1">{{ designer.first_name }}{{ designer.last_name }}</h4>
+          <h5 class="mb-1">{{ designer.hierarchy }}</h5>
+        </div>
+        <div class="card-footer bg-white pt-0 border-0 text-left">
+          <div class="row">
+            <div class="col">
+              <a class="lead text-center font-weight-bold mt-3 mb-3" href="{{ designer.facebook_link}}"
+                target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+             <span>&nbsp &nbsp &nbsp</span>
+              <a class="lead mb-0 text-center font-weight-bold mt-3 mb-3" href="{{ designer.twiter_link} }"
+                    target="_blank" role="button"><i class="fab fa-twitter"></i></a>                
+
+                 
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+     
+        {% endfor %}
+  </div>
+    
+</div>
+</div>    
+
+
+  {% endblock %}
