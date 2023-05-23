@@ -6,6 +6,7 @@ from django.conf import settings
 
 from products.models import Product, Customise
 
+# Copied form BoutiqueAdo and adopted for MadameMusette
 
 # Orders models.
 

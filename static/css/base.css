@@ -338,7 +338,10 @@ ul a.cart:hover {
     background-color:#1a1207!important ;
 }
 
-
+/* ---- Order checkout page ---- */
+.order_container{
+    margin-top: 20rem;
+}
 
 /* ------ Contact footer modal --- */
 
