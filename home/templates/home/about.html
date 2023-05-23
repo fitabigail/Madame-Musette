@@ -47,20 +47,22 @@
     </div>
   </div>
   <hr class="hr-about">
-  <div class="row mt-5 mb-3 mx-auto text-center">
-    <div class="card-group" id="card-group-designers">
+  <div class="row lg-4 md-6 mt-5 mb-3 mx-auto justify-content-center">
     {% for designer in designers %}
-    <div class="col-sm">
+
+    <div class="card-group"  id="card-group-designers">
+    
+    <div class="col-sm justify-content-center">
       <div class="card h-100 w-100 card  align-items-center">
-        <a href="#">
+        <a href="{{ designer.facebook_link}}">
           <img class="card-img-top img-fluid" src="{{ designer.image.url }}"
-            alt="{{ designer.first_name }}{{ designer.last_name }}">
+            alt="{{ designer.first_name }}{{ designer.last_name }}"style="height: 600px;" >
         </a>
-        <div class="card-body pb-0">
+        <div class="card-body pb-0 text-center">
           <h4 class="mb-1">{{ designer.first_name }}{{ designer.last_name }}</h4>
           <h5 class="mb-1">{{ designer.hierarchy }}</h5>
         </div>
-        <div class="card-footer bg-white pt-0 border-0 text-left">
+        <div class="card-footer bg-white pt-0 border-0 text-center">
           <div class="row">
             <div class="col">
               <a class="lead text-center font-weight-bold mt-3 mb-3" href="{{ designer.facebook_link}}"

@@ -230,9 +230,14 @@ html, body {
 
 .prod_detail_wrap{
     margin-top: 30vh;
+    }
+
+.product_size{
+    width: 10rem;;
 }
 .quantity-group{
     width: 10rem;
+    margin-left: 1.5rem;
 }
 .btn.btn-increment{
     background-color:#382004be;
@@ -250,6 +255,26 @@ input.qty_input::-webkit-inner-spin-button {
 input.qty_input[type=number] {
   -moz-appearance: textfield;
 }
+ 
+.tab{
+    cursor: pointer;    
+    padding:10px 20px;
+    background:#fff; 
+    border: none;
+    box-shadow: 0  0.2rem 0.5rem #00000080;
+    width: 12rem;
+    
+  }
+  .tab a:link{
+    color: #000;
+  }
+  .tab-content{
+    background:#fffffff6;    
+    min-height:100px;    
+    width:100%;
+    height: auto;   
+    padding:20px;  
+  }
 
 /* Cart icon  */
 ul a.cart:hover {
@@ -428,15 +453,8 @@ a:link{
     background: #46260144;
    
 }
-/*
-.img-about{
-    width: 600px;
-    height: auto;
-}
 
-.about-text{
-    font-size: 15rem;
-}*/
+
 
 /* ----- Full page search (code reused from PP4- LamborghiniDeals) ------ */
 
@@ -643,5 +661,5 @@ a:link{
         height: 3rem;
         font-size: medium;
     }
-    
+   
 }

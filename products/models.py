@@ -8,7 +8,6 @@ from home.models import Designer
 
 
 class Category(models.Model):
-    
     class Meta:
         verbose_name_plural = 'Categories'
 
@@ -34,9 +33,47 @@ class Product(models.Model):
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     in_stock = models.BooleanField(default=True)
     is_customised = models.BooleanField(default=False)
-    designer_id = models.ForeignKey(Designer(), on_delete=models.PROTECT, blank=True, null=True)
+    designer_id = models.ForeignKey(Designer, on_delete=models.PROTECT, 
+                                    blank=True, null=True)
     created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)   
-
+    updated_date = models.DateTimeField(auto_now=True)
+    
     def __str__(self):
         return self.name
+
+
+customised_sole = (
+    ('platform', 'platform'),
+    ('wedge heels', 'wedge heels')
+
+)
+
+customised_color = (
+    ('beign', 'beign'),
+    ('burgundy', 'burgundy'),
+    ('red', 'red'),
+    ('nude', 'nude')
+)
+
+customised_special_size = (
+    ('UK 3', 'UK 3'),
+    ('UK 3.5', 'UK 3.5'),
+    ('UK 9', 'UK 9'),
+    ('UK 9', 'UK 9'),
+)
+
+
+class Customise(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)    
+    sole = models.CharField(max_length=150,
+                            choices=customised_sole)
+    color = models.CharField(max_length=150,
+                             choices=customised_color)
+    logo = models.BooleanField(default=False)
+    special_size = models.CharField(max_length=150,
+                                    choices=customised_special_size)
+
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return self.product

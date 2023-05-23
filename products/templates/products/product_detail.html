@@ -19,7 +19,9 @@
                 </a>
             </div>
             <div class="designer_name ml-10 float-left">
-                Designed by: <a href="{% url 'about' %}#card-group-designers" class="link-offset-3-hover"><strong>{{ product.designer_id.first_name }} {{ product.designer_id.last_name }}</strong></a>
+                Designed by: <a href="{% url 'about' %}#card-group-designers"
+                    class="link-offset-3-hover"><strong>{{ product.designer_id.first_name }}
+                        {{ product.designer_id.last_name }}</strong></a>
             </div>
         </div>
         <!--Product Details-->
@@ -44,22 +46,71 @@
                     <div class="form-row">
                         {% with product.has_sizes as s %}
                         {% if s %}
-                        <div class="col-12">
-                            <p><strong>Size:</strong></p>
-                            <select class="form-control rounded-0 w-25" name="product_size" id='id_product_size'>
-                                <option value="uk4">UK 4</option>
-                                <option value="uk4.5">UK 4.5</option>
-                                <option value="uk5">UK 5</option>
-                                <option value="uk5.5">UK 5.5</option>
-                                <option value="uk6">UK 6</option>
-                                <option value="uk6.5">UK 6.5</option>
-                                <option value="uk7">UK 7</option>
-                                <option value="uk7.5">UK 7.5</option>
-                                <option value="uk8">UK 8</option>
-                                <option value="uk8.5">UK 8.5</option>
-                            </select>
+                        <div class="col-12 mt-5">
+                            <ul class="nav nav-tab">
+                                <li class="tab active m-3 text-center discover-btn"><a data-toggle="tab"
+                                        href="#common-size">Choose your size</a></li>
+                                <li class="tab m-3 text-center discover-btn"><a data-toggle="tab"
+                                        href="#custom">Customise</a></li>
+
+                            </ul>
+                            <div class="tab-content mb-5">
+                                <div id="common-size" class="tab-pane active">
+                                    <p><strong>Size:</strong></p>
+                                    <select class="form-control rounded-0 product_size" name="product_size"
+                                        id='id_product_size'>
+                                        <option value="uk4">UK 4</option>
+                                        <option value="uk4.5">UK 4.5</option>
+                                        <option value="uk5">UK 5</option>
+                                        <option value="uk5.5">UK 5.5</option>
+                                        <option value="uk6">UK 6</option>
+                                        <option value="uk6.5">UK 6.5</option>
+                                        <option value="uk7">UK 7</option>
+                                        <option value="uk7.5">UK 7.5</option>
+                                        <option value="uk8">UK 8</option>
+                                        <option value="uk8.5">UK 8.5</option>
+                                    </select>
+                                    {% endif %}
+                                </div>
+                                <div id="custom" class="tab-pane fade">
+
+                                    {% if s %}
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p><strong> Choose Color:</strong></p>
+                                            <select name="color" class="form-control mb-3 product_size">
+                                                <option value="" disabled selected>Choose Color</option>
+                                                {% for i in customs %}
+                                                <option value="{{i.color}}">{{i.color}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <p mt-3><strong>Choose Sole:</strong></p>
+                                            <select name="sole" class="form-control mb-3 product_size">
+                                                <option value="red">red</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p mt-3><strong>Select Size:</strong></p>
+                                            <select name="special_size" class="form-control mb-3 product_size">
+                                                <option value="red">red</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <p mt-3><strong> Select Logo:</strong></p>
+                                            <select name="logo" class="form-control mb-3 product_size">
+                                                <option value="red">red</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
                         </div>
-                        {% endif %}
+
                         <div class="col-12">
                             <p class="mt-3"><strong>Quantity:</strong></p>
                             <div class="form-group quantity-group">
@@ -101,6 +152,7 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
