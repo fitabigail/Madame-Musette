@@ -90,7 +90,7 @@
                             <p class="my-0">€ {{ item.product.price | calc_subtotal:item.quantity }}</p>
                         </td>
                     </tr>
-                    {% endfor %}
+                    {% endfor %}  
                     <tr>
                         <td colspan="5" class="pt-5 text-right">
                             <h6><strong>Cart Total: € {{ total|floatformat:2 }}</strong></h6>
@@ -128,6 +128,7 @@
                 <span class="text-uppercase"> <i class="fas fa-chevron-left"></i>Keep Shopping</span>
             </a>
             {% endif %}
+         
         </div>
     </div>
 </div>
