@@ -1,0 +1,40 @@
+{% extends "base_shop.html" %}
+{% load static %}
+{% block extra_title %}Order Completed{% endblock %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container order_container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Thank for your purchase</h2>
+            <hr>
+            <p class="text-black">Your order information is below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-7">
+
+        </div>
+               
+    </div>
+    <div class="row mb-5">
+        <div class="col-12 col-lg-7 text-right">
+            <a href="{% url 'products' %}?category=sales,new_arrivals" class="btn discover-btn checkout-btn rounded-0 my-2">
+                <span class="icon mr-2">
+                    <i class="fas fa-gifts"></i>
+                </span>
+                <span class="text-uppercase">See ours new deals!</span>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
