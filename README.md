@@ -263,7 +263,8 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 - Shopping cart is not display in line the quantity field on mobile view - fixed by changed the width to w-30
 - Empty Shopping cart footer was not stick to bottom - fixed by adding on base.css container height : auto
 - Empty products page footer is not sticky to bottom
-- cart shop on xsmall screens the quantity button is ont in line
+- cart shop on xsmall screens the quantity button is not in line
+- products detail page for no size products display problems
 
 > ## LightHouse
 </br></br>
