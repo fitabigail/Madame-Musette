@@ -11,11 +11,11 @@ from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
 
-    products = Product.objects.all() 
+    products = Product.objects.all()
     categories = None
     sort = None
     direction = None
-    
+
     if request.GET:
         if 'sort' in request.GET:
             sortkey = request.GET['sort']

@@ -14,7 +14,7 @@
   <div class="row mt-5 mb-5">
 
     <div class="col-lg-4 text-center">
-      <img class="w-50 shadow img-about" src="/media/modal-shoes.png" alt="About MadameMusette" style="width: 300px;"/>
+      <img class="w-50 shadow img-about" src="/media/modal-shoes.png" alt="About MadameMusette" style="width: 300px;" />
     </div>
     <div class="col-lg-8">
       <div class="p-2 mt-4">
@@ -36,7 +36,9 @@
           history with
           modernity, targeting growth on the international market. </p>
 
-        <a href="#contact_us_modal" class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Contact Us</a>
+        <a href="#contact_us_modal"
+          class="link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Contact
+          Us</a>
       </div>
     </div>
   </div>
@@ -50,25 +52,25 @@
   <div class="row lg-4 md-6 mt-5 mb-3 mx-auto justify-content-center">
     {% for designer in designers %}
 
-    <div class="card-group"  id="card-group-designers">
-    
-    <div class="col-sm justify-content-center">
-      <div class="card h-100 w-100 card  align-items-center">
-        <a href="{{ designer.facebook_link}}">
-          <img class="card-img-top img-fluid" src="{{ designer.image.url }}"
-            alt="{{ designer.first_name }}{{ designer.last_name }}"style="height: 600px;" >
-        </a>
-        <div class="card-body pb-0 text-center">
-          <h4 class="mb-1">{{ designer.first_name }}{{ designer.last_name }}</h4>
-          <h5 class="mb-1">{{ designer.hierarchy }}</h5>
-        </div>
-        <div class="card-footer bg-white pt-0 border-0 text-center">
-          <div class="row">
-            <div class="col">
-              <a class="lead text-center font-weight-bold mt-3 mb-3" href="{{ designer.facebook_link}}"
-                target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
-             <span>&nbsp &nbsp &nbsp</span>
-              <a class="lead mb-0 text-center font-weight-bold mt-3 mb-3" href="{{ designer.twiter_link} }"
+    <div class="card-group" id="card-group-designers">
+
+      <div class="col-sm justify-content-center">
+        <div class="card h-100 w-100 card  align-items-center">
+          <a href="{{ designer.facebook_link}}">
+            <img class="card-img-top img-fluid" src="{{ designer.image.url }}"
+              alt="{{ designer.first_name }}{{ designer.last_name }}" style="height: 600px;">
+          </a>
+          <div class="card-body pb-0 text-center">
+            <h4 class="mb-1">{{ designer.first_name }}{{ designer.last_name }}</h4>
+            <h5 class="mb-1">{{ designer.hierarchy }}</h5>
+          </div>
+          <div class="card-footer bg-white pt-0 border-0 text-center">
+            <div class="row">
+              <div class="col">
+                <a class="lead text-center font-weight-bold mt-3 mb-3" href="{{ designer.facebook_link}}"
+                  target="_blank" role="button"><i class="fab fa-facebook-f"></i></a>
+                <span>&nbsp &nbsp &nbsp</span>
+                <a class="lead mb-0 text-center font-weight-bold mt-3 mb-3" href="{{ designer.twiter_link} }"
                     target="_blank" role="button"><i class="fab fa-twitter"></i></a>                
 
                  
@@ -77,7 +79,7 @@
         </div>
       </div>
     </div>
-     
+    </div>
         {% endfor %}
   </div>
     
