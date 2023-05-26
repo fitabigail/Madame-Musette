@@ -253,6 +253,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 </br>
 
 ### Fixed bugs
+- - profile icon dropdown does not fit on screen - fixed with class = mx-5
 
 </br></br>
 
@@ -265,6 +266,8 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 - Empty products page footer is not sticky to bottom
 - cart shop on xsmall screens the quantity button is not in line
 - products detail page for no size products display problems
+ 
+- footer buttons need media query between 992 and 770
 
 > ## LightHouse
 </br></br>

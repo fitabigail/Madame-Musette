@@ -15,7 +15,7 @@
             </div>
         </div>
 
-        {% if product_count %}
+        {% if product_count and not on_profile_page %}
             <p class="logo-font bg-white text-black py-1">Your Cart ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in cart_items %}
