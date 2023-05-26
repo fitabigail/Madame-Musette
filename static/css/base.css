@@ -692,8 +692,12 @@ a:link{
 .confirm-email{
     margin-top: 8rem;
 }
+ /* ----- Add Product page --- */
 
-
+.add_product{
+    margin-top: 20rem;
+    height: 100%;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
