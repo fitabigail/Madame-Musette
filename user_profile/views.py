@@ -1,8 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
-
+from orders.models import Order, OrderProduct
 from .models import UserProfile
 from .forms import UserProfileForm
+
+# Copied fromBoutiqueAdo and adapted for MadameMusette
 
 
 def user_profile(request):
@@ -28,6 +30,23 @@ def user_profile(request):
         'form': form,
         'purchases': purchases,
         'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+def order_history(request, order_number):
+    purchases = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'orders/order_complete.html'
+    context = {
+        'purchases': purchases,
+        'from_profile': True,
     }
 
     return render(request, template, context)
