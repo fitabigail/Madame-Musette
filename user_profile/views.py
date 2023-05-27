@@ -1,12 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from orders.models import Order, OrderProduct
+
 from .models import UserProfile
 from .forms import UserProfileForm
 
 # Copied fromBoutiqueAdo and adapted for MadameMusette
 
-
+@login_required
 def user_profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
@@ -35,11 +37,13 @@ def user_profile(request):
     return render(request, template, context)
 
 
+# Order history view
+
 def order_history(request, order_number):
     purchases = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        f'This is a past confirmation for order number {order_number}. '
+        f'This is a past confirmation for order number {order_number}.'
         'A confirmation email was sent on the order date.'
     ))
 

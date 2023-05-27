@@ -9,10 +9,10 @@ class ProductAdmin(admin.ModelAdmin):
         return format_html('<img src="{}" width="50" height="50" style="border-radius: 50px" />'.format(obj.image.url))
 
     list_display = ('id', 'image_tag', 'name', 'category', 'price',
-                    'in_stock', 'is_customised', 'updated_date')
+                    'in_stock', 'is_customised',)
     list_display_links = ('image_tag', 'name')
     search_fields = ('name', 'category',)
-    list_filter = ('category', 'rating', 'is_customised', 'updated_date')
+    list_filter = ('category', 'rating', 'is_customised',)
     list_per_page = 20
     list_editable = ('in_stock', 'is_customised',)    
 

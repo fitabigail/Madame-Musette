@@ -36,9 +36,7 @@ class Product(models.Model):
     is_customised = models.BooleanField(default=False)
     designer_id = models.ForeignKey(Designer, on_delete=models.PROTECT,
                                     blank=True, null=True)
-    created_date = models.DateTimeField(auto_now_add=True)
-    updated_date = models.DateTimeField(auto_now=True)
-    
+   
     def __str__(self):
         return self.name
 
