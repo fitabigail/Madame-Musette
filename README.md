@@ -266,7 +266,8 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 - Empty products page footer is not sticky to bottom
 - cart shop on xsmall screens the quantity button is not in line
 - products detail page for no size products display problems
- 
+- Product manager page ratings fields alow negative values 
+- Add products manager can not update produc erro 'image' has no attribute when does not have image
 - footer buttons need media query between 992 and 770
 
 > ## LightHouse
@@ -368,6 +369,69 @@ This project was use Heroku service for deployment. The folowing steps have to b
 </ol>
 </ol>
 </br></br>
+
+### Database ElephantSql
+
+
+- In the terminal, install dj_database_url and psycopg2, both of these are needed to connect to your external database.
+
+ pip3 install dj_database_url==0.5.0 psycopg2
+Update your requirements.txt file with the newly installed packages
+
+ pip freeze > requirements.txt
+In your settings.py file, import dj_database_url underneath the import for os
+
+ import os
+ import dj_database_url
+
+Scroll to the DATABASES section and update it to the following code, so that the original connection to sqlite3 is commented out and we connect to the new ElephantSQL database instead. Paste in your ElephantSQL database URL in the position indicated
+
+ # DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+     
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+    
+DO NOT commit this file with your database string in the code, this is temporary so that we can connect to the new database and make migrations. We will remove it in a moment.
+
+In the terminal, run the showmigrations command to confirm you are connected to the external database
+
+ python3 manage.py showmigrations
+If you are, you should see a list of all migrations, but none of them are checked off
+
+a terminal showing migrations that have not been applied
+
+Migrate your database models to your new database
+
+ python3 manage.py migrate
+Load in the fixtures. Please note the order is very important here. We need to load categories first
+
+ python3 manage.py loaddata categories
+Then products, as the products require a category to be set
+
+ python3 manage.py loaddata products
+Create a superuser for your new database
+
+ python3 manage.py createsuperuser
+Follow the steps to create a your superuser username and password. The email address can be left blank.
+
+Finally, to prevent exposing our database when we push to GitHub, we will delete it again from our settings.py - we’ll set it up again using an environment variable in the next video - and reconnect to our local sqlite database. For now, your DATABASE setting in the settings.py file should look like this
+
+ DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.sqlite3',
+         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+     }
+ }
+On the ElephantSQL page for your database, in the left side navigation, select “BROWSER”
+Click the Table queries button, select auth_user
+When you click “Execute”, you should see your newly created superuser details displayed. This confirms your tables have been created and you can add data to your database
+
 
 ### Opening the Repository 
 

@@ -12,8 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
+
 from django.contrib.messages import constants as messages
 
 
@@ -28,9 +30,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -124,12 +128,16 @@ WSGI_APPLICATION = 'madame_musette.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+ }
 
 
 # Password validation

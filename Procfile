@@ -1,0 +1,1 @@
+web: gunicorn madame-musette.wsgi:application
