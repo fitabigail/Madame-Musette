@@ -3,6 +3,7 @@ from .models import Product, Category
 
 # Copied from BoutiqueAdo
 
+
 class ProductForm(forms.ModelForm):
 
     class Meta:

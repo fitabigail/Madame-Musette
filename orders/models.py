@@ -16,7 +16,9 @@ from user_profile.models import UserProfile
 class Order(models.Model):
    
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='purchases')
+    user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='purchases')
     full_name = models.CharField(max_length=50, null=False, blank=False)
     email = models.EmailField(max_length=254, null=False, blank=False)
     phone_number = models.CharField(max_length=20, null=False, blank=False)
@@ -26,7 +28,7 @@ class Order(models.Model):
     address_line_1 = models.CharField(max_length=80, null=False, blank=False)
     address_line_2 = models.CharField(max_length=80, null=True, blank=True)
     country = CountryField(blank_label='Country *', null=False, blank=False)
-    date = models.DateTimeField(auto_now_add=True)    
+    date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=6, decimal_places=2,
                                         null=False, default=0)
     order_total = models.DecimalField(max_digits=10, decimal_places=2,
@@ -34,7 +36,8 @@ class Order(models.Model):
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                       null=False, default=0)
     original_cart = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
 
     def full_address(self):
         return f'{self.address_line_1} {self.address_line_2}'
@@ -79,7 +82,7 @@ class OrderProduct(models.Model):
                                 on_delete=models.CASCADE)
     product_size = models.CharField(max_length=2, null=True, blank=True)
     customised = models.ManyToManyField(Customise, blank=True)
-    quantity = models.IntegerField(null=False, blank=False, default=0)   
+    quantity = models.IntegerField(null=False, blank=False, default=0)
     orderitem_total = models.DecimalField(max_digits=6, decimal_places=2,
                                           null=False, blank=False,
                                           editable=False)
@@ -91,6 +94,6 @@ class OrderProduct(models.Model):
         """
         self.orderitem_total = self.product.price * self.quantity
         super().save(*args, **kwargs)
-    
+
     def __str__(self):
         return f'ID {self.product.id} on order {self.order.order_number}'
