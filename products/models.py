@@ -1,11 +1,12 @@
 from django.shortcuts import reverse
+from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 from home.models import Designer
 
 
-# Create your models here.
+# PRODUCT CATEGORIES MODEL
 
 
 class Category(models.Model):
@@ -19,7 +20,9 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        return self.friendly_name
+        return self.friendly_name   
+
+# PRODUCT MODEL
 
 
 class Product(models.Model):
@@ -36,9 +39,15 @@ class Product(models.Model):
     is_customised = models.BooleanField(default=False)
     designer_id = models.ForeignKey(Designer, on_delete=models.PROTECT,
                                     blank=True, null=True)
-   
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    like = models.ManyToManyField(
+        User, related_name='product_liked', blank=True)
+
     def __str__(self):
         return self.name
+
+# PRODUCT CUSTOMISED MODEL
 
 
 customised_sole = (
