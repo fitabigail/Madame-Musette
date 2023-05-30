@@ -1,1 +1,1 @@
-web: gunicorn madame-musette.wsgi:application
+web: gunicorn madame_musette.wsgi:application
