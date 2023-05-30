@@ -29,6 +29,8 @@ class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)   
     name = models.CharField(max_length=254)
+    user_name = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="user_like", null=True)
     description = RichTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
