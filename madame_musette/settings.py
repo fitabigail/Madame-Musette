@@ -12,19 +12,23 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+if os.path.exists("env.py"):
+    import env 
 import dj_database_url
 from django.contrib.messages import constants as messages
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '')
+# SECRET_KEY = os.environ.get('SECRET_KEY', '')
+SECRET_KEY = '91&3u4si9k28=9q8o8)*%z2kd9&p^jd^f%3np-v5za)w4r94@='
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
