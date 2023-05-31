@@ -4,6 +4,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from multiselectfield import MultiSelectField
 from home.models import Designer
+from user_profile.models import UserProfile
 
 
 # PRODUCT CATEGORIES MODEL
@@ -27,10 +28,10 @@ class Category(models.Model):
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
-                                 on_delete=models.SET_NULL)   
-    name = models.CharField(max_length=254)
+                                 on_delete=models.SET_NULL)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_like", null=True)
+    name = models.CharField(max_length=254)      
     description = RichTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
@@ -74,7 +75,16 @@ customised_special_size = (
 
 
 class Customise(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)    
+    user_name = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="custom_name",
+        null=True)
+    full_name = models.CharField(max_length=100,
+                                 null=True)
+    email = models.EmailField(max_length=100,
+                              null=True)
+    phone_number = models.CharField(max_length=20,
+                                    null=True, blank=True)
     sole = models.CharField(max_length=150,
                             choices=customised_sole)
     color = models.CharField(max_length=150,
@@ -82,8 +92,10 @@ class Customise(models.Model):
     logo = models.BooleanField(default=False)
     special_size = models.CharField(max_length=150,
                                     choices=customised_special_size)
+    details = models.TextField(blank=True)
 
     created_date = models.DateTimeField(auto_now_add=True)
 
-    def __unicode__(self):
-        return self.product
+    def __str__(self):
+        return f"{self.user_name}: Your request will be reviewed soon, \
+            and we will replay by email."

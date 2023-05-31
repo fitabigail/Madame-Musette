@@ -7,6 +7,7 @@ django-allauth==0.41.0
 django-ckeditor==6.5.1
 django-countries==7.2.1
 django-crispy-forms==1.14.0
+django-formtools==2.3
 django-js-asset==2.0.0
 django-multiselectfield==0.1.12
 django-storages==1.13.2

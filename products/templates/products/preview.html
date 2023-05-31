@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load i18n %}
+
+{% block content %}
+<div class="container w-50">
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <hr>
+            <h1 class="logo-font mb-4">Product Customise</h1>
+            <hr>
+            <h2>{% translate "Preview your submission" %}</h2>
+
+            <table class="table">
+                {% for field in form %}
+                <tr>
+                    <th>{{ field.label }}:</th>
+                    <td>{{ field.data }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            <p>{% blocktranslate %}Security hash: {{ hash_value }}{% endblocktranslate %}</p>
+
+            <form action="" method="post">{% csrf_token %}
+                {% for field in form %}{{ field.as_hidden }}
+                {% endfor %}
+                <input type="hidden" name="{{ stage_field }}" value="2" />
+                <input type="hidden" name="{{ hash_field }}" value="{{ hash_value }}" />
+                <p><input class="btn btn-outline-dark discover-btn" type="submit" value="{% translate "Submit" %}" /></p>
+            </form>
+
+            <h1>{% translate "Or edit it again" %}</h1>
+
+            <form action="" method="post">{% csrf_token %}
+                <table>
+                    {{ form|crispy }}
+                </table>
+                <input class="btn btn-outline-dark discover-btn" type="hidden" name="{{ stage_field }}" value="1" />
+                <p><input class="btn btn-outline-dark discover-btn" type="submit" value="{% translate "Preview" %}" /></p>
+            </form>
+        </div>
+    </div></div>
+    {% endblock %}

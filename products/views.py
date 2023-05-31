@@ -1,11 +1,14 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
-from .models import Product, Category
-from .forms import ProductForm
+from formtools.preview import FormPreview
+from .models import Product, Category, Customise
+from .forms import ProductForm, CustomiseForm
 from django.db.models.functions import Lower
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+
+AUTO_ID = 'formtools_%s'
 
 # All products view.
 
@@ -75,6 +78,23 @@ def product_detail(request, product_id):
 # Product manager function copied from BoutiqueAdo
 # Add product view
 
+# PRODUCT CUSTOMISE VIEW
+
+
+class CustomiseFormPreview(FormPreview):
+    form_template = 'products/customise.html'
+    preview_template = 'products/preview.html'
+
+    def parse_params(self, request, *args, **kwargs):
+
+        pass
+
+    def done(self, request, cleaned_data):
+        Customise.objects.create(**cleaned_data)
+        messages.success(request, 'Your Request was succesfuly registred, and \
+                on short time we will contact you by email.')
+        return redirect(reverse('home'))
+        
 
 @login_required
 def add_product(request):
