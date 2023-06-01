@@ -6,7 +6,8 @@ from orders.models import Order, OrderProduct
 from .models import UserProfile
 from .forms import UserProfileForm
 
-# Copied fromBoutiqueAdo and adapted for MadameMusette
+# USER PROFILE (Copied fromBoutiqueAdo and adapted for MadameMusette
+
 
 @login_required
 def user_profile(request):
@@ -37,7 +38,7 @@ def user_profile(request):
     return render(request, template, context)
 
 
-# Order history view
+# ORDER HISTORY VIEW
 
 def order_history(request, order_number):
     purchases = get_object_or_404(Order, order_number=order_number)

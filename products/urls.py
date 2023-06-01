@@ -5,7 +5,7 @@ from .forms import CustomiseForm
 
 urlpatterns = [
     path('', views.all_products, name='products'),
-    path('<int:product_id>/', views.product_detail, name='product_detail'),    
+    path('<int:product_id>/', views.product_detail, name='product_detail'),
     path('customise/', views.CustomiseFormPreview(CustomiseForm),
          name='customise'),
     path('search/', views.search, name='search'),

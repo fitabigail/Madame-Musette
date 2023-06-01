@@ -10,7 +10,7 @@ from django.contrib import messages
 
 def index(request):
     """ A view to return the index page """
-    
+
     return render(request, 'home/index.html')
 
 # Contact form view here
@@ -21,7 +21,8 @@ def contactView(request):
         form = ContactForm(request.POST or None)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Your message was send succesfuly, soon one of our team member will contact you!')
+            messages.success(request, 'Your message was send succesfuly, \
+                        soon one of our team member will contact you!')
             return HttpResponseRedirect('/')
 
 # About page view

@@ -140,7 +140,7 @@ def order(request):
     return render(request, template, context)
 
 
-# Completed Order here.
+# ORDER COMPLETE VIEW.
 
 
 def order_complete(request, order_number):

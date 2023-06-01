@@ -10,13 +10,17 @@ class ContactForm(forms.ModelForm):
         fields = ['full_name', 'email', 'subject', 'message']
         labels = {
             'full_name': '',
-            'email': '',     
+            'email': '',
             'message': '',
-        }        
-  
+        }
+
         widgets = {
-            'full_name': forms.TextInput(attrs={'class': 'form-control text-mute mb-3', 'placeholder': 'Full Name'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control mb-3', 'placeholder': 'Email'}),
-            'subject': forms.RadioSelect(attrs={'class': 'form-check form-check-inline list-unstyled mb-3'}),            
-            'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Write message'}),
-            }
+            'full_name': forms.TextInput(attrs={'class': 'form-control \
+                text-mute mb-3', 'placeholder': 'Full Name'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control \
+                mb-3', 'placeholder': 'Email'}),
+            'subject': forms.RadioSelect(attrs={'class': 'form-check \
+                form-check-inline list-unstyled mb-3'}),
+            'message': forms.Textarea(attrs={
+                'class': 'form-control', 'placeholder': 'Write message'}),
+         }

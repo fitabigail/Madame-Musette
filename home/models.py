@@ -20,7 +20,7 @@ class Contact(models.Model):
     created_on = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.name
+        return self.subject
 
 
 # Designers model
@@ -33,7 +33,7 @@ class Designer(models.Model):
     image = models.ImageField(null=True, blank=True)
     facebook_link = models.URLField(max_length=100)
     twiter_link = models.URLField(max_length=100)
-    created_on = models.DateField(auto_now_add=True) 
+    created_on = models.DateField(auto_now_add=True)
 
     def __str__(self):
         return (f"{self.first_name}  {self.last_name}")

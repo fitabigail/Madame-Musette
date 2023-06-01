@@ -41,15 +41,15 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories,
                                        in_stock=True)
-            categories = Category.objects.filter(name__in=categories)  
+            categories = Category.objects.filter(name__in=categories)
 
     page_num = request.GET.get('page', 1)
     paginator = Paginator(products, 16)
     try:
         page_obj = paginator.page(page_num)
-    except PageNotAnInteger:        
+    except PageNotAnInteger:
         page_obj = paginator.page(1)
-    except EmptyPage:       
+    except EmptyPage:
         page_obj = paginator.page(paginator.num_pages)
 
     sorting_products = f'{sort}_{direction}'
@@ -94,7 +94,7 @@ class CustomiseFormPreview(FormPreview):
         messages.success(request, 'Your Request was succesfuly registred, and \
                 on short time we will contact you by email.')
         return redirect(reverse('home'))
-        
+
 
 @login_required
 def add_product(request):
@@ -110,10 +110,11 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. Please\
+                 ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -174,6 +175,7 @@ def search(request):
             query = Q(name__icontains=keyword) | Q(description__icontains=keyword)
             products = Product.objects.order_by('-updated_date').filter(query)
             product_count = products.count()
+
     data = {
         'keyword': keyword,
         'products': products,

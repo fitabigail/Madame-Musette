@@ -21,7 +21,7 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        return self.friendly_name   
+        return self.friendly_name
 
 # PRODUCT MODEL
 
@@ -31,7 +31,7 @@ class Product(models.Model):
                                  on_delete=models.SET_NULL)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="user_like", null=True)
-    name = models.CharField(max_length=254)      
+    name = models.CharField(max_length=254)
     description = RichTextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True,
@@ -69,18 +69,26 @@ customised_color = (
 customised_special_size = (
     ('UK 3', 'UK 3'),
     ('UK 3.5', 'UK 3.5'),
+    ('UK 4', 'UK 4'),
+    ('UK 4.5', 'UK 4.5'),
+    ('UK 5', 'UK 5'),
+    ('UK 5.5', 'UK 5.5'),
+    ('UK 6', 'UK 6'),
+    ('UK 6.5', 'UK 6.5'),
+    ('UK 7', 'UK 7'),
+    ('UK 7.5', 'UK 7.5'),
+    ('UK 8', 'UK 8'),
+    ('UK 8.5', 'UK 8.5'),
     ('UK 9', 'UK 9'),
     ('UK 9', 'UK 9'),
 )
 
 
 class Customise(models.Model):
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)    
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     user_name = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="custom_name",
         null=True)
-    full_name = models.CharField(max_length=100,
-                                 null=True)
     email = models.EmailField(max_length=100,
                               null=True)
     phone_number = models.CharField(max_length=20,

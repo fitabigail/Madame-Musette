@@ -52,7 +52,7 @@
                                 <td>{{ purchase.date }}</td>
                                 <td>
                                     <ul class="list-unstyled">
-                                        {% for item in purchase.orderitems.all %}
+                                        {% for item in purchases.orderitems.all %}
                                             <li class="small">
                                                 {% if item.product.has_sizes %}
                                                     Size {{ item.product.size|upper }}

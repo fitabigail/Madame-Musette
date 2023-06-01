@@ -26,16 +26,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
-#SECRET_KEY = ')(4s!@mdb@$6%c&7+mgglj#yuy2)#__y+3s$(^v_(^8)%7&j=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
-#DEBUG = True
+# DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-jkk0b49zkyx.ws-eu98.gitpod.io']
-
 
 # Application definition
 
@@ -59,7 +57,6 @@ INSTALLED_APPS = [
     'user_profile',
     'storages',
     'formtools',
-    
 ]
 
 MIDDLEWARE = [

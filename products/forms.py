@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 from .widgets import CustomClearableFileInput
 from .models import Product, Category, Customise
 from user_profile.models import UserProfile
@@ -17,7 +18,7 @@ class ProductForm(forms.ModelForm):
                              widget=CustomClearableFileInput)
 
     def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)       
+        super().__init__(*args, **kwargs)
 
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
@@ -29,35 +30,35 @@ class ProductModelChoiceField(ModelChoiceField):
         return "Product #%s %s / %s" % (obj.id, obj.name, obj.category)
 
 
-class CustomiseForm(forms.ModelForm): 
+class CustomiseForm(forms.ModelForm):
     product = ProductModelChoiceField(queryset=Product.objects.all())
 
     class Meta:
         model = Customise
-        fields = ('full_name', 'email', 'phone_number', 'sole', 'color',
-                  'logo', 'special_size', 'details')
-        
+        exclude = ('created_date',)
+
     def __init__(self, *args, **kwargs):
         """
         Add placeholders and classes, remove auto-generated
         labels and set autofocus on first field
+
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'full_name': 'Full Name',
+            'user_name': 'Username',
             'email': 'Email',
-            'phone_number': 'phone_number',
+            'phone_number': 'Phone_number',
             'product': 'Choose Product',
             'sole': 'Choose Sole',
             'color': 'Chose Color',
             'logo': '',
             'special_size': 'Choose Size',
-            'details': 'Details'
+            'details': 'Write here some specific requirements.'
         }
 
         self.fields['product'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'details':
+            if field != ['sole', 'color', 'special_size', 'product']:
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]}'
                 else:
@@ -65,5 +66,3 @@ class CustomiseForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black \
                 rounded-0 profile-form-input'
-
-

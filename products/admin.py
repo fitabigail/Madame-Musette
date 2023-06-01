@@ -12,10 +12,9 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('id', 'image_tag', 'name', 'category', 'price',
                     'in_stock', 'is_customised', 'updated_date')
     list_display_links = ('image_tag', 'name')
-    search_fields = ('name', 'category',)
     list_filter = ('category', 'rating', 'is_customised', 'updated_date')
     list_per_page = 20
-    list_editable = ('in_stock', 'is_customised',)      
+    list_editable = ('in_stock', 'is_customised',)
 
     ordering = ('id',)
 
@@ -25,7 +24,7 @@ class CategoryAdmin(admin.ModelAdmin):
         'friendly_name',
         'name',
     )
-    
+
 
 class CustomisedAdmin(admin.ModelAdmin):
     list_display = ('product', 'sole', 'color',

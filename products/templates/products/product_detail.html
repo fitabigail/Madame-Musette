@@ -33,19 +33,28 @@
             </div>
             <hr class="mb-5"> <br>
 
-            <div class="designer_name mt-8 float-left">
-                {% if user.is_authenticated %}
-                <input type="hidden" name="user_id" value="{{user.id}}">
-                {% else %}
-                <input type="hidden" name="user_id" value="0">
+            <div class="designer_name mt-8 float-left">                
 
-                {% endif %}
-                {% with product.has_sizes as s %}
+                
+              
+                {% with product.has_sizes as s %}                
                     {% if s %}
+                    {% if user.is_authenticated %}         
                         <a href="{% url 'customise' %}" class="link-offset-3-hover "><strong class="mr-5">For Customised Product CLICK
                             here.</strong></a>
+                    {% else %}
+                    <p>For <strong> Customise Product</strong> you need to
+                        <a class=" mr-1 ml-1 text-orange" href="{% url 'account_signup' %}"> Sign-Up </a>
+                        <span> or </span>
+                        <a class="mr-1 ml-1 text-orange" href="{% url 'account_login' %}"> Log-In </a>
+                    </p>
                     {% endif %}
+                    {% endif %}                           
                 {% endwith %}
+                
+
+                
+
             </div>
 </div>
 
