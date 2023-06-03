@@ -1,14 +1,10 @@
-from django.shortcuts import reverse
 from django.contrib.auth.models import User
 from django.db import models
 from ckeditor.fields import RichTextField
-from multiselectfield import MultiSelectField
 from home.models import Designer
-from user_profile.models import UserProfile
 
 
 # PRODUCT CATEGORIES MODEL
-
 
 class Category(models.Model):
     class Meta:
@@ -22,6 +18,7 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+
 
 # PRODUCT MODEL
 
@@ -80,7 +77,7 @@ customised_special_size = (
     ('UK 8', 'UK 8'),
     ('UK 8.5', 'UK 8.5'),
     ('UK 9', 'UK 9'),
-    ('UK 9', 'UK 9'),
+    ('UK 9.5', 'UK 9.5'),
 )
 
 
@@ -107,3 +104,31 @@ class Customise(models.Model):
     def __str__(self):
         return f"{self.user_name}: Your request will be reviewed soon, \
             and we will replay by email."
+
+
+# REVIEW AND RATINGS
+
+
+class Review(models.Model):
+    rating = [
+              (1, '1'),
+              (2, '2'),
+              (3, '3'),
+              (4, '4'),
+              (5, '5'),
+    ]
+
+    product = models.ForeignKey(Product(), related_name="reviews",
+                                on_delete=models.CASCADE)
+    body = models.TextField(max_length=300, null=False, blank=False)
+    author = models.ForeignKey(User, related_name="author",
+                               on_delete=models.CASCADE)    
+    rating = models.IntegerField(choices=rating, default='5',
+                                 null=False, blank=False)
+    date_created = models.DateField(auto_now_add=True)
+
+    class Meta:
+        ordering = ('date_created',)
+
+    def __str__(self):
+        return f'Review {self.body} by {self.author}'

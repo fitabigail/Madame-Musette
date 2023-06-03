@@ -1,20 +1,15 @@
 {% load socialaccount %}
+{% providers_media_js %}
 
-{% get_providers as socialaccount_providers %}
 
-{% for provider in socialaccount_providers %}
-{% if provider.id == "openid" %}
-{% for brand in provider.get_brands %}
-<li>
-  <a title="{{brand.name}}" 
-     class="socialaccount_provider {{provider.id}} {{brand.id}}" 
-     href="{% provider_login_url provider.id openid=brand.openid_url process=process %}"
-     >{{brand.name}}</a>
-</li>
-{% endfor %}
-{% endif %}
-<li>
-  <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}}" 
-     href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">{{provider.name}}</a>
-</li>
-{% endfor %}
+
+<div class="row">
+
+  <div class="col-sm p-2">
+  <a href="{% provider_login_url 'facebook' method='js_sdk' %}" class="btn btn-lg btn-social btn-facebook"><i class="fa fa-facebook facebook-i"></i><span>Facebook</span></a><br>
+ </div>
+ <div class="col-sm p-2">
+ <a href="{% provider_login_url 'google' %}" class="btn btn-lg btn-social btn-google text-uppercase btn-outline"><img src="https://img.icons8.com/color/16/000000/google-logo.png"><span>Google</span></a>
+</div>
+
+</div>

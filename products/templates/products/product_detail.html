@@ -26,21 +26,19 @@
                 {% endif %}
             </div>
             <div class="row">
-            <div class="designer_name mt-8 ml-10  float-left">
-                Designed by: <a href="{% url 'about' %}#card-group-designers"
-                    class="link-offset-3-hover"><strong>{{ product.designer_id.first_name }}
-                        {{ product.designer_id.last_name }}</strong></a>
-            </div>
-            <hr class="mb-5"> <br>
+                <div class="designer_name mt-8 ml-10 pl-3 float-left">
+                    Designed by: <a href="{% url 'about' %}#card-group-designers"
+                        class="link-offset-3-hover"><strong>{{ product.designer_id.first_name }}
+                            {{ product.designer_id.last_name }}</strong></a>
 
-            <div class="designer_name mt-8 float-left">                
+                </div>
+                <hr class="mb-5"> <br>
 
-                
-              
-                {% with product.has_sizes as s %}                
-                    {% if s %}
-                    {% if user.is_authenticated %}         
-                        <a href="{% url 'customise' %}" class="link-offset-3-hover "><strong class="mr-5">For Customised Product CLICK
+                <div class="mt-8 float-left">
+
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'customise' %}" class="link-offset-3-hover "><strong class="mr-5">For Customised
+                            Product CLICK
                             here.</strong></a>
                     {% else %}
                     <p>For <strong> Customise Product</strong> you need to
@@ -49,15 +47,38 @@
                         <a class="mr-1 ml-1 text-orange" href="{% url 'account_login' %}"> Log-In </a>
                     </p>
                     {% endif %}
-                    {% endif %}                           
-                {% endwith %}
-                
-
-                
+                </div>
 
             </div>
-</div>
+            <div class="row">
+                {%  for review in product.reviews.all %}
+                <div class="row">
+                    <span style="color:#9b5412;">{{ review.rating }} <i class="fa-solid fa-star"
+                            style="color:#9b5412;"></i></span>
+                </div>
+                <br>
+                <div class="row">
+                    {{ review.body }}
+                </div>
+                </br>
 
+                {% endfor %}
+            </div>
+            <div class="row">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <label for="">Add comment</label>
+                    </div>
+                    <div>
+                        {{review_form.body }}
+                    </div>
+                    <div>
+                        <input type="hidden" name="product_review_id" id="product_review_id" value="{{ product.id }}">
+                    </div>
+                    <button type="submit">Submit Review</button>
+                </form>
+            </div>
         </div>
         <!--Product Details-->
         <div class="col-12 col-md-6 col-lg-4">
@@ -165,4 +186,5 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+
 {% endblock %}

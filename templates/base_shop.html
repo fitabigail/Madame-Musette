@@ -67,9 +67,19 @@
                 </button>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{% url 'products' %}">All Products</a>
-                    {% for category in list %}
-                    <a class="dropdown-item" href="{{category.get_absolute_url.id}}">{{ category.friendly_name }}</a>
-                    {% endfor %}
+                    <a href="{% url 'products' %}?category=pumps" class="dropdown-item">Pumps</a>
+                <a href="{% url 'products' %}?category=sandals" class="dropdown-item ">Sandals</a>
+                <a href="{% url 'products' %}?category=Sneakers" class="dropdown-item ">Sneakers</a>
+                 <div class="dropdown-divider"></div> 
+                <a href="{% url 'products' %}?category=shoulder_bags" class="dropdown-item">Shoulder Bags</a>
+                <a href="{% url 'products' %}?category=cluch_evening_bags" class="dropdown-item">Cluch & Evening Bags</a>
+                <a href="{% url 'products' %}?category=backpacks" class="dropdown-item">Backpacks</a>
+                <div class="dropdown-divider"></div> 
+                <a href="{% url 'products' %}?category=wallets" class="dropdown-item">Wallets</a>
+                <a href="{% url 'products' %}?category=belts" class="dropdown-item">Belts</a>
+                <a href="{% url 'products' %}?category=sales" class="dropdown-item">Sales</a>
+                <a href="{% url 'products' %}?category=New Arrivals" class="dropdown-item">New Arrivals</a>
+                    
                 </div>
             </div>
         </div>
@@ -85,9 +95,7 @@
                     <a href="{% url 'products' %}?sort=price&direction=desc" class="dropdown-item">Price: <small
                             class="text-muted">high to low</small> </a>
                     <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">Rating: <small
-                            class="text-muted">high to low</small></a>
-                    <a href="{% url 'products' %}?sort=is_customized&direction=asc"
-                        class="dropdown-item ">Customised</a>
+                            class="text-muted">high to low</small></a>                    
                     <div class="dropdown-divider"></div>
                     <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
 

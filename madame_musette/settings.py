@@ -37,6 +37,8 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-rj8r8zr75ke.ws-eu98.gitpod.io']
 
+LOGIN_REDIRECT_URL = '/'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -61,6 +63,10 @@ INSTALLED_APPS = [
     'user_profile',
     'storages',
     'formtools',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'mathfilters',
+
 ]
 
 MIDDLEWARE = [
@@ -115,6 +121,33 @@ AUTHENTICATION_BACKENDS = (
 )
 
 SITE_ID = 1
+
+# Provider specific settings
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '',
+            'secret': '',
+            'key': ''
+        }
+    },
+
+    'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '',
+            'secret': '',
+            'key': ''
+        }
+    }
+
+
+}
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True

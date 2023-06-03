@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Customise
+from .models import Product, Category, Customise, Review
 from django.utils.html import format_html
 
 
@@ -20,10 +20,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'friendly_name',
-        'name',
-    )
+    list_display = ('friendly_name', 'name')
 
 
 class CustomisedAdmin(admin.ModelAdmin):
@@ -33,6 +30,11 @@ class CustomisedAdmin(admin.ModelAdmin):
                    'color', 'special_size')
 
 
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ('author', 'date_created')
+
+
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Customise, CustomisedAdmin)
+admin.site.register(Review, ReviewAdmin)

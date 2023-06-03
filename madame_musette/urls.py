@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import handler404, handler500, handler403, handler405
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,3 +31,9 @@ urlpatterns = [
     path('user_profile/', include('user_profile.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'madame_musette.views.handler404'
+handler500 = 'madame_musette.views.handler500'
+handler403 = 'madame_musette.views.handler403'
+handler405 = 'madame_musette.views.handler405'

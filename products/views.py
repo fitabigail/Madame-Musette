@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from formtools.preview import FormPreview
 from .models import Product, Category, Customise
-from .forms import ProductForm, CustomiseForm
+from .forms import ProductForm, CustomiseForm, ReviewForm
 from django.db.models.functions import Lower
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
@@ -20,6 +20,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    logged_user = request.user
 
     if request.GET:
         if 'sort' in request.GET:
@@ -58,19 +59,21 @@ def all_products(request):
         'products': page_obj,
         'categories': categories,
         'sorting_products': sorting_products,
+        'logged_user': logged_user,
     }
     return render(request, 'products/products.html', context)
+
 
 # Product details view
 
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-
-    product = get_object_or_404(Product, pk=product_id)
-
+    product = get_object_or_404(Product, pk=product_id)   
+   
     context = {
         'product': product,
+        
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -85,9 +88,9 @@ class CustomiseFormPreview(FormPreview):
     form_template = 'products/customise.html'
     preview_template = 'products/preview.html'
 
-    def parse_params(self, request, *args, **kwargs):
+    #def parse_params(self, request, *args, **kwargs):
 
-        pass
+       # pass
 
     def done(self, request, cleaned_data):
         Customise.objects.create(**cleaned_data)
@@ -182,3 +185,15 @@ def search(request):
         'product_count': product_count,
         }
     return render(request, 'products/products.html', data)
+
+# LIKE PRODUCT VIEW
+
+
+def like_product(request):
+    product_id = request.POST.get('product_id')
+    product = get_object_or_404(Product, id=product_id)
+    if product.like.filter(id=request.user.id).exists():
+        product.like.remove(request.user)
+    else:
+        product.like.add(request.user)
+    return redirect('products')

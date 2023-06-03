@@ -1,4 +1,5 @@
 {% extends "base_shop.html" %}
+{% load mathfilters %}
 {% load static %}
 {% block extra_title %}Products{% endblock %}
 {% block content %}
@@ -101,18 +102,36 @@
                                             {{ product.price }}</p>
 
                                         {% if product.rating %}
-                                        <small class="text-muted text-left mr-5"><i
+                                        <small class="text-muted text-left"><i
                                                 class="fas fa-star mr-1"></i>{{ product.rating }} /
                                             5</small>
                                         {% else %}
                                         <small class="text-muted text-left mr-5">No Rating</small>
                                         {% endif %}
                                         <span class="text-right ml-5">
-                                            <i class="far fa-heart" style="cursor: pointer"></i>
+                                            <a id="{{ product.id }}" class="btn-like">
+                                                {% if logged_user in product.like.all %}
+                                                    <i class="fa-solid fa-heart fa-sm" style="color: #ce7227;"></i>
+                                                {% else %}
+                                                     <i class="far fa-heart" style="cursor: pointer"></i>
+                                                {% endif %}
+                                            </a>                                            
                                         </span>
+                                        <small class=" text-muted ">
+                                        {% if product.like.count < 1 %}
+                                        {% elif product.like.count == 1 %}    
+                                        {% elif product.like.count > 1 %}
+                                         {{ product.like.count|sub:1 }} Likes
+                                        {% endif %}
+                                    </small>
                                     </div>
-                                   
+                                  
                                 </div>
+                                 <div>
+                                   
+                                    
+                                    
+                                   </div>
                                  {% if request.user.is_superuser %}
                                     <small class="mt-5 float-right">
                                         <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -223,6 +242,17 @@
 
             window.location.replace(currentUrl);
         }
+    })
+
+    window.CSRF_TOKEN ="{{ csrf_token }}"
+    $(document).on('click', '.btn-like', function(){
+        var product_id = this.id
+        $.ajax({
+            method:"POST",
+            url:'/products/like',
+            data:{product_id:product_id, csrfmiddlewaretoken:window.CSRF_TOKEN}
+        })
+        window.location.href="https://8000-fitabigail-madamemusett-rj8r8zr75ke.ws-eu98.gitpod.io/products/"
     })
 </script>
 {% endblock %}

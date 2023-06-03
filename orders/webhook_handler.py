@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from django.conf import settings
 
 from .models import Order, OrderProduct
 from products.models import Product
@@ -8,6 +9,8 @@ from user_profile.models import UserProfile
 
 import json
 import time
+
+import stripe
 
 # Code copied from BoutiqueAdo
 

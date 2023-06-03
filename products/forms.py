@@ -1,11 +1,11 @@
 from django import forms
 from django.contrib.auth.models import User
 from .widgets import CustomClearableFileInput
-from .models import Product, Category, Customise
+from .models import Product, Category, Customise, Review
 from user_profile.models import UserProfile
 from django.forms import ModelChoiceField
 
-# Copied from BoutiqueAdo
+# PRODUCT FORM (Copied from BoutiqueAdo)
 
 
 class ProductForm(forms.ModelForm):
@@ -19,10 +19,15 @@ class ProductForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        categories = Category.objects.all()
+        friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
 
         self.fields['category'].choices = friendly_names
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
+
+
+# CUSTOMISE FORM
 
 
 class ProductModelChoiceField(ModelChoiceField):
@@ -66,3 +71,33 @@ class CustomiseForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'border-black \
                 rounded-0 profile-form-input'
+
+
+# REVIEW FORM 
+
+class ReviewForm(forms.ModelForm):
+
+    class Meta:
+        model = Review
+        fields = ('body', 'rating', )
+
+    def __init__(self, *args, **kwargs):
+        """
+        Add placeholders and classes, remove auto-generated
+        labels and set autofocus on first field
+        """
+        super().__init__(*args, **kwargs)
+        placeholders = {
+            'body': 'Write your review here.',
+        }
+
+        self.fields['body'].widget.attrs['autofocus'] = True
+        for field in self.fields:
+            if field != 'rating':
+                if self.fields[field].required:
+                    placeholder = f'{placeholders[field]} *'
+                else:
+                    placeholder = placeholders[field]
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False
