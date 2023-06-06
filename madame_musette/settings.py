@@ -33,7 +33,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-pat0sldzdmc.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost']
 
 LOGIN_REDIRECT_URL = '/'
 
