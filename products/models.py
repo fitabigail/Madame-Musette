@@ -98,13 +98,11 @@ class Customise(models.Model):
     special_size = models.CharField(max_length=150,
                                     choices=customised_special_size)
     details = models.TextField(blank=True)
-
     created_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f"{self.user_name}: Your request will be reviewed soon, \
             and we will replay by email."
-
 
 # REVIEW AND RATINGS
 
@@ -121,8 +119,7 @@ class Review(models.Model):
     product = models.ForeignKey(Product(), related_name="reviews",
                                 on_delete=models.CASCADE)
     body = models.TextField(max_length=300, null=False, blank=False)
-    author = models.ForeignKey(User, related_name="author",
-                               on_delete=models.CASCADE)    
+    author = models.CharField(max_length=200)
     rating = models.IntegerField(choices=rating, default='5',
                                  null=False, blank=False)
     date_created = models.DateField(auto_now_add=True)

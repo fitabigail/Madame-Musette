@@ -1,0 +1,36 @@
+{% extends "base_shop.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block extra_title %}Add Review{% endblock %}
+
+<!-- Copied from BoutiqueAdo -->
+
+{% block content %} 
+
+    <div class="container add_product h-100">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h2 class="logo-font mb-4">Add review</h2>
+                
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="" class="form mb-2">
+                    {% csrf_token %}
+                    
+                            {{ form | crispy }}
+                       
+                    <div class="text-right">
+                        <a class="btn btn btn-outline-dark discover-btn w-25 float-right" id="cancel-add" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn btn-outline-dark discover-btn w-25 mr-5" type="submit">Add Review</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+

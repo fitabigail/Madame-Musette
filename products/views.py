@@ -3,14 +3,15 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from formtools.preview import FormPreview
-from .models import Product, Category, Customise
+from .models import Product, Category, Customise, Review
 from .forms import ProductForm, CustomiseForm, ReviewForm
 from django.db.models.functions import Lower
+from datetime import datetime
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 AUTO_ID = 'formtools_%s'
 
-# All products view.
+# ALL PRODUCTS VIEW.
 
 
 def all_products(request):
@@ -64,39 +65,74 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-# Product details view
+# PRODUCT DETAILS VIEW
 
 
 def product_detail(request, product_id):
     """ A view to show individual product details """
-    product = get_object_or_404(Product, pk=product_id)   
-   
+    product = get_object_or_404(Product, pk=product_id)
+
+    num_review = Review.objects.filter(product=product).count()
     context = {
         'product': product,
-        
+        'num_review': num_review,
     }
 
     return render(request, 'products/product_detail.html', context)
 
-# Product manager function copied from BoutiqueAdo
-# Add product view
+# REVIEW PRODUCT VIEW
+
+
+def add_review(request, pk):
+    product = Product.objects.get(id=pk)
+    form = ReviewForm(instance=product)   
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=product)
+       
+        if form.is_valid():
+            name = request.user.username
+            body = form.cleaned_data['body']
+            review = Review(product=product, author=name, body=body, date_created=datetime.now())
+            product_id = review.product.id            
+            review.save()
+            messages.success(request, 'Your review was submited')
+            return redirect(reverse('product_detail', args=[product_id]))
+        else:
+            messages.error(request, 'form is invalid') 
+    else:
+        form = ReviewForm()
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'products/add_review.html', context)       
+
+# DELETE REVIEW VIEW
+
+
+def delete_review(request, pk):
+    review = Review.objects.filter(product=pk).last()
+    product_id = review.product.id
+    review.delete()
+    return redirect(reverse('product_detail', args=[product_id]))
+
 
 # PRODUCT CUSTOMISE VIEW
 
 
 class CustomiseFormPreview(FormPreview):
     form_template = 'products/customise.html'
-    preview_template = 'products/preview.html'
-
-    #def parse_params(self, request, *args, **kwargs):
-
-       # pass
+    preview_template = 'products/preview.html'    
 
     def done(self, request, cleaned_data):
         Customise.objects.create(**cleaned_data)
         messages.success(request, 'Your Request was succesfuly registred, and \
                 on short time we will contact you by email.')
         return redirect(reverse('home'))
+
+
+# ADD PRODUCT VIEW (Product manager function copied from BoutiqueAdo)
 
 
 @login_required
@@ -124,6 +160,8 @@ def add_product(request):
     }
 
     return render(request, template, context)
+
+# EDIT PRODUCT VIEW
 
 
 @login_required
@@ -155,6 +193,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+# DELETE PRODUCT VIEW
 
 @login_required
 def delete_product(request, product_id):
@@ -168,7 +207,7 @@ def delete_product(request, product_id):
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
 
-# Search View
+#  SEARCH VIEW
 
 
 def search(request):
