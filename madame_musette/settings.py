@@ -35,7 +35,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-rj8r8zr75ke.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-yi21dqo9cwq.ws-eu98.gitpod.io']
 
 LOGIN_REDIRECT_URL = '/'
 
@@ -46,14 +46,14 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.messages',   
     'django.contrib.sites',
-    'cloudinary_storage',
+    'cloudinary_storage', 
+    'django.contrib.staticfiles', 
+    'cloudinary',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',
-    'cloudinary',
+    'allauth.socialaccount',   
     'home',
     'products',
     'ckeditor',
