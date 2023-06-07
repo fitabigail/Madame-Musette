@@ -323,7 +323,8 @@ ul a.cart:hover {
 }
   /* ---- Footer ----*/
 
-.footer {     
+.footer { 
+    height: auto;    
     background-color: #33240e!important;
     color:#fff;
     font-size: 2px;

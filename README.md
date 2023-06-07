@@ -2,11 +2,11 @@
 
 # Madame Musette
 
-The Project is deployed [here](#) 
+The Project is deployed [here](https://madamemusette.herokuapp.com/) 
 
 GitHub repository is [here](https://github.com/fitabigail/Madame-Musette) 
 
-![I am responsive](#)
+![I am responsive](/images_reademe/Iamresponsive.png)
 
 ## TABLE OF CONTENTS
 - [Aim of the website](#aim-of-the-website)

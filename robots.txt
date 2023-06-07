@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Disallow: /orders/
+Disallow: /user_profile/
+Sitemap: https://madamemusette.herokuapp.com//sitemap.xml
