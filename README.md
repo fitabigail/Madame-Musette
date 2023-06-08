@@ -819,7 +819,7 @@ Here images:
 <br>
 | Feature   	| Expected Action   	| Result   	|
 |---	|---	|---	|
-| Message in top right of screen     | Floating message according to the user action | Triggered by user action | Pass|
+| Message in top right of screen| Floating message according to the user action| Pass|
 <br>
 
 ## Singup Page
@@ -869,17 +869,21 @@ Here images:
 ![](/images_reademe/payment1.png)
 ![](/images_reademe/webhook-fail.png)
 </details>
+
 - On console the mailchimp subscribe give an error,
 
 <details>
 
 ![](/images_reademe/webhook-fail.png)
 </details>
+
 - The Subscription form doesn show the text even on first intall was working perfectly, The error I belive is comming from error show on console. I will try to fix on later time. Images below:
 <details>
+
 ![](/images_reademe/subscribe.png)
 ![](/images_reademe/subscribe-fail.png)
 </details>
+
 - Product manager page ratings fields alow negative values,
 - Like button is not allowing unregistred user to like,
 - The profile drop down on mobile should moved to right for better view,
