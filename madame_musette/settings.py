@@ -31,11 +31,11 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = True
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-yi21dqo9cwq.ws-eu98.gitpod.io']
+ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-yi21dqo9cwq.ws-eu99.gitpod.io']
 
 LOGIN_REDIRECT_URL = '/'
 

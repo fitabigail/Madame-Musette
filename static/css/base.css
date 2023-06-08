@@ -138,7 +138,6 @@ html, body {
 
 
 
-
 /* ------- Products page ----- */
 
  .products{    
@@ -802,9 +801,12 @@ box-shadow: 0 1px 2px 1px #ddd;
     #user-options{
         font-size: 1.5rem;
     }
-.icon-search{
-    font-size: 2rem;
-}
+    #user-options2{
+        font-size: 1.5rem;
+    }
+    .icon-search{
+        font-size: 2rem;
+    }
     .nav-link {
         padding: 0.15rem;
         font-size: 1rem;
@@ -860,25 +862,28 @@ box-shadow: 0 1px 2px 1px #ddd;
     }
     .add_product{
         margin-top: 10rem;
-}
-#add-prod {
-    font-size: 0.8rem;
-    padding-inline: 5rem;
-    text-align: left;
-}
+    }
+    #add-prod {
+        font-size: 0.8rem;
+        padding-inline: 5rem;
+        text-align: left;
+    }
 
-#cancel-add{
+    #cancel-add{
+        font-size: 0.8rem;
+    }
+    #new-image{
+    width: 11rem;
     font-size: 0.8rem;
-}
-#new-image{
-width: 11rem;
-font-size: 0.8rem;
-}
+    }
 
-.btn.btn-black.rounded-0.btn-file{
-    font-size: 1rem;}
-.cart-container{
-    min-height: 80vh;
-    margin-top: 10rem;
-}
+    .btn.btn-black.rounded-0.btn-file{
+        font-size: 1rem;}
+    .cart-container{
+        min-height: 80vh;
+        margin-top: 10rem;
+    }
+    .hero-text h1 {
+        font-size: 2rem;
+    }
 }

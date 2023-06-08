@@ -56,8 +56,8 @@
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
                             {% if products or categories or sorting_products != 'None_None' %}
-                            <a href="{% url 'home' %}" class="text-black"><span class="small"><i
-                                        class="fa fa-fw fa-home"></i></a> | </span>
+                           <a href="{% url 'home' %}" class="text-black"><span class="small"><i
+                                        class="fa fa-fw fa-home"></i>| </span></a> 
                             {% endif %}
                             {{ products|length }} items {% if products %} | {{ categ.friendly_name }} {{ keyword }}
                             {% endif %}
@@ -252,7 +252,7 @@
             url:'/products/like',
             data:{product_id:product_id, csrfmiddlewaretoken:window.CSRF_TOKEN}
         })
-        window.location.href="https://8000-fitabigail-madamemusett-rj8r8zr75ke.ws-eu98.gitpod.io/products/"
+        window.location.href="https://madamemusette.herokuapp.com/products/?category=pumps,sandals,Sneakers"
     })
 </script>
 {% endblock %}

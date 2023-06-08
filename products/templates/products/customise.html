@@ -4,23 +4,24 @@
 
 {% block content %}
 <div class="container w-50">
-<div class="row">
-    <div class="col-12 col-md-8">
-    <hr>
-        <h1 class="logo-font mb-4">Product Customise</h1>
-   <hr> 
+    <div class="row">
+        <div class="col-12 col-md-8">
+            <hr>
+            <h1 class="logo-font mb-4">Product Customise</h1>
+            <hr>
 
 
-{% if form.errors %}<h2>{% translate "Please correct the following errors" %}</h2>
-{% else %}<h2>{% translate "Add your custom options" %}</h2>{% endif %} </div></div>
+            {% if form.errors %}<h2>{% translate "Please correct the following errors" %}</h2>
+            {% else %}<h2>{% translate "Add your custom options" %}</h2>{% endif %}
+        </div>
+    </div>
 
-<form action="" method="post">{% csrf_token %}
-<table>
-{{ form|crispy }}
-</table>
-<input class="btn btn-outline-dark discover-btn" type="hidden" name="{{ stage_field }}" value="1" />
-<p ><input class="btn btn-outline-dark discover-btn" type="submit" value="{% translate "Preview" %}" /></p>
-</form>
+    <form action="" method="post">{% csrf_token %}
+        <table>
+            {{ form|crispy }}
+        </table>
+        <input class="btn btn-outline-dark discover-btn" type="hidden" name="{{ stage_field }}" value="1" />
+        <p><input class="btn btn-outline-dark discover-btn" type="submit" value="{% translate "Preview" %}" /></p>
+    </form>
 </div>
 {% endblock %}
-

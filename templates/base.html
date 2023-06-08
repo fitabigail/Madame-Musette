@@ -206,17 +206,17 @@
 
             <!-- Button to Open the Modal -->
             <button type="button" class="btn btn-outline-dark btn-lg discover-btn" data-toggle="modal"
-              data-target="#myModal" id="contact_us_modal">
+              data-target="#Modal">
               Subscribe
             </button>
             <!-- The Modal -->
-            <div class="modal" id="myModal">
+            <div class="modal" id="Modal">
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
 
                   <!-- Modal Header -->
                   <div class="modal-header gradient-custom">
-                    <h4 class="modal-title pl-5">Subscribe here!</h4>                    
+                    <h4 class="modal-title pl-5">Subscribe here!</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                   </div>
 
@@ -226,14 +226,14 @@
                       <div class="col-sm mt-5 p-5">
 
                         <!-- Begin Mailchimp Signup Form -->
+
                         <div id="mc_embed_signup">
                           <form
                             action="https://herokuapp.us21.list-manage.com/subscribe/post?u=b21461786129ec04d2034c23c&amp;id=4e063b8969&amp;f_id=0082bde1f0"
                             method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
                             class="validate" target="_blank" novalidate>
                             <div id="mc_embed_signup_scroll">
-                              <h2>Subscribe!</h2>
-                              <p>Get exclusive offers and discount codes by subscribing to ours monthly newsletter.</p>
+                              <h2>Subscribe</h2>
                               <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                               <div class="mc-field-group">
                                 <label for="mce-EMAIL">Email Address <span class="asterisk">*</span>
@@ -270,13 +270,14 @@
                                     class="button">
                                   <p class="brandingLogo"><a href="http://eepurl.com/iqIBts"
                                       title="Mailchimp - email marketing made easy and fun"><img
-                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
+                                        src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="mailchimp-logo"></a>
                                   </p>
                                 </div>
                               </div>
                             </div>
                           </form>
                         </div>
+
                         <!--End mc_embed_signup-->
 
                       </div>
@@ -306,7 +307,7 @@
                 <a class="dropdown-item" href="{% url 'about' %}">About</a>
                 <a class="dropdown-item"
                   href="https://www.privacypolicygenerator.info/live.php?token=UGGLWVkbk22RuiO54QiS6Vsu4LbBWf37"
-                  target="_blank">Privacy Policy</a>               
+                  target="_blank">Privacy Policy</a>
               </div>
             </div>
           </div>
@@ -371,7 +372,7 @@
                         <div class="row">
                           <div class="col-sm mt-5 p-5">
 
-                            {{c_form}}
+                            {{ c_form| crispy }}
 
                           </div>
                           <div class="col-sm">
@@ -396,7 +397,7 @@
           <div class="text-center">
             <h4 class="my-4 ml-5">Store location:</h4>
             <a
-              href="https://www.google.com/maps/place/Blanchardstown+Centre/@53.3931251,-6.3983277,14.75z/data=!4m6!3m5!1s0x48670d50e9317be7:0x1ef966973dd6d646!8m2!3d53.3918686!4d-6.3910117!16s%2Fm%2F05qb9zy">
+              href="https://www.google.com/maps/place/Blanchardstown+Centre/@53.3931251,-6.3983277,14.75z/data=!4m6!3m5!1s0x48670d50e9317be7:0x1ef966973dd6d646!8m2!3d53.3918686!4d-6.3910117!16s%2Fm%2F05qb9zy" target="_blank">
               <h6 class="text-white ml-5 " id="store-location"><i class="fas fa-map-marker-alt"></i> Blankcharstown
                 Shopping
                 Center</h6>
@@ -420,12 +421,6 @@
       </div>
     </div>
     <!-- End subfooter -->
-
-
-
-    </div>
-    </div>
-
 
   </footer>
   <!--End Footer-->
