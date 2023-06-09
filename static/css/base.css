@@ -38,7 +38,7 @@ html, body {
   /* ----- Hero Image ---- */
 
 .banner-image {
-    background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/media/hero.webp');
+    background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('https://musettemadame.s3.eu-west-1.amazonaws.com/media/hero.webp');
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -93,7 +93,7 @@ html, body {
 /* ----- Section Sales ---- */
 
 .sales-image {
-    background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('/media/sales-background.webp');
+    background-image:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('https://musettemadame.s3.eu-west-1.amazonaws.com/media/sales-background.webp');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
