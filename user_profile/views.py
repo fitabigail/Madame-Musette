@@ -50,7 +50,7 @@ def order_history(request, order_number):
 
     template = 'orders/order_complete.html'
     context = {
-        'purchases': purchases,
+        'order': purchases,
         'from_profile': True,
     }
 
