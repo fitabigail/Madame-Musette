@@ -768,8 +768,25 @@ box-shadow: 0 1px 2px 1px #ddd;
     overflow-y: scroll;
     height: 200px;
 }
+/* -------- Like button ---------*/
 
-/* -------------------------------- Media Queries */
+.btn-like{  
+    border: none
+   
+}
+.fa-heart, .fa-star{
+    color: #ce7227;
+}
+/* ----- Mailchimp --- */
+
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 400px;
+  }
+
+/* -------- Media Queries ------------ */
 
 /* Slightly larger container on xl screens */
 

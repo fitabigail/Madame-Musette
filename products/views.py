@@ -9,6 +9,7 @@ from django.db.models.functions import Lower
 from datetime import datetime
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
+
 AUTO_ID = 'formtools_%s'
 
 # ALL PRODUCTS VIEW.
@@ -61,6 +62,7 @@ def all_products(request):
         'categories': categories,
         'sorting_products': sorting_products,
         'logged_user': logged_user,
+       
     }
     return render(request, 'products/products.html', context)
 
@@ -235,4 +237,5 @@ def like_product(request):
         product.like.remove(request.user)
     else:
         product.like.add(request.user)
-    return redirect('products')
+    return redirect(reverse('product_detail', args=[product_id]))
+

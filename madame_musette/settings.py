@@ -46,14 +46,13 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',   
+    'django.contrib.messages',
     'django.contrib.sites',
-    'cloudinary_storage', 
-    'django.contrib.staticfiles', 
+    'django.contrib.staticfiles',
     'cloudinary',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',   
+    'allauth.socialaccount',
     'home',
     'products',
     'ckeditor',
@@ -248,9 +247,9 @@ if 'USE_AWS' in os.environ:
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'eur'
-STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
-STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET')
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'musettemadame@gmail.com'
 
 if (DEBUG == True):

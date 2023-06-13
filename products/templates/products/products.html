@@ -108,6 +108,7 @@
                                         {% else %}
                                         <small class="text-muted text-left mr-5">No Rating</small>
                                         {% endif %}
+                                        <!--
                                         <span class="text-right ml-5">
                                             <a id="{{ product.id }}" class="btn-like">
                                                 {% if logged_user in product.like.all %}
@@ -118,12 +119,35 @@
                                             </a>                                            
                                         </span>
                                         <small class=" text-muted ">
-                                        {% if product.like.count < 1 %}
-                                        {% elif product.like.count == 1 %}    
-                                        {% elif product.like.count > 1 %}
-                                         {{ product.like.count|sub:1 }} Likes
-                                        {% endif %}
-                                    </small>
+                                            {% if product.like.count < 1 %}
+                                            {% elif product.like.count == 1 %}    
+                                            {% elif product.like.count > 1 %}
+                                            {{ product.like.count|sub:1 }} Likes
+                                            {% endif %}
+                                        </small>-->
+
+                                        <strong class="text-right ml-5">
+                                            {% if user.is_authenticated %}
+                                            <form class="d-inline" action="{% url 'like' %}" method="POST">
+                                                {% csrf_token %}
+                                                {% if logged_user %}
+                                                <button type="submit" name="product_id" value="{{product.id}}" class="btn-like"><i class="fa-solid fa-heart fa-sm" ></i></button>
+                                                
+                                                {% else %}
+                                                <button type="submit" name="product_id" value="{{product.id}}" class="btn-like" ><i class="far fa-heart"></i></button>
+                                                {% endif %}
+                                            </form>
+                                            {% else %}
+                                                <span class="text-secondary"><i class="far fa-heart"></i></span>
+                                            {% endif %}
+                                          
+                                            <span class="text-secondary">{{ product.num_likes }} </span>
+                                            
+
+                                        </strong>   
+
+
+
                                     </div>
                                   
                                 </div>
@@ -254,5 +278,8 @@
         })
         window.location.href="https://madamemusette.herokuapp.com/products/?category=pumps,sandals,Sneakers"
     })
+
+
+    
 </script>
 {% endblock %}

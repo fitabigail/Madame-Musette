@@ -47,6 +47,10 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def num_likes(self):
+        return self.like.all().count()
+
 # PRODUCT CUSTOMISED MODEL
 
 
