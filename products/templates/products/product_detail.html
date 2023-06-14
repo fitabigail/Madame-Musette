@@ -216,15 +216,22 @@
             </div>
         </div>
         <div class="col-sm">
+            {% if user.is_authenticated %}
+                <p><a class="btn btn btn-outline-dark discover-btn w-25 mr-5 mb-5"
+                        href="{% url 'add_review' product.id %}">Add
+                        Review</a></p>
 
-            <p><a class="btn btn btn-outline-dark discover-btn w-25 mr-5 mb-5"
-                    href="{% url 'add_review' product.id %}">Add
-                    Review</a></p>
 
-
-            <p><a class="btn btn btn-outline-dark discover-btn w-25 mr-5"
-                    href="{% url 'delete_review' product.id %}">Delete
-                    Review</a></p>
+                <p><a class="btn btn btn-outline-dark discover-btn w-25 mr-5"
+                        href="{% url 'delete_review' product.id %}">Delete
+                        Review</a></p>
+            {% else %}                
+                <p>For <strong> Review the Product</strong> you need to
+                    <a class=" mr-1 ml-1 text-orange" href="{% url 'account_signup' %}"> Sign-Up </a>
+                    <span> or </span>
+                    <a class="mr-1 ml-1 text-orange" href="{% url 'account_login' %}"> Log-In </a>
+                </p>
+            {% endif %}   
 
         </div>
     </div>

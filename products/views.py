@@ -125,7 +125,7 @@ def delete_review(request, pk):
 
 class CustomiseFormPreview(FormPreview):
     form_template = 'products/customise.html'
-    preview_template = 'products/preview.html'    
+    preview_template = 'products/preview.html'
 
     def done(self, request, cleaned_data):
         Customise.objects.create(**cleaned_data)
@@ -238,4 +238,3 @@ def like_product(request):
     else:
         product.like.add(request.user)
     return redirect(reverse('product_detail', args=[product_id]))
-

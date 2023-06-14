@@ -10,7 +10,7 @@ class ContactForm(forms.ModelForm):
         fields = ['full_name', 'email', 'subject', 'message']
         labels = {
             'full_name': '',
-            'subject': '',
+            'subject': 'Subject:',
             'email': '',
             'message': '',
         }
@@ -20,8 +20,8 @@ class ContactForm(forms.ModelForm):
                 text-mute mb-3', 'placeholder': 'Full Name'}),
             'email': forms.EmailInput(attrs={'class': 'form-control \
                 mb-3', 'placeholder': 'Email'}),
-            'subject': forms.RadioSelect(attrs={'class': 'form-check-inline \
-                list-unstyled mb-3 text-black'}),
+            'subject': forms.Select(attrs={'class': 'form-check-inline \
+                list-unstyled mb-3 text-dark text-mute ml-2'}),
             'message': forms.Textarea(attrs={
                 'class': 'form-control', 'placeholder': 'Write message'}),
          }
