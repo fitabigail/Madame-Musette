@@ -149,6 +149,7 @@ A robots.txt file has also be included in the build to tell the search engine cr
 
 <br>
 </details>
+</br></br>
 
 > ## Agiles 
 ---
@@ -223,8 +224,14 @@ The epics were created using the milestones on github. Each epic was created and
     - USER STORY: Social Media [[#35](https://github.com/fitabigail/Madame-Musette/issues/35)]    
     - USER STORY: Sing up for newsletter [[#20](https://github.com/fitabigail/Madame-Musette/issues/20)]
     - USER STORY: See creators team [[#18](https://github.com/fitabigail/Madame-Musette/issues/18)]    
-    
-   
+    </br></br>
+
+- Epic: Reviews and Likes  :
+
+    - USER STORY: Add Review and Rating [[#39](https://github.com/fitabigail/Madame-Musette/issues/39)]
+    - USER STORY: Delete a Review [[#37](https://github.com/fitabigail/Madame-Musette/issues/37)]    
+    - USER STORY: Like and unlike [[#20](https://github.com/fitabigail/Madame-Musette/issues/20)]
+      
 </details>
  </br></br>
 
@@ -236,9 +243,11 @@ Flowchart here:
 
 ![Flowchart](/images_reademe/flowchart.png)
 </details>
-</br>
+</br></br>
 
 > ## Design
+---
+
 </br>
 I tried different color palettes while building the website and settled on a simple combination  gradient of gold.
 Black and white are used for text color and contrast well with primary colors.
@@ -270,14 +279,10 @@ Black and white are used for text color and contrast well with primary colors.
 </details>  
 
 </details> 
-  
-
-
-
-
 </br></br>
 
 > ## Features
+---
 </br>
 
 ### Existing Futures by Page
@@ -566,11 +571,10 @@ The admin can add, update and delete a product from front-end.
 
 As the time frame was affected by external factors out of my control, some of the 'could have' features had been left for future implementation.
 However fields and some of the need elements for them had been set in place since the beginning, and are there for when can be done.
-
+- A wishing list;
 - Singup/Login with Facebook and Google : added but not functional yet;
 - Forgot password need to be added;
 - Customise Product now have an unique form for all products. For future will be two forms one for products which has size and one for the rest of products;
-- The review form can be completed by all users, for future should be allowed only the one who purchase a product;
 - For review section in future to be implement a review replay from the admin/staff;
 - A service for renting specials designer products to be add;
 - A page with Q&A and Term and Conditions of the business;
@@ -581,8 +585,10 @@ However fields and some of the need elements for them had been set in place sinc
 </br>
 </details>
 </details>
+</br></br>
 
 > ## Database
+---
 
 </br></br>
 For the data base had been used ElephantSQL, and the diagram is as below.
@@ -590,6 +596,7 @@ For the data base had been used ElephantSQL, and the diagram is as below.
 
 ![DB Scheme](/images_reademe/DB-Scheme.png)
 </details>
+</br></br>
 
 > ## Testing
 ---
@@ -611,7 +618,8 @@ Monitor: 1280 * 1024 / 1600 * 900 / 1950 & UP
 
 The site had been test in Chrome seeming all according to the design. In Firefox. In Internet Explorer all seems to work as the design.
 <br>
-# **Manual Testing**
+
+### **Manual Testing**
 
 </br>
 
@@ -661,7 +669,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 |Search icon|Open the search|Pass|
 
 
-|Search icon|Open the search bar| Pass|
+
 </br>
 
 ## Home
@@ -705,7 +713,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 |Categories Filters Bar| Display the Categories filters | Pass|
 </br>
 
-# Product page
+## Product page
 </br>
 
 | Feature   	| Expected Action   	| Result   	|
@@ -724,7 +732,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 
 </br>
 
-# Product Detail page
+## Product Detail page
 </br>
 
 | Feature   	| Expected Action   	| Result   	|
@@ -806,9 +814,16 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 |Add Product button|Add product if all required fiels was corect completed| Pass|
 |Cancel button|Redirect to Products Page| Pass|
 
-## **Messages**
+## Messages
 <br>
 The features will be displayed for all the users, as marked in features pag
+
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+| Message in top right of screen| Floating message according to the user action| Pass|
+<br>
 
 Here images:
 <details>
@@ -816,10 +831,6 @@ Here images:
 ![message](/images_reademe/messages.png)
 ![message](/images_reademe/sing-up-confirm.png)
 </details>
-<br>
-| Feature   	| Expected Action   	| Result   	|
-|---	|---	|---	|
-| Message in top right of screen| Floating message according to the user action| Pass|
 <br>
 
 ## Singup Page
@@ -846,51 +857,148 @@ Here images:
 |Go home button| Land Home page|Pass|
 |Sing Up link| Go to Singup Page| Pass|
 
+
+## Emails confirmations
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Registration Email|Send confirmation email link| Pass|
+|Order  confirm email from gitpod |Show order details| Pass|
+|Order  confirm email from heroku |Show order details| Fail|
+
+<details>
+
+![Emails](/images_reademe/emails.png)
+![Email-registration](/images_reademe/Confirm_email_registration.png)
+
+![Email-order-terminal](/images_reademe/confirm-order.png)
+![Email-order-heroku](/images_reademe/email-order-heroku.png)
+
 </details>
+</br>
+
+## User story test
+
+## Register & Login and Logout
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|User Account Registration|Create an user account| Pass|
+|Login and Logout|Log in or out a user| Pass|
+|Personalized Account Profile|Create personalised profile wich can be updadated| Pass|
+
+</br>
+
+## Viewing and Navigation
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|See products|See a list of products| Pass|
+|Product Details|See products details| Pass|
+|Indentify Deals |Easy find deals by a click| Pass|
+|Select a specific category|Could see products from only one category| Pass|
+|See number of items on the cart|View number of item on cart| Pass|
+ 
+</br>
+
+## Sorting and Searching
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Sort multiple categories|View products from multiple categories| Pass|
+|Sort a category|Sort products from a category| Pass|
+|Sorting Products |Sorting products by diffrent filters|Pass|
+|Search products|Search for specific products| Pass|
+|View the search results|View searched product| Pass|
+ 
+</br>
+ 
+## Purchasing and Checkout
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Select quantity and size|Add quntity and size for product| Pass|
+|Customise a product|Customize a product choice| Pass|
+|Shopping Cart View |See the products on shopping cart|Pass|
+|Update shopping cart |Update quantity or remove the products| Pass|
+|Secure payments|Secure checkout| Pass|
+|Payment information |Show payment informations|Pass|
+|Order confirmation  |Confirm order| Pass|
+|Order email confirmation|Confirm order email receive| Pass|
+</br>
+     
+## Admin and Store Management
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Add products|Add product from front end| Pass|
+|Edit products|Update a product details| Pass|
+|Delete products |Delete product from database|Pass|
+
+</br>
+ 
+## Contact and Social Links
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Contact form|Contact a staff by contact form| Pass|
+|Social Media|Links to social media| Pass|
+|Sing up for newsletter |Suscribe to newsletter|Pass|
+|See creators team |Check details of designers|Pass|
+
+</br>
+
+</details>
+
+
+
 </br></br>
 
-## **BUGS**
+### BUGS
 </br>
 
 ### Fixed bugs
 
- - Profile icon dropdown ddid not fit on small screens - fixed with class = mx-5,
- - on deployment on Heroku my project had over maximum allowed slug size (after compression) 500 MB to 579MB. This was reduce with a .slugignore file. 
+ - Profile icon dropdown did not fit on small screens - fixed with class = mx-5,
+ - On deployment on Heroku, my project had over maximum allowed slug size (after compression) 500 MB to 579MB. This was reduce by adding a .slugignore file. 
+ - On console the mailchimp subscribe gave me an error, fixed by moving the javascript code to bottom of the page,
+ - The static files folder was not loading on heroku. Fixed by removing them from slugignor file, and all static media images was linked with AWS url,
+ - The webhook was not working propely. I found two mistakes on my code one the stripe_elements.js did not have the right path, and the second the confirmation_emails folder was not on orders folder,
 
 </br></br>
 
 ### Not Fixed bugs
-</br></br>
-- The static file folder is not loading on heroku. I have oad them from terminal to cloudinary, even before I had AWS and did over as well, heroku still does not want to load the website with them. I had long discutions with tutor but still no solution,
-- The webhook is not working propely. I checked each line of code but still not find the issue. I was looking for help to the tutors, but even they could not figure out why is not working. The payment on development it shows success but the webhook it say is fail. Below images:
-<details>
 
-![](/images_reademe/payments.png)
-![](/images_reademe/payment1.png)
-![](/images_reademe/webhook-fail.png)
-</details>
-
-- On console the mailchimp subscribe give an error,
-
-<details>
-
-![](/images_reademe/webhook-fail.png)
-</details>
-
-- The Subscription form doesn show the text even on first intall was working perfectly, The error I belive is comming from error show on console. I will try to fix on later time. Images below:
-<details>
-
-![](/images_reademe/subscribe.png)
-![](/images_reademe/subscribe-fail.png)
-</details>
+</br>
 
 - Product manager page ratings fields alow negative values,
-- Like button is not allowing unregistred user to like,
-- The profile drop down on mobile should moved to right for better view,
-- Login/singup with Facebook, Google buttons are not funtional.
+- Like button is not allowing unregistred user to like, and no message allow him to know must be registred to like a product,
+- A user can write more than one review per product,
+- The profile drop down on mobile should moved to left for better view:
+<details>
 
+ ![Profile-DropMenu](/images_reademe/profile-drop.png),
+</details>
+
+- Login/singup with Facebook, Google buttons are not funtional, 
+- The order confirmations email if is send from gitpod is showing the costs of product but send from heroku is not shows the values:
+ <details>
+
+![Email-order-terminal](/images_reademe/confirm-order.png)
+![Email-order-heroku](/images_reademe/email-order-heroku.png)
+</details>
+
+
+</br></br>
 
 > ## Validation
+---
+
 </br>
 <details>
 
@@ -966,9 +1074,9 @@ All the files with .js extension had been validate with JsHint, the files for ea
 ![](/images_reademe/js-valid.png)
 
 </br>
-
-
 </details>
+</br></br>
+
 
 > ## LightHouse
 ----
@@ -1032,9 +1140,6 @@ The Light score is low. In the absence of the necessary time to fix the errors, 
 <br>
 
 </details>
-
-
-</br></br>
 
 
 </br></br>
@@ -1217,6 +1322,8 @@ The folowing steps have to be done:
 </br></br>
 
 > ## Credits
+---
+
 </br>
 For this project, I have seen and read many tutorials from where I had tried to get some understading of the logic more than copy the code itself, but still could not avoid in certain cases taken code and adapt it to the project and its necessities.
 
@@ -1229,7 +1336,7 @@ For this project, I have seen and read many tutorials from where I had tried to 
  - [Stack Overflow](https://stackoverflow.com) - finding answers to specific questions,
  - [Udemy](https://www.udemy.com/course/django-course/learn/lecture/34829606#overview) - for like function.
 
-
+</br></br>
  > ## Acknowledgement
 
  Finally to my mentor Ronan McClelland , thanks so much for all your guidance and support through not just this project but all the course.

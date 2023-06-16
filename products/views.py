@@ -8,6 +8,7 @@ from .forms import ProductForm, CustomiseForm, ReviewForm
 from django.db.models.functions import Lower
 from datetime import datetime
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
+from django.db.models import Avg
 
 
 AUTO_ID = 'formtools_%s'
@@ -75,10 +76,13 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
 
     num_review = Review.objects.filter(product=product).count()
+    avg_review = Review.objects.filter(product=product).aggregate(average=Avg('rating'))
+
     context = {
         'product': product,
         'num_review': num_review,
-    }
+        'avg_review': avg_review,
+        }
 
     return render(request, 'products/product_detail.html', context)
 
@@ -95,7 +99,8 @@ def add_review(request, pk):
         if form.is_valid():
             name = request.user.username
             body = form.cleaned_data['body']
-            review = Review(product=product, author=name, body=body, date_created=datetime.now())
+            rating = form.cleaned_data['rating']
+            review = Review(product=product, author=name, body=body, rating=rating, date_created=datetime.now(), status=True)
             product_id = review.product.id            
             review.save()
             messages.success(request, 'Your review was submited')
@@ -237,4 +242,4 @@ def like_product(request):
         product.like.remove(request.user)
     else:
         product.like.add(request.user)
-    return redirect(reverse('product_detail', args=[product_id]))
+    return redirect(reverse('products'))

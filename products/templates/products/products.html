@@ -6,8 +6,7 @@
 
 <div class="container-fluid h-100 container-products">
     <div class="row products-body">
-        <div class="row mt-10 ml-3 bc-icons" aria-label="breadcrumb">
-            <!--<div class="col text-center mt-3"> </div>-->
+        <div class="row mt-10 ml-3 bc-icons" aria-label="breadcrumb">          
 
             {% for categ in categories %}
             <ol class="breadcrumb">
@@ -107,24 +106,7 @@
                                             5</small>
                                         {% else %}
                                         <small class="text-muted text-left mr-5">No Rating</small>
-                                        {% endif %}
-                                        <!--
-                                        <span class="text-right ml-5">
-                                            <a id="{{ product.id }}" class="btn-like">
-                                                {% if logged_user in product.like.all %}
-                                                    <i class="fa-solid fa-heart fa-sm" style="color: #ce7227;"></i>
-                                                {% else %}
-                                                     <i class="far fa-heart" style="cursor: pointer"></i>
-                                                {% endif %}
-                                            </a>                                            
-                                        </span>
-                                        <small class=" text-muted ">
-                                            {% if product.like.count < 1 %}
-                                            {% elif product.like.count == 1 %}    
-                                            {% elif product.like.count > 1 %}
-                                            {{ product.like.count|sub:1 }} Likes
-                                            {% endif %}
-                                        </small>-->
+                                        {% endif %}                                       
 
                                         <strong class="text-right ml-5">
                                             {% if user.is_authenticated %}
@@ -267,19 +249,7 @@
             window.location.replace(currentUrl);
         }
     })
-
-    window.CSRF_TOKEN ="{{ csrf_token }}"
-    $(document).on('click', '.btn-like', function(){
-        var product_id = this.id
-        $.ajax({
-            method:"POST",
-            url:'/products/like',
-            data:{product_id:product_id, csrfmiddlewaretoken:window.CSRF_TOKEN}
-        })
-        window.location.href="https://madamemusette.herokuapp.com/products/?category=pumps,sandals,Sneakers"
-    })
-
-
+   
     
 </script>
 {% endblock %}

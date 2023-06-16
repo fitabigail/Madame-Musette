@@ -35,7 +35,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-yi21dqo9cwq.ws-eu99.gitpod.io']
+ALLOWED_HOSTS = ['madamemusette.herokuapp.com', 'localhost', '8000-fitabigail-madamemusett-nwh94wss7br.ws-eu100.gitpod.io']
 
 LOGIN_REDIRECT_URL = '/'
 

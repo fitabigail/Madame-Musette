@@ -55,12 +55,14 @@ class Product(models.Model):
 
 
 customised_sole = (
+    ('none', 'none'),
     ('platform', 'platform'),
     ('wedge heels', 'wedge heels')
 
 )
 
 customised_color = (
+    ('none', 'none'),
     ('beign', 'beign'),
     ('burgundy', 'burgundy'),
     ('red', 'red'),
@@ -68,6 +70,7 @@ customised_color = (
 )
 
 customised_special_size = (
+    ('none', 'none'),
     ('UK 3', 'UK 3'),
     ('UK 3.5', 'UK 3.5'),
     ('UK 4', 'UK 4'),
@@ -113,11 +116,11 @@ class Customise(models.Model):
 
 class Review(models.Model):
     rating = [
-              (1, '1'),
-              (2, '2'),
-              (3, '3'),
-              (4, '4'),
-              (5, '5'),
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
     ]
 
     product = models.ForeignKey(Product(), related_name="reviews",
@@ -126,6 +129,7 @@ class Review(models.Model):
     author = models.CharField(max_length=200)
     rating = models.IntegerField(choices=rating, default='5',
                                  null=False, blank=False)
+    status = models.BooleanField(default=True)
     date_created = models.DateField(auto_now_add=True)
 
     class Meta:
