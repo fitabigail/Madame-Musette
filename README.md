@@ -32,7 +32,11 @@ GitHub repository is [here](https://github.com/fitabigail/Madame-Musette)
 </br>
 Madame Musette is a fully functional E-Commerce store built in Django using Python, JavaScript, CSS, Bootstrap4, HTML and it incorporates stripe payments. The site includes  user authentication and Full CRUD functionality for products. 
 Madame Musette is a website for selling ladies shoes and accessories. The user can quickly search for a specific categories, through the search bar on home page, or by more specific fields on the home and products page. 
-This version has been built for project 5 of the Code Institute Diploma in Software Development and therefore doesn't accept real payments and any orders made won't be fulfilled.
+This version has been built for project 5 of the Code Institute Diploma in Software Development and therefore doesn't accept real payments and any orders made won't be fulfilled. For testing payments can be used those cards numbers, followed by any expired date, CVC, and ZIP with 5 digit:
+
+- Successfull payments : 4242424242424242
+- Requires authentication : 4000002500003155
+- Failed payment : 4000000000009995
   </br></br>
 
 > ## Web Marketing
@@ -114,7 +118,9 @@ A robots.txt file has also be included in the build to tell the search engine cr
 - As User I want to subscribe to the store newletters 
 - As User I want to contact the staff if I require help or clarification of a process
 - As User I want to see the reviews of the products
+- As Registred user I want to get an customised product
 - As Registered User I want to be able to leave a product review
+- As Registred User I  want to like a product
 
 ### Registred/Unregistred User and Admin/Staff User
   </br> 
@@ -129,6 +135,7 @@ A robots.txt file has also be included in the build to tell the search engine cr
 - As Unregistered User, I want to be able to register so that I can create my account and access to the registered user features
 - As a Unregistered User I want to see the detail information of the products
 - As User I want to contact the staff if I require help or clarification of a process 
+- As Use I want to check designers profiles
 <br>
 
 ### Registered User
@@ -138,6 +145,7 @@ A robots.txt file has also be included in the build to tell the search engine cr
 - As Registered User I want to be able to update my information if needed
 - As Registered User I want to have  access to customised form for personalized products    
 - As Registered User I want to be able to leave a product review 
+- As Registred User I  want to like a product
 - As Registered User I want to keep a history of my orders
 </br>
 
@@ -230,7 +238,7 @@ The epics were created using the milestones on github. Each epic was created and
 
     - USER STORY: Add Review and Rating [[#39](https://github.com/fitabigail/Madame-Musette/issues/39)]
     - USER STORY: Delete a Review [[#37](https://github.com/fitabigail/Madame-Musette/issues/37)]    
-    - USER STORY: Like and unlike [[#20](https://github.com/fitabigail/Madame-Musette/issues/20)]
+    - USER STORY: Like/Unlike a Product [[#40](https://github.com/fitabigail/Madame-Musette/issues/40)]
       
 </details>
  </br></br>
@@ -461,6 +469,7 @@ From product details page the user can:
 </br>
 
 ![Reviews](/images_reademe/review.png)
+![Average-Rating](/images_reademe/average-review.png)
 </br>
 
 ### ADD Review
@@ -780,7 +789,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 
 </br>
 
-## Oder page
+## Oder Complete page
 </br>
 
 | Feature   	| Expected Action   	| Result   	|
@@ -798,7 +807,7 @@ I utilised a manual testing strategy for the development of the site. Seperate t
 |---	|---	|---	|
 |User Details|Display USER Summary| Pass|
 |Update button|Update Use Profile| Pass|
-|Order history link| Display Order History|Fail|
+|Order history link| Display Order History|Pass|
 
 ## Customised Product
 
@@ -953,6 +962,19 @@ Here images:
 
 </br>
 
+## Reviews and Likes
+
+
+| Feature   	| Expected Action   	| Result   	|
+|---	|---	|---	|
+|Add Review and Rating|As authenticated user can add a review| Pass|
+|Delete a Review|As authenticated user can delete a review| Pass|
+|Like/Unlike a Product |As authenticated user can LIKE/UNLIKE a product|Pass|
+
+
+</br>
+
+
 </details>
 
 
@@ -969,7 +991,11 @@ Here images:
  - On console the mailchimp subscribe gave me an error, fixed by moving the javascript code to bottom of the page,
  - The static files folder was not loading on heroku. Fixed by removing them from slugignor file, and all static media images was linked with AWS url,
  - The webhook was not working propely. I found two mistakes on my code one the stripe_elements.js did not have the right path, and the second the confirmation_emails folder was not on orders folder,
+<details>
 
+![Webhook Heroku](/images_reademe/herokuwh.png)
+
+</details>
 </br></br>
 
 ### Not Fixed bugs
@@ -978,6 +1004,7 @@ Here images:
 
 - Product manager page ratings fields alow negative values,
 - Like button is not allowing unregistred user to like, and no message allow him to know must be registred to like a product,
+- After a product is liked the user is redirected on products page, and he can see his like only by searching or scrolling for that product,
 - A user can write more than one review per product,
 - The profile drop down on mobile should moved to left for better view:
 <details>
